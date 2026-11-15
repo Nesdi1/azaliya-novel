@@ -1,0 +1,713 @@
+{
+  "schemaVersion": 1,
+  "version": "assets-v1",
+  "assets": {
+    "azalia": {
+      "src": "assets/characters/azalia.webp",
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 81648,
+      "sha256": "64c6302eb03b6a856639aa7f8ec80939c6c6481706a91e05d87b187d4470acbc",
+      "source": "../raw_files/персонажи/azaliya.jfif",
+      "sourceSha256": "925b51a2b9e9dac3a2d8aa1cd3f0ba718b08ed44bc207ea8002ad31f1d70b518",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "bg_manor": {
+      "src": "assets/backgrounds/bg_manor.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 384038,
+      "sha256": "258a274068f951f24a3e5e156755cd896f300837a280c4c5b45e45877dd29cbc",
+      "source": "../raw_files/фон/bg_manor.jfif",
+      "sourceSha256": "c7c9aecd91484fb09a056bbad52cd108614884ff09bd59c6a1bdfb4bf002eac8",
+      "processing": "resize"
+    },
+    "magic_wand": {
+      "src": "assets/props/magic_wand.webp",
+      "type": "prop",
+      "width": 1046,
+      "height": 137,
+      "bytes": 22324,
+      "sha256": "d86cc01cf1bd7058f9fab259b4e9efaeb25dfca5699a015d2125b591f9da2dcc",
+      "source": "../../raw_files/персонажи/magic_wand.jfif",
+      "sourceSha256": "5bcfb2718b8b94041db80de1ed94c176598c9ccfd40fdfcd77c9bf50dc529015",
+      "processing": "u2netp",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "andromeda": {
+      "src": "assets/characters/andromeda.webp",
+      "type": "character",
+      "width": 979,
+      "height": 1506,
+      "bytes": 112202,
+      "sha256": "88b4b2e1100d2b543a91ae3eac1625983d2cd1e6b540a15b5d211c51978de69a",
+      "source": "../raw_files/персонажи/andromeda.jfif",
+      "sourceSha256": "760af16dae669b52d415263cc5a68054d5c273b6d3b0f9c8c6490ec4c214ff2c",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12
+    },
+    "blaise": {
+      "src": "assets/characters/blaise.webp",
+      "type": "character",
+      "width": 1041,
+      "height": 1473,
+      "bytes": 81228,
+      "sha256": "096da9ea6b6947effb40182eab7afc740bc2e05c3325ffddc2d91da19106f8f3",
+      "source": "../raw_files/персонажи/blaise.jfif",
+      "sourceSha256": "0225e21f9bda7fe0149d8775aca2567aad60dad3a464a0e9272d528ea4fa084c",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "cedric": {
+      "src": "assets/characters/cedric.webp",
+      "type": "character",
+      "width": 967,
+      "height": 1491,
+      "bytes": 84250,
+      "sha256": "9f828ae55c66f25f8e7ec82d8c436f2ce5c3a811926976c5d68bf5e29687b51d",
+      "source": "../raw_files/персонажи/cedric.jfif",
+      "sourceSha256": "e0851fb5e45a6504c0ed7900bf60d75083f11714d67f8b3dae41ca7906c6b79f",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "dima": {
+      "src": "assets/characters/dima.webp",
+      "type": "character",
+      "width": 1003,
+      "height": 1505,
+      "bytes": 80656,
+      "sha256": "47b12d1bb968e9e11c4e510eeb8950ff93edb0a4a76c9682a4c3c10509c6d428",
+      "source": "../raw_files/персонажи/dima.jfif",
+      "sourceSha256": "0a354bf30f49b775621e8ffe8cd901ac15d8da401e806112096a5c89f7d32c1c",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "dumbledore": {
+      "src": "assets/characters/dumbledore.webp",
+      "type": "character",
+      "width": 1023,
+      "height": 1495,
+      "bytes": 208504,
+      "sha256": "8dd7dd762f4e01f77ce300addd071cedcda7300eebff5420b8530c99cfb18e7d",
+      "source": "../raw_files/персонажи/dumbledore.jfif",
+      "sourceSha256": "81b86ffd649f5cb28c3c08895365f0f46ab477d98d02bbd0cc910a19570f20e7",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12
+    },
+    "elizabeth": {
+      "src": "assets/characters/elizabeth.webp",
+      "type": "character",
+      "width": 1103,
+      "height": 1507,
+      "bytes": 137740,
+      "sha256": "80dc1b2b1e61fdaaa60a823f9754e37daf89aa6fec72ba1a48ce158a944dff36",
+      "source": "../raw_files/персонажи/elizabeth.jfif",
+      "sourceSha256": "dcfe394857141a1dcdefded9d45dfa223078347d1568b5f981ee3b932c13e235",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12
+    },
+    "harry": {
+      "src": "assets/characters/harry.webp",
+      "type": "character",
+      "width": 1036,
+      "height": 1490,
+      "bytes": 78050,
+      "sha256": "7c3b7134f5053afad6676814df7d41935ec3a0fce6c86737c8064d54c65fb581",
+      "source": "../raw_files/персонажи/harry.jfif",
+      "sourceSha256": "5bb072006a73d785c4dc88b7bc8820d606800c268e7c3024d4e560d161143e48",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "hermione": {
+      "src": "assets/characters/hermione.webp",
+      "type": "character",
+      "width": 971,
+      "height": 1493,
+      "bytes": 91870,
+      "sha256": "ec67fe5ac70e025e3a2692b36da78805490e7ba736b62c68d75e179e158f6a61",
+      "source": "../raw_files/персонажи/hermione.jfif",
+      "sourceSha256": "d6d3bada7db1e8f426ac5fa988ec2cc9532db7e30e1b11102aa72606bc3796df",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "malfoy": {
+      "src": "assets/characters/malfoy.webp",
+      "type": "character",
+      "width": 997,
+      "height": 1487,
+      "bytes": 71154,
+      "sha256": "1a8f5ec5cceca887fc7cf304b58be24411be59d33f5723bec44b1593dcb3b71d",
+      "source": "../raw_files/персонажи/malfoy.jfif",
+      "sourceSha256": "63d51876833755498a57bdeb991575b397dc477ae004945256b06229bb99c11a",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "mcgonagall": {
+      "src": "assets/characters/mcgonagall.webp",
+      "type": "character",
+      "width": 943,
+      "height": 1555,
+      "bytes": 140492,
+      "sha256": "8141948504b3b9b590dc36aaaaa173b47a2805e6ae87b01853e2c21916901593",
+      "source": "../raw_files/персонажи/mcgonagall.jfif",
+      "sourceSha256": "b41d0c399244275e6030184cd61a5add7c12877d833e2b7551e928fc77a9e5ee",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12
+    },
+    "nott": {
+      "src": "assets/characters/nott.webp",
+      "type": "character",
+      "width": 1014,
+      "height": 1514,
+      "bytes": 84988,
+      "sha256": "68b65496369e629868c9fbc926082f1c63a44d3a379fbf3b324f717c2aaf31be",
+      "source": "../raw_files/персонажи/nott.jfif",
+      "sourceSha256": "c6ca42796c921d2845e09679b74d234163e9aaba0242e0de0203e1c484bc18f4",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "pansy": {
+      "src": "assets/characters/pansy.webp",
+      "type": "character",
+      "width": 1082,
+      "height": 1516,
+      "bytes": 80914,
+      "sha256": "7847a7e4a82d113d69ad445bdba0caf846388fc7165833d8484481c23bb2b88b",
+      "source": "../raw_files/персонажи/pansy.jfif",
+      "sourceSha256": "848fcf00ebf43c3e6c0f849271d052102031320890d0797af26a84b1a3005289",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "regulus": {
+      "src": "assets/characters/regulus.webp",
+      "type": "character",
+      "width": 1104,
+      "height": 1511,
+      "bytes": 104054,
+      "sha256": "53e67293495e006de1a90cab89fab427a50853f38ea80f3610b19ef2df09c26a",
+      "source": "../raw_files/персонажи/regulus.jfif",
+      "sourceSha256": "1ed2832b0fd5525937238934ecf3007bbcacdc31242ca0e9b065826c9a772365",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12
+    },
+    "ron": {
+      "src": "assets/characters/ron.webp",
+      "type": "character",
+      "width": 1037,
+      "height": 1528,
+      "bytes": 90242,
+      "sha256": "d8cc30cb33e5d2aeb099740c37e12c34aea8cff1df1d0e18d60406ca7b833f3e",
+      "source": "../raw_files/персонажи/ron.jfif",
+      "sourceSha256": "fa849e3a2473c131b23a0741ac99bd413a9a4ab074118dd82c46cafcc5694146",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "rose": {
+      "src": "assets/characters/rose.webp",
+      "type": "character",
+      "width": 1075,
+      "height": 1505,
+      "bytes": 97136,
+      "sha256": "7e01dc2fe74f3949fa8a0126a4fc41d2faa3ca558cdbb71493e43b61e7a36223",
+      "source": "../raw_files/персонажи/rose.jfif",
+      "sourceSha256": "20b996c4be1a5343fac35a0273a46be7a4428c34f1b8c34da62da92131841673",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "snape": {
+      "src": "assets/characters/snape.webp",
+      "type": "character",
+      "width": 906,
+      "height": 1490,
+      "bytes": 59686,
+      "sha256": "cd2576e354d5c979cddf5bcf79328af4f3e32b9c8709f9a051c611904cec062a",
+      "source": "../raw_files/персонажи/snape.jfif",
+      "sourceSha256": "3c14254f4c951e16d485c555851db214ef9fb90abd0807c96e889d00a1f89a5e",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12
+    },
+    "sprout": {
+      "src": "assets/characters/sprout.webp",
+      "type": "character",
+      "width": 950,
+      "height": 1539,
+      "bytes": 105470,
+      "sha256": "c77624b089bc23a3519f51a68574e8dd06fad101b2927d2cdc6b81f3534c9ec4",
+      "source": "../raw_files/персонажи/sprout.jfif",
+      "sourceSha256": "5f5a372d414cceb32c502a55dc2f10c78afbc0dbd48ece961742cfcebd874f36",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12
+    },
+    "theo": {
+      "src": "assets/characters/theo.webp",
+      "type": "character",
+      "width": 1059,
+      "height": 1515,
+      "bytes": 94302,
+      "sha256": "191a6448b2bebf01265bf33ba10d32c7a93b0ff2b72caa8c977bafe652cbe973",
+      "source": "../raw_files/персонажи/theo.jfif",
+      "sourceSha256": "9e47d35d1017afda9c8920e4b04f19b54d23d55972e222ace7854b43e8f55be6",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "twins": {
+      "src": "assets/characters/twins.webp",
+      "type": "character",
+      "width": 1197,
+      "height": 1461,
+      "bytes": 124506,
+      "sha256": "507e757b321cea56ca08276e11f30addaefb419db6da32de59b8b8c70b457f88",
+      "source": "../raw_files/персонажи/twins.jfif",
+      "sourceSha256": "a3187e8c73848b413a9621b8071fc7a642ec7e08e6c45330c4f230ca84e4833c",
+      "processing": "isnet-anime",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    },
+    "bg_black_lake": {
+      "src": "assets/backgrounds/bg_black_lake.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 442260,
+      "sha256": "dfc6de84d55b18d56cdd1dfb02cfc3d6e6c48cf32a67094d593ef2c04837b7e7",
+      "source": "../raw_files/фон/bg_black_lake.jfif",
+      "sourceSha256": "7f4cfe3b24528aad801a4df112a23283865b46574a3cb5160da428b878ae3cc6",
+      "processing": "resize"
+    },
+    "bg_classroom": {
+      "src": "assets/backgrounds/bg_classroom.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 302548,
+      "sha256": "5bc141dd6d66a80c138b7d07dba50ce573d6c685c040a3c8a2bca3a38cc8d42c",
+      "source": "../raw_files/фон/bg_classroom.jfif",
+      "sourceSha256": "91a528814a16c89bdf234b0ec61ae6cbb2ffe5cccb8626388c7316c5056c9d9e",
+      "processing": "resize"
+    },
+    "bg_corridor": {
+      "src": "assets/backgrounds/bg_corridor.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 289388,
+      "sha256": "ae82208e4ee33cd6cc1cf0804668078255d7effc330ce409512bf010e3d56ac9",
+      "source": "../raw_files/фон/bg_corridor.jfif",
+      "sourceSha256": "ee7eee6113f4a33429e7a96542f8dafc76f4278ad83c4dfec0c0b54629453ba0",
+      "processing": "resize"
+    },
+    "bg_dueling_hall": {
+      "src": "assets/backgrounds/bg_dueling_hall.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 261552,
+      "sha256": "7109390b67571b2be841e1f2716f23078f143ab11682b596369573150577de29",
+      "source": "../raw_files/фон/bg_dueling_hall.jfif",
+      "sourceSha256": "d08859224d8b81ebf8921b87156692af86632f96a141681ad2f528c87cf2f19f",
+      "processing": "resize"
+    },
+    "bg_fountain_day": {
+      "src": "assets/backgrounds/bg_fountain_day.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 443456,
+      "sha256": "991ddd9695b1dbd4ce690c0d82b10f1148eb7a1aed1cf0fbbd28fa2c4f3a4e92",
+      "source": "../raw_files/фон/bg_fountain_day.jfif",
+      "sourceSha256": "d0d8c055ae2c0bee49d1848feb0af39a64872fcacfe30f423ae86132804acb7e",
+      "processing": "resize"
+    },
+    "bg_fountain_night": {
+      "src": "assets/backgrounds/bg_fountain_night.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 318508,
+      "sha256": "3977da698107abfd4add69f3ab30289d2cdf786c57a8fdfc2cbd9cfe393d68f2",
+      "source": "../raw_files/фон/bg_fountain_night.jfif",
+      "sourceSha256": "c6b46e2a0ea93be531077d78fc0184d7181d33f45de906a87af976291937f7f8",
+      "processing": "resize"
+    },
+    "bg_great_hall": {
+      "src": "assets/backgrounds/bg_great_hall.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 309110,
+      "sha256": "7a6994af0f336e297f3fd2baf16ddddca58cf660dbe46efdc5cd9e69bb752164",
+      "source": "../raw_files/фон/bg_great_hall.jfif",
+      "sourceSha256": "05fadce06bb814c1fe1f31b97ded634f0dfbe91dda513b01569059ef303bdd07",
+      "processing": "resize"
+    },
+    "bg_greenhouse": {
+      "src": "assets/backgrounds/bg_greenhouse.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 431456,
+      "sha256": "1ed683fa14e775caf37b79899afbe6e9e5e1cd312285105a5aa8105805a5c06a",
+      "source": "../raw_files/фон/bg_greenhouse.jfif",
+      "sourceSha256": "fb3a63f5c9598f446744706b88723205994a5dd27fff3a4803d6d523c005eaca",
+      "processing": "resize"
+    },
+    "bg_hospital": {
+      "src": "assets/backgrounds/bg_hospital.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 200808,
+      "sha256": "8d9f9f546aad9da5ddb0a68d27fd7be8030e0b5be6fecd04d7cc2a996b1eade2",
+      "source": "../raw_files/фон/bg_hospital.jfif",
+      "sourceSha256": "e1c69df34f83623890e88d86a96d42a964cf8aa630bc5ce0f4f531faa00bb6aa",
+      "processing": "resize"
+    },
+    "bg_hufflepuff_common": {
+      "src": "assets/backgrounds/bg_hufflepuff_common.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 382128,
+      "sha256": "b07b0a00da3bbf6e84dbff3a9ec29566e6a363bc14235d25263de758a62dd1fc",
+      "source": "../raw_files/фон/bg_hufflepuff_common.jfif",
+      "sourceSha256": "d8ebe1236df12e0d5ee6177c70458fb37caf7494c1a22bcfcc4751412ef12464",
+      "processing": "resize"
+    },
+    "bg_hufflepuff_dorm": {
+      "src": "assets/backgrounds/bg_hufflepuff_dorm.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 351676,
+      "sha256": "3680388e2b748f2ff8b568a609934b44d9114d829f01b3d9064e24902aa8e36f",
+      "source": "../raw_files/фон/bg_hufflepuff_dorm.jfif",
+      "sourceSha256": "dc981e3598554c0294d054f8a95637ff1f9bea52915f69d874b938e61e532d5b",
+      "processing": "resize"
+    },
+    "bg_library": {
+      "src": "assets/backgrounds/bg_library.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 331276,
+      "sha256": "5fa77bdbee65def75ca59112b827c64cb23ce96b5cecb1746a7fd09a7c58fad8",
+      "source": "../raw_files/фон/bg_library.jfif",
+      "sourceSha256": "84f2b16cecb6972b2881e0b84d6d9b0ba64021d73cc6e00f583b0e5a2f64c0db",
+      "processing": "resize"
+    },
+    "bg_potions": {
+      "src": "assets/backgrounds/bg_potions.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 225328,
+      "sha256": "e556b72a4b3751d134cc092e20aca41c85a6ac01e2856e3dde6363f0a788ecf3",
+      "source": "../raw_files/фон/bg_potions.jfif",
+      "sourceSha256": "996cbcf9150d6d90b027c1320748ce6248c950e9b57c626db15ff5ba307d24d9",
+      "processing": "resize"
+    },
+    "bg_quidditch": {
+      "src": "assets/backgrounds/bg_quidditch.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 261442,
+      "sha256": "90242a12b881731243bbb3c8720be186195c32619abacb8f3359d272adcaf597",
+      "source": "../raw_files/фон/bg_quidditch.jfif",
+      "sourceSha256": "085a24c9b9ab9d2a10179252b9fe58c722d5963756512fc86a8b055ce89e9570",
+      "processing": "resize"
+    },
+    "bg_train": {
+      "src": "assets/backgrounds/bg_train.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 186888,
+      "sha256": "268fddc22e331d0dca88d3ba0bfbc1f9e89ad623b059b035a48afd16625774ac",
+      "source": "../raw_files/фон/bg_train.jfif",
+      "sourceSha256": "bf2fa90872f6ca53bcc0e507dc00e307a4cfd03b034501c691967c1ccea5c15d",
+      "processing": "resize"
+    },
+    "bg_ravenclaw_dorm": {
+      "src": "assets/backgrounds/bg_ravenclaw_dorm.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 202418,
+      "sha256": "6fdb92b3fd76f15eb794b4248a93cf48a267e088f7af95a97b9654bbe36fb187",
+      "source": "../../raw_files/фон/bg_ravenclaw_dorm.jfif",
+      "sourceSha256": "33878fa5abda896eb09fb84ff51ee99c4d140f288086ce866c059890eb79e96f",
+      "processing": "resize"
+    },
+    "bg_corridor_night": {
+      "src": "assets/backgrounds/bg_corridor_night.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 234206,
+      "sha256": "22c5f33ff743e7750c477c12bbd5544b2e3813493277dc7d68ccc626022c7b7c",
+      "source": "../../raw_files/фон/bg_corridor_night.jfif",
+      "sourceSha256": "ea5bdb1a0929627cbf4a5b9c76d889552fefb4df05209cfae1c8fc05d7339156",
+      "processing": "resize"
+    },
+    "bg_hufflepuff_dorm_morning": {
+      "src": "assets/backgrounds/bg_hufflepuff_dorm_morning.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 264738,
+      "sha256": "c449359d53a4dde27f20fdde09107f55459af78a3917772e16588040aee72e1e",
+      "source": "../../raw_files/фон/bg_hufflepuff_dorm_morning.jfif",
+      "sourceSha256": "fb1843c24499cbb68fda402252c4e5401640e5246bcd66ae7823a1d922f32864",
+      "processing": "resize"
+    },
+    "bg_parchment_clean": {
+      "src": "assets/backgrounds/bg_parchment_clean.webp",
+      "type": "background",
+      "width": 1529,
+      "height": 2048,
+      "bytes": 173450,
+      "sha256": "2dc41d1f13c8d361b0f62348116e17dfd328913903f216b8bcec4a2de4f4967f",
+      "source": "../../raw_files/фон/bg_parchment_clean.jfif",
+      "sourceSha256": "8ed8ee57ddb87e4e0befa8fdf303f2ff059153dfb2a52e1aaaef3fe1071d6a4d",
+      "processing": "resize"
+    },
+    "sorting_hat": {
+      "src": "assets/props/sorting_hat.webp",
+      "type": "prop",
+      "width": 1025,
+      "height": 1041,
+      "bytes": 75038,
+      "sha256": "bdde77916e551b371b063fb271035ebe151c6bf3bbeb9fb0afe6ebc439841cda",
+      "source": "../../raw_files/персонажи/sorting_hat.jfif",
+      "sourceSha256": "e2b07886c2601c0ea0493faea18052afb4d7823eced4d1ca88154dfed7b4ab6e",
+      "processing": "u2netp",
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1
+    }
+  },
+  "scenes": {
+    "scene01": [
+      "andromeda",
+      "azalia",
+      "elizabeth",
+      "regulus",
+      "theo",
+      "bg_manor",
+      "bg_train"
+    ],
+    "scene02": [
+      "azalia",
+      "cedric",
+      "dima",
+      "dumbledore",
+      "harry",
+      "hermione",
+      "malfoy",
+      "mcgonagall",
+      "ron",
+      "rose",
+      "theo",
+      "twins",
+      "bg_great_hall",
+      "bg_hufflepuff_common",
+      "bg_hufflepuff_dorm",
+      "bg_hufflepuff_dorm_morning",
+      "sorting_hat"
+    ],
+    "scene03": [
+      "azalia",
+      "bg_corridor",
+      "bg_fountain_day",
+      "bg_great_hall",
+      "bg_potions",
+      "blaise",
+      "harry",
+      "hermione",
+      "malfoy",
+      "nott",
+      "pansy",
+      "ron",
+      "snape",
+      "theo",
+      "twins"
+    ],
+    "scene04": [
+      "azalia",
+      "dima",
+      "harry",
+      "hermione",
+      "malfoy",
+      "ron",
+      "rose",
+      "theo",
+      "twins",
+      "bg_corridor",
+      "bg_great_hall",
+      "bg_hospital",
+      "bg_library"
+    ],
+    "scene05": [
+      "azalia",
+      "dima",
+      "harry",
+      "hermione",
+      "ron",
+      "rose",
+      "snape",
+      "theo",
+      "twins",
+      "bg_classroom",
+      "bg_corridor",
+      "bg_fountain_day",
+      "bg_fountain_night",
+      "bg_hufflepuff_dorm",
+      "bg_corridor_night"
+    ],
+    "scene06": [
+      "azalia",
+      "bg_black_lake",
+      "bg_corridor",
+      "bg_dueling_hall",
+      "bg_quidditch",
+      "dima",
+      "malfoy",
+      "pansy",
+      "rose",
+      "theo"
+    ],
+    "scene07": [
+      "azalia",
+      "rose",
+      "theo",
+      "bg_corridor",
+      "bg_library"
+    ],
+    "scene08": [
+      "azalia",
+      "bg_corridor",
+      "bg_fountain_day",
+      "bg_fountain_night",
+      "bg_hufflepuff_dorm",
+      "bg_library",
+      "bg_ravenclaw_dorm",
+      "dima",
+      "theo"
+    ],
+    "scene09": [
+      "azalia",
+      "dima",
+      "harry",
+      "hermione",
+      "ron",
+      "rose",
+      "theo",
+      "twins",
+      "bg_corridor",
+      "bg_hufflepuff_common",
+      "bg_hufflepuff_dorm_morning"
+    ],
+    "scene10": [
+      "azalia",
+      "bg_corridor",
+      "bg_greenhouse",
+      "bg_parchment_clean",
+      "dima",
+      "magic_wand",
+      "malfoy",
+      "rose",
+      "sprout",
+      "theo"
+    ]
+  },
+  "missingRequired": []
+}
