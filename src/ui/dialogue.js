@@ -212,6 +212,7 @@ export function createDialogue(root, bus = defaultBus, { hudRoot = null } = {}) 
 
   function show(node, options = {}) {
     stopTimers();
+    root.hidden = false;
     currentNode = node;
     isChoiceActive = false;
     isRetryActive = false;
@@ -227,6 +228,7 @@ export function createDialogue(root, bus = defaultBus, { hudRoot = null } = {}) 
 
     const type = node?.type || 'dialogue';
     const speaker = node?.speaker || null;
+    const stageNote = options?.stageNote ? String(options.stageNote).trim() : '';
     fullText = String(node?.text || '');
 
     // Reset text style classes
@@ -241,7 +243,8 @@ export function createDialogue(root, bus = defaultBus, { hudRoot = null } = {}) 
     } else {
       speakerBadgeEl.hidden = false;
       const label = getSpeakerLabel(speaker);
-      speakerBadgeEl.textContent = type === 'thought' ? `${label} (мысли)` : label;
+      const baseTitle = type === 'thought' ? `${label} (мысли)` : label;
+      speakerBadgeEl.textContent = stageNote ? `${baseTitle} · ${stageNote}` : baseTitle;
       if (type === 'thought') {
         textEl.classList.add('is-thought', `thought-${speaker}`);
       } else {
@@ -457,12 +460,17 @@ export function createDialogue(root, bus = defaultBus, { hudRoot = null } = {}) 
     root.innerHTML = '';
   }
 
+  function setOverlayMode(active) {
+    root.hidden = Boolean(active);
+  }
+
   return {
     show,
     showChoices,
     showRetry,
     setSettings,
     setSkipActive,
+    setOverlayMode,
     isTyping: () => isTyping,
     completeTyping: finishTyping,
     triggerAdvance: handleAdvanceTrigger,

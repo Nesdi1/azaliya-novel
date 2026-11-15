@@ -58,78 +58,11 @@ function isInteractiveTextNode(node) {
   return false;
 }
 
-/**
- * DEBUG-STUB: Built-in M1 showcase scene to test thought styles (azalia/theo/malfoy),
- * author narration without speaker name, and vertical choice buttons before Scene 2-10 are added in M2.
- * Does not modify src/data/story/scene01.js.
- */
-export const M1_DEMO_SCENE = {
-  schemaVersion: 1,
-  id: 'm1_demo',
-  start: 'm1_demo_enter',
-  nodes: [
-    {
-      id: 'm1_demo_enter',
-      type: 'scene',
-      action: 'enter',
-      background: 'bg_train',
-      characters: ['azalia', 'theo', 'malfoy'],
-      next: 'm1_demo_narration',
-    },
-    {
-      id: 'm1_demo_narration',
-      type: 'narration',
-      text: 'За окном поезда проплывают зелёные холмы и каменный виадук. Это проверочный экран этапа M1 (DEBUG-STUB до M2) для демонстрации авторского текста, мыслей героев и меню выбора.',
-      next: 'm1_demo_thought_azalia',
-    },
-    {
-      id: 'm1_demo_thought_azalia',
-      type: 'thought',
-      speaker: 'azalia',
-      text: '«Главное — сохранять спокойствие и не поддаваться на провокации в первый же день…»',
-      next: 'm1_demo_thought_theo',
-    },
-    {
-      id: 'm1_demo_thought_theo',
-      type: 'thought',
-      speaker: 'theo',
-      text: '«Интересно, на какой факультет нас распределит Шляпа? Только бы не скучать!»',
-      next: 'm1_demo_thought_malfoy',
-    },
-    {
-      id: 'm1_demo_thought_malfoy',
-      type: 'thought',
-      speaker: 'malfoy',
-      text: '«Посмотрим, чего стоят эти Блэки на самом деле…»',
-      next: 'm1_demo_choice',
-    },
-    {
-      id: 'm1_demo_choice',
-      type: 'choice',
-      text: 'Выберите действие (проверка вертикальных кнопок выбора M1):',
-      options: [
-        {
-          id: 'm1_opt_restart_s01',
-          text: 'Вернуться в начало Сцены 1 (Особняк Блэков)',
-          effects: [],
-          next: 'm1_demo_to_s01',
-        },
-        {
-          id: 'm1_opt_repeat_demo',
-          text: 'Повторить проверку мыслей и авторского текста',
-          effects: [],
-          next: 'm1_demo_narration',
-        },
-      ],
-    },
-    {
-      id: 'm1_demo_to_s01',
-      type: 'end',
-      nextScene: 'scene01',
-      next: null,
-    },
-  ],
-};
+function extractParentheticalNote(annotation) {
+  if (!annotation) return '';
+  const m = String(annotation).match(/\(([^)]+)\)/);
+  return m ? m[1].trim() : '';
+}
 
 export function createEngine({
   ui,
@@ -142,12 +75,12 @@ export function createEngine({
   scenes = {},
 } = {}) {
   const allScenes = {
-    m1_demo: M1_DEMO_SCENE,
     ...scenes,
   };
 
   let state = createInitialState();
   let currentNode = null;
+  let pendingRetryNode = null;
   let isTransitioning = false;
   let instanceCounter = 0;
   let activeAbortController = null;
@@ -213,6 +146,16 @@ export function createEngine({
     return Array.from(ids);
   }
 
+  function collectSceneInitialAssets(scene) {
+    if (!scene || !Array.isArray(scene.nodes) || scene.nodes.length === 0) return [];
+    const first = scene.nodes.find((n) => n.id === scene.start) || scene.nodes[0];
+    const ids = new Set();
+    if (first?.background) ids.add(first.background);
+    if (Array.isArray(first?.characters)) first.characters.forEach((c) => ids.add(c));
+    collectPrefetchAssets(scene, first).forEach((id) => ids.add(id));
+    return Array.from(ids);
+  }
+
   async function enterNode(sceneId, nodeId) {
     if (isTransitioning) return;
     isTransitioning = true;
@@ -240,14 +183,15 @@ export function createEngine({
 
       // Follow non-interactive structural nodes (scene enter/cue, set, if, goto)
       let guard = 0;
+      let pendingStageNote = '';
       while (node && guard < 100) {
         guard += 1;
         state.sceneId = sceneId;
         state.nodeId = node.id;
 
         if (node.type === 'scene') {
-          markNodeRead(node.id);
           if (node.action === 'enter') {
+            markNodeRead(node.id);
             await stage?.enter?.({
               background: node.background,
               characters: node.characters || [],
@@ -258,6 +202,9 @@ export function createEngine({
               // Significant plot stage remark: stop here and display as an author/action line with its stage cues
               break;
             }
+            markNodeRead(node.id);
+            const note = extractParentheticalNote(node.annotation);
+            if (note) pendingStageNote = note;
             // Non-stopping stage cue: execute explicit cues and optional holdMs, then advance
             stageCuesOf(node).forEach((c) => stage?.cue?.(c));
             const holdMs = Number(node.holdMs) || 0;
@@ -344,7 +291,7 @@ export function createEngine({
               text: String(node.annotation || node.text || '').replace(/^\((.*)\)$/s, '$1'),
             }
           : node;
-        ui?.show?.(uiNode, { isRead: true });
+        ui?.show?.(uiNode, { isRead: true, stageNote: isCueNarration ? '' : pendingStageNote });
         isTransitioning = false;
 
         if (skipMode && wasAlreadyRead && node.next) {
@@ -378,15 +325,27 @@ export function createEngine({
         persistIfAllowed();
         isTransitioning = false;
 
+        // If the cutscene is immediately followed by an end node, preload the next scene's initial assets during playback
+        let preloadPromise = null;
+        const afterNode = node.next ? getNode(sceneId, node.next) : null;
+        if (afterNode?.type === 'end' && afterNode.nextScene && getScene(afterNode.nextScene)) {
+          const nextIds = collectSceneInitialAssets(getScene(afterNode.nextScene));
+          if (nextIds.length > 0) preloadPromise = stage?.preload?.(nextIds);
+        }
+
+        ui?.setOverlayMode?.(true);
         activeAbortController = new AbortController();
         try {
           await cutscenes?.play?.(stage?.getOverlayRoot?.(), node.cutsceneId, {
             signal: activeAbortController.signal,
             reducedMotion: Boolean(state.settings?.reducedMotion),
+            preloadPromise,
           });
         } catch (err) {
+          ui?.setOverlayMode?.(false);
           if (err?.name === 'AbortError' || myInstanceId !== instanceCounter) return;
         }
+        ui?.setOverlayMode?.(false);
         if (myInstanceId !== instanceCounter) return;
         markNodeRead(node.id);
         persistIfAllowed();
@@ -403,10 +362,14 @@ export function createEngine({
         persistIfAllowed();
         isTransitioning = false;
 
+        ui?.setOverlayMode?.(true);
         activeAbortController = new AbortController();
         try {
           const gameModule = await minigames?.load?.(node.gameId);
-          if (myInstanceId !== instanceCounter) return;
+          if (myInstanceId !== instanceCounter) {
+            ui?.setOverlayMode?.(false);
+            return;
+          }
           const result = await gameModule.run(stage?.getOverlayRoot?.(), {
             sceneId,
             instanceId: myInstanceId,
@@ -416,18 +379,31 @@ export function createEngine({
             debugAutoWin,
             ...(node.params || {}),
           });
+          ui?.setOverlayMode?.(false);
           if (myInstanceId !== instanceCounter) return;
+
+          const successRoute = node.resultRoutes?.success || node.next;
+          const failureRoute = node.resultRoutes?.failure || node.next;
+          // Potions/quidditch failure without a distinct story failure branch offers UI retry/skip (04_STORY_SCHEMA L39)
+          if (!result?.ok && (!node.resultRoutes?.failure || failureRoute === successRoute)) {
+            pendingRetryNode = { sceneId, node };
+            ui?.showRetry?.({
+              kind: node.gameId,
+              message: 'Испытание не пройдено. Попробовать снова или пропустить испытание?',
+            });
+            return;
+          }
+
           bus?.emit?.('game:result', { instanceId: myInstanceId, result });
           markNodeRead(node.id);
           persistIfAllowed();
 
-          const nextTarget = result?.ok
-            ? node.resultRoutes?.success || node.next
-            : node.resultRoutes?.failure || node.next;
+          const nextTarget = result?.ok ? successRoute : failureRoute;
           if (nextTarget) {
             await enterNode(sceneId, nextTarget);
           }
         } catch (err) {
+          ui?.setOverlayMode?.(false);
           if (err?.name === 'AbortError' || myInstanceId !== instanceCounter) return;
         }
         return;
@@ -440,9 +416,21 @@ export function createEngine({
         const nextSceneId = node.nextScene;
         if (nextSceneId && getScene(nextSceneId)) {
           const nextSc = getScene(nextSceneId);
+          const nextIds = collectSceneInitialAssets(nextSc);
+          const preloadPromise = nextIds.length > 0 ? stage?.preload?.(nextIds) : Promise.resolve();
+          ui?.setOverlayMode?.(true);
+          try {
+            await cutscenes?.playSceneTransition?.(stage?.getOverlayRoot?.(), {
+              preloadPromise,
+              reducedMotion: Boolean(state.settings?.reducedMotion),
+            });
+          } finally {
+            ui?.setOverlayMode?.(false);
+          }
+          if (myInstanceId !== instanceCounter) return;
           await enterNode(nextSceneId, nextSc.start);
         } else {
-          handleMissingScene(nextSceneId || 'scene02');
+          handleMissingScene(nextSceneId || 'scene05');
         }
         return;
       }
@@ -457,24 +445,24 @@ export function createEngine({
   function handleMissingScene(missingSceneId) {
     skipMode = false;
     ui?.setSkipActive?.(false);
-    // Present a clean M1 end-of-scene screen with option to preview M1 thought/narration/choice styles or restart Scene 1
+    ui?.setOverlayMode?.(false);
     currentNode = {
-      id: '__m1_scene_complete__',
+      id: '__scene_boundary__',
       type: 'choice',
     };
     ui?.show?.({
-      id: '__m1_scene_complete_text__',
+      id: '__scene_boundary_text__',
       type: 'narration',
-      text: `Сцена 1 пройдена до конца! Переход к «${missingSceneId}» будет добавлен на этапе M2. Вы можете проверить стили мыслей/выбора (DEBUG-STUB) или пройти Сцену 1 заново.`,
+      text: `Сцены 1–4 пройдены! Переход к «${missingSceneId}» будет подключён в следующей части этапа M2.`,
     });
     ui?.showChoices?.([
       {
-        id: '__m1_open_demo__',
-        text: 'Проверить мысли, авторский текст и выбор (DEBUG-STUB)',
+        id: '__restart_s04__',
+        text: 'Пройти Сцену 4 сначала (проверить другую ветку)',
       },
       {
-        id: '__m1_restart_s01__',
-        text: 'Пройти Сцену 1 сначала',
+        id: '__restart_s01__',
+        text: 'Начать с самого начала (Сцена 1)',
       },
     ]);
   }
@@ -551,10 +539,10 @@ export function createEngine({
     audio?.unlock?.();
     suppressAutoSave = false;
 
-    if (currentNode.id === '__m1_scene_complete__') {
-      if (optionId === '__m1_open_demo__') {
-        await enterNode('m1_demo', M1_DEMO_SCENE.start);
-      } else if (optionId === '__m1_restart_s01__') {
+    if (currentNode.id === '__scene_boundary__') {
+      if (optionId === '__restart_s04__' && getScene('scene04')) {
+        await enterNode('scene04', 's04_enter');
+      } else if (optionId === '__restart_s01__') {
         await enterNode('scene01', 's01_enter');
       }
       return;
@@ -622,6 +610,23 @@ export function createEngine({
     }),
     bus.on('ui:choice', ({ optionId }) => {
       choose(optionId);
+    }),
+    bus.on('ui:retry', async ({ action }) => {
+      if (!pendingRetryNode) return;
+      const { sceneId: retrySceneId, node: retryNode } = pendingRetryNode;
+      pendingRetryNode = null;
+      if (action === 'retry') {
+        await enterNode(retrySceneId, retryNode.id);
+      } else if (action === 'skip') {
+        const skipResult = { ok: true, score: 0, details: { reason: 'skipped' } };
+        bus?.emit?.('game:result', { instanceId: instanceCounter, result: skipResult });
+        markNodeRead(retryNode.id);
+        persistIfAllowed();
+        const nextTarget = retryNode.resultRoutes?.success || retryNode.next;
+        if (nextTarget) {
+          await enterNode(retrySceneId, nextTarget);
+        }
+      }
     }),
     bus.on('ui:skip', ({ active }) => {
       skipMode = Boolean(active);

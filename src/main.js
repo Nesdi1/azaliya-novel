@@ -8,6 +8,9 @@ import { createMinigameRegistry } from './minigames/registry.js';
 import { createEngine } from './engine/storyEngine.js';
 import { mount as mountDebug } from './debug/debug.js';
 import scene01 from './data/story/scene01.js';
+import scene02 from './data/story/scene02.js';
+import scene03 from './data/story/scene03.js';
+import scene04 from './data/story/scene04.js';
 
 async function bootstrap() {
   const bootWarning = document.getElementById('file-protocol-warning');
@@ -49,6 +52,9 @@ async function bootstrap() {
     bus,
     scenes: {
       scene01,
+      scene02,
+      scene03,
+      scene04,
     },
   });
 

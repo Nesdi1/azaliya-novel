@@ -13,7 +13,10 @@ def build():
    text=full[row['line']-1];row['original']=text
    for part in row['parts']:
     value=text[part['start']:part['end']]
-    if 'node' in part:
+    if 'option' in part:
+     node=nodes[part['node']];opt=next(o for o in node['options'] if o['id']==part['option'])
+     opt[part['field']]=value;opt['source']=[dict(file='dialogues',line=row['line'],start=part['start'],end=part['end'])]
+    elif 'node' in part:
      node=nodes[part['node']];node[part['field']]=value;node['source']=[dict(file='dialogues',line=row['line'],start=part['start'],end=part['end'])]
     else:part['text']=value
   data['sourceSha256']=hashlib.sha256(src.read_bytes()).hexdigest()
