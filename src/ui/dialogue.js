@@ -35,7 +35,12 @@ export function getSpeakerLabel(speakerId) {
   return SPEAKER_LABELS_RU[speakerId] || speakerId;
 }
 
-export function createDialogue(root, bus = defaultBus) {
+/**
+ * createDialogue(root, bus, { hudRoot }) — hudRoot (optional) receives the quick controls
+ * (Авто / Пропуск / Настройки / Меню) so they live in the top-right corner of the stage
+ * instead of inside the dialogue panel (owner-approved layout, docs/OPEN_QUESTIONS.md Q-L01).
+ */
+export function createDialogue(root, bus = defaultBus, { hudRoot = null } = {}) {
   if (!root) throw new Error('Dialogue root element is required');
 
   let settings = {
@@ -99,7 +104,6 @@ export function createDialogue(root, bus = defaultBus) {
   menuBtn.textContent = 'Меню';
 
   controlsBarEl.append(autoBtn, skipBtn, settingsBtn, menuBtn);
-  headerEl.append(speakerBadgeEl, controlsBarEl);
 
   // Scrollable text container (pan-y allowed for long speeches)
   const bodyEl = document.createElement('div');
@@ -119,21 +123,30 @@ export function createDialogue(root, bus = defaultBus) {
   retryEl.className = 'dialogue-retry';
   retryEl.hidden = true;
 
-  // Footer prompt ("Нажмите, чтобы продолжить")
-  const footerEl = document.createElement('div');
-  footerEl.className = 'dialogue-footer';
-
-  const hintEl = document.createElement('span');
-  hintEl.className = 'dialogue-hint';
-  hintEl.textContent = 'Нажмите для продолжения ▸';
+  // "Далее" lives in the name row (saves a whole text line in the compact overlay panel)
+  const HINT_TYPING = 'Нажмите, чтобы показать весь текст';
+  const HINT_NEXT = 'Нажмите для продолжения';
 
   const nextBtn = document.createElement('button');
   nextBtn.type = 'button';
   nextBtn.className = 'ui-btn dialogue-next-btn';
   nextBtn.textContent = 'Далее ▸';
+  nextBtn.setAttribute('aria-label', HINT_NEXT);
 
-  footerEl.append(hintEl, nextBtn);
-  root.append(headerEl, bodyEl, choicesEl, retryEl, footerEl);
+  headerEl.append(speakerBadgeEl, nextBtn);
+  root.append(headerEl, bodyEl, choicesEl, retryEl);
+
+  if (hudRoot) {
+    hudRoot.innerHTML = '';
+    hudRoot.appendChild(controlsBarEl);
+  } else {
+    headerEl.insertBefore(controlsBarEl, nextBtn);
+  }
+
+  function setHint(text) {
+    nextBtn.setAttribute('aria-label', text);
+    nextBtn.title = text;
+  }
 
   function stopTimers() {
     if (rafId !== null) {
@@ -170,7 +183,7 @@ export function createDialogue(root, bus = defaultBus) {
     revealedChars = fullText.length;
     textEl.textContent = fullText;
     root.classList.remove('is-typing');
-    hintEl.textContent = 'Нажмите для продолжения ▸';
+    setHint(HINT_NEXT);
     scheduleAutoAdvance();
   }
 
@@ -206,7 +219,8 @@ export function createDialogue(root, bus = defaultBus) {
     choicesEl.innerHTML = '';
     retryEl.hidden = true;
     retryEl.innerHTML = '';
-    footerEl.hidden = false;
+    nextBtn.hidden = false;
+    root.classList.remove('has-choices');
 
     canSkipCurrent = Boolean(options.isRead);
     skipBtn.disabled = !canSkipCurrent && !skipActive;
@@ -246,7 +260,7 @@ export function createDialogue(root, bus = defaultBus) {
       lastTickTs = 0;
       textEl.textContent = '';
       root.classList.add('is-typing');
-      hintEl.textContent = 'Нажмите, чтобы показать весь текст…';
+      setHint(HINT_TYPING);
       rafId = window.requestAnimationFrame(tickTypewriter);
     }
   }
@@ -265,7 +279,8 @@ export function createDialogue(root, bus = defaultBus) {
 
     choicesEl.innerHTML = '';
     choicesEl.hidden = false;
-    footerEl.hidden = true;
+    nextBtn.hidden = true;
+    root.classList.add('has-choices');
 
     options.forEach((opt, idx) => {
       const btn = document.createElement('button');
@@ -298,7 +313,8 @@ export function createDialogue(root, bus = defaultBus) {
 
     retryEl.innerHTML = '';
     retryEl.hidden = false;
-    footerEl.hidden = true;
+    nextBtn.hidden = true;
+    root.classList.add('has-choices');
 
     const retryBtn = document.createElement('button');
     retryBtn.type = 'button';
@@ -437,6 +453,7 @@ export function createDialogue(root, bus = defaultBus) {
     root.removeEventListener('pointerdown', onPointerDown);
     root.removeEventListener('pointerup', onPointerUp);
     root.removeEventListener('pointercancel', onPointerCancel);
+    if (controlsBarEl.parentNode) controlsBarEl.parentNode.removeChild(controlsBarEl);
     root.innerHTML = '';
   }
 

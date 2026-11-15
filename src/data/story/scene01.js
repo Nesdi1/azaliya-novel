@@ -30,6 +30,17 @@ export default {
           "end": 106
         }
       ],
+      "cues": [
+        {
+          "target": "regulus",
+          "effect": "focus"
+        },
+        {
+          "target": "regulus",
+          "effect": "breathe",
+          "durationMs": 2800
+        }
+      ],
       "next": "s01_l008_0"
     },
     {
@@ -58,6 +69,19 @@ export default {
           "line": 10,
           "start": 0,
           "end": 62
+        }
+      ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "focus"
+        },
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": -1.8,
+          "durationMs": 500
         }
       ],
       "next": "s01_l012_0"
@@ -105,6 +129,24 @@ export default {
           "end": 88
         }
       ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "focus"
+        },
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": -2,
+          "durationMs": 550
+        },
+        {
+          "target": "regulus",
+          "effect": "focus",
+          "delayMs": 450
+        }
+      ],
       "next": "s01_l018_0"
     },
     {
@@ -133,6 +175,28 @@ export default {
           "line": 22,
           "start": 0,
           "end": 103
+        }
+      ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "focus"
+        },
+        {
+          "effect": "group",
+          "targets": [
+            "elizabeth",
+            "theo",
+            "azalia"
+          ],
+          "durationMs": 650
+        },
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": 2,
+          "durationMs": 500
         }
       ],
       "next": "s01_l024_0"
@@ -165,6 +229,14 @@ export default {
           "end": 143
         }
       ],
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "shake",
+          "amplitude": 3.5,
+          "durationMs": 450
+        }
+      ],
       "next": "s01_l028_0"
     },
     {
@@ -178,6 +250,19 @@ export default {
           "line": 28,
           "start": 0,
           "end": 40
+        }
+      ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "focus"
+        },
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": 1.8,
+          "durationMs": 500
         }
       ],
       "next": "s01_l029_0"
@@ -210,6 +295,19 @@ export default {
           "end": 26
         }
       ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "focus"
+        },
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": -1.8,
+          "durationMs": 500
+        }
+      ],
       "next": "s01_l032_0"
     },
     {
@@ -225,6 +323,14 @@ export default {
           "end": 124
         }
       ],
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "shake",
+          "amplitude": 4,
+          "durationMs": 450
+        }
+      ],
       "next": "s01_l034_0"
     },
     {
@@ -238,6 +344,19 @@ export default {
           "line": 34,
           "start": 0,
           "end": 97
+        }
+      ],
+      "cues": [
+        {
+          "effect": "group",
+          "targets": [],
+          "durationMs": 550
+        },
+        {
+          "target": "theo",
+          "effect": "bounce",
+          "amplitude": 8,
+          "durationMs": 560
         }
       ],
       "next": "s01_l034_1"
@@ -270,6 +389,14 @@ export default {
           "end": 87
         }
       ],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "tilt",
+          "amplitude": -2,
+          "durationMs": 500
+        }
+      ],
       "next": "s01_l036_1"
     },
     {
@@ -300,6 +427,43 @@ export default {
           "end": 254
         }
       ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "focus"
+        },
+        {
+          "effect": "group",
+          "targets": [
+            "regulus",
+            "elizabeth",
+            "theo",
+            "azalia"
+          ],
+          "durationMs": 700
+        },
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": 2,
+          "hold": true,
+          "durationMs": 600
+        },
+        {
+          "target": "regulus",
+          "effect": "tilt",
+          "amplitude": 1.5,
+          "hold": true,
+          "durationMs": 650,
+          "delayMs": 250
+        },
+        {
+          "effect": "camera",
+          "to": 1.03,
+          "durationMs": 1000
+        }
+      ],
       "next": "s01_l040_0"
     },
     {
@@ -313,6 +477,32 @@ export default {
           "line": 40,
           "start": 0,
           "end": 16
+        }
+      ],
+      "cues": [
+        {
+          "target": "regulus",
+          "effect": "tilt",
+          "amplitude": 0,
+          "hold": true,
+          "durationMs": 500
+        },
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": 0,
+          "hold": true,
+          "durationMs": 500
+        },
+        {
+          "effect": "group",
+          "targets": [],
+          "durationMs": 600
+        },
+        {
+          "effect": "camera",
+          "to": 1,
+          "durationMs": 800
         }
       ],
       "next": "s01_l040_1"
@@ -345,6 +535,13 @@ export default {
           "end": 62
         }
       ],
+      "cues": [
+        {
+          "effect": "shake",
+          "amplitude": 3,
+          "durationMs": 450
+        }
+      ],
       "next": "s01_l042_1"
     },
     {
@@ -375,6 +572,81 @@ export default {
           "end": 233
         }
       ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "regulus",
+          "effect": "tilt",
+          "amplitude": -2,
+          "durationMs": 350
+        },
+        {
+          "target": "andromeda",
+          "effect": "fade",
+          "to": 1,
+          "side": "left",
+          "durationMs": 520,
+          "delayMs": 120
+        },
+        {
+          "target": "andromeda",
+          "effect": "bounce",
+          "amplitude": 10,
+          "durationMs": 560,
+          "delayMs": 140
+        },
+        {
+          "target": "andromeda",
+          "effect": "focus",
+          "delayMs": 200
+        },
+        {
+          "effect": "group",
+          "targets": [
+            "andromeda",
+            "azalia",
+            "theo"
+          ],
+          "durationMs": 650,
+          "delayMs": 560
+        },
+        {
+          "target": "andromeda",
+          "effect": "tilt",
+          "amplitude": 2.5,
+          "hold": true,
+          "durationMs": 550,
+          "delayMs": 900
+        },
+        {
+          "target": "azalia",
+          "effect": "tilt",
+          "amplitude": -1.8,
+          "hold": true,
+          "durationMs": 550,
+          "delayMs": 900
+        },
+        {
+          "target": "theo",
+          "effect": "tilt",
+          "amplitude": -2.2,
+          "hold": true,
+          "durationMs": 550,
+          "delayMs": 900
+        },
+        {
+          "effect": "camera",
+          "to": 1.05,
+          "durationMs": 1200,
+          "delayMs": 850
+        },
+        {
+          "effect": "glow",
+          "to": 0.28,
+          "durationMs": 1200,
+          "delayMs": 850
+        }
+      ],
       "next": "s01_l045_0"
     },
     {
@@ -388,6 +660,14 @@ export default {
           "line": 45,
           "start": 0,
           "end": 42
+        }
+      ],
+      "cues": [
+        {
+          "target": "andromeda",
+          "effect": "shake",
+          "amplitude": 2,
+          "durationMs": 400
         }
       ],
       "next": "s01_l045_1"
@@ -420,6 +700,14 @@ export default {
           "end": 147
         }
       ],
+      "cues": [
+        {
+          "target": "andromeda",
+          "effect": "bounce",
+          "amplitude": 6,
+          "durationMs": 520
+        }
+      ],
       "next": "s01_l045_3"
     },
     {
@@ -450,6 +738,20 @@ export default {
           "end": 152
         }
       ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "andromeda",
+          "effect": "focus"
+        },
+        {
+          "target": "andromeda",
+          "effect": "tilt",
+          "amplitude": 1.2,
+          "hold": true,
+          "durationMs": 500
+        }
+      ],
       "next": "s01_l049_0"
     },
     {
@@ -463,6 +765,14 @@ export default {
           "line": 49,
           "start": 0,
           "end": 63
+        }
+      ],
+      "cues": [
+        {
+          "target": "theo",
+          "effect": "bounce",
+          "amplitude": 6,
+          "durationMs": 500
         }
       ],
       "next": "s01_l049_1"
@@ -495,6 +805,15 @@ export default {
           "end": 100
         }
       ],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "tilt",
+          "amplitude": -2.2,
+          "hold": true,
+          "durationMs": 500
+        }
+      ],
       "next": "s01_l051_1"
     },
     {
@@ -525,6 +844,41 @@ export default {
           "end": 158
         }
       ],
+      "narration": true,
+      "cues": [
+        {
+          "target": "andromeda",
+          "effect": "focus"
+        },
+        {
+          "effect": "group",
+          "targets": [
+            "regulus",
+            "andromeda",
+            "azalia",
+            "theo",
+            "elizabeth"
+          ],
+          "durationMs": 700
+        },
+        {
+          "target": "andromeda",
+          "effect": "tilt",
+          "amplitude": 2.5,
+          "hold": true,
+          "durationMs": 500
+        },
+        {
+          "effect": "camera",
+          "to": 1.06,
+          "durationMs": 1000
+        },
+        {
+          "effect": "glow",
+          "to": 0.34,
+          "durationMs": 1000
+        }
+      ],
       "next": "s01_l055_0"
     },
     {
@@ -538,6 +892,44 @@ export default {
           "line": 55,
           "start": 0,
           "end": 71
+        }
+      ],
+      "cues": [
+        {
+          "target": "andromeda",
+          "effect": "tilt",
+          "amplitude": 0,
+          "hold": true,
+          "durationMs": 500
+        },
+        {
+          "target": "azalia",
+          "effect": "tilt",
+          "amplitude": 0,
+          "hold": true,
+          "durationMs": 500
+        },
+        {
+          "target": "theo",
+          "effect": "tilt",
+          "amplitude": 0,
+          "hold": true,
+          "durationMs": 500
+        },
+        {
+          "effect": "group",
+          "targets": [],
+          "durationMs": 650
+        },
+        {
+          "effect": "camera",
+          "to": 1,
+          "durationMs": 900
+        },
+        {
+          "effect": "glow",
+          "to": 0.1,
+          "durationMs": 900
         }
       ],
       "next": "s01_l055_1"
@@ -570,6 +962,14 @@ export default {
           "end": 62
         }
       ],
+      "cues": [
+        {
+          "target": "elizabeth",
+          "effect": "tilt",
+          "amplitude": 1.5,
+          "durationMs": 500
+        }
+      ],
       "next": "s01_l057_1"
     },
     {
@@ -585,6 +985,36 @@ export default {
           "end": 83
         }
       ],
+      "next": "s01_exit"
+    },
+    {
+      "id": "s01_exit",
+      "type": "scene",
+      "action": "cue",
+      "holdMs": 650,
+      "cues": [
+        {
+          "target": "theo",
+          "effect": "fade",
+          "to": 0,
+          "side": "right",
+          "durationMs": 600
+        },
+        {
+          "target": "azalia",
+          "effect": "fade",
+          "to": 0,
+          "side": "right",
+          "durationMs": 600,
+          "delayMs": 80
+        },
+        {
+          "effect": "glow",
+          "to": 0,
+          "durationMs": 600
+        }
+      ],
+      "source": [],
       "next": "s01_cs01"
     },
     {

@@ -18,6 +18,7 @@ async function bootstrap() {
   const appRoot = document.getElementById('app');
   const stageRoot = document.getElementById('stage-root');
   const dialogueRoot = document.getElementById('dialogue-root');
+  const hudRoot = document.getElementById('hud-root');
   const modalRoot = document.getElementById('modal-root');
   const toastRoot = document.getElementById('toast-root');
 
@@ -34,7 +35,7 @@ async function bootstrap() {
   const save = createSave(bus);
   const audio = createAudio();
   const stage = createStage(stageRoot, manifest, bus);
-  const ui = createDialogue(dialogueRoot, bus);
+  const ui = createDialogue(dialogueRoot, bus, { hudRoot });
   const cutscenes = createCutscenePlayer(stage, bus);
   const minigames = createMinigameRegistry();
 

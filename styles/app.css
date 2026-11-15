@@ -62,18 +62,23 @@ body {
   }
 }
 
-/* Main application shell with safe-area padding */
+/*
+ * Owner-approved layout (docs/OPEN_QUESTIONS.md, Q-L01): in every orientation the 896x1200 stage
+ * is centred full-screen (contain, blurred copy on the sides); the dialogue panel overlays the
+ * bottom of the stage and the quick controls sit in the top-right corner of the stage.
+ * stage.js publishes the fitted stage rectangle as --stage-left/top/w/h/right/bottom on .app-shell.
+ */
 .app-shell {
   position: relative;
   width: 100%;
   height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  padding-top: var(--safe-top);
-  padding-right: var(--safe-right);
-  padding-bottom: var(--safe-bottom);
-  padding-left: var(--safe-left);
   overflow: hidden;
+  --stage-left: 0px;
+  --stage-top: 0px;
+  --stage-w: 100vw;
+  --stage-h: 100vh;
+  --stage-right: 0px;
+  --stage-bottom: 0px;
 }
 
 @supports not (height: 100dvh) {
@@ -82,46 +87,39 @@ body {
   }
 }
 
-/* Portrait layout (default & screens < 700px wide): stage on top/full, dialogue at bottom up to 35% height */
+/* Full-screen stage; the padding keeps the fitted 896x1200 frame inside the iPhone/iPad safe areas */
 .stage-viewport {
-  position: relative;
-  flex: 1 1 auto;
-  width: 100%;
-  min-height: 0;
+  position: absolute;
+  inset: 0;
+  padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
   overflow: hidden;
   touch-action: none;
+  z-index: 0;
 }
 
-.dialogue-container {
-  position: relative;
-  flex: 0 0 auto;
-  width: 100%;
-  max-height: 35%;
-  min-height: 195px;
-  padding: 8px 12px 10px;
-  z-index: 20;
+/* Quick controls (Auto / Skip / Settings / Menu): translucent block in the top-right corner of the stage */
+.hud-root {
+  position: absolute;
+  z-index: 25;
+  top: calc(var(--stage-top) + 8px);
+  right: calc(var(--stage-right) + 8px);
+  max-width: calc(100vw - var(--safe-left) - var(--safe-right) - 16px);
+}
+
+.hud-root .dialogue-controls {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(12, 18, 30, 0.55);
+  border: 1px solid var(--gold-soft);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
-/* Landscape layout on iPhone/iPad when width >= 700 CSS px: stage on left, dialogue panel on right */
-@media (orientation: landscape) and (min-width: 700px) {
-  .app-shell {
-    flex-direction: row;
-    align-items: stretch;
-  }
-
-  .stage-viewport {
-    flex: 1 1 auto;
-    height: 100%;
-  }
-
-  .dialogue-container {
-    width: clamp(280px, 36vw, 480px);
-    max-height: 100%;
-    height: 100%;
-    padding: 12px 14px 12px 8px;
-  }
+.hud-root .ui-btn {
+  background: rgba(24, 34, 56, 0.72);
 }
 
 /* Blurred background fill around the central contain stage (computed once per scene change, not animated) */
@@ -137,20 +135,29 @@ body {
   z-index: 0;
 }
 
-/* Central 896x1200 logical stage fitted via contain, never stretched disproportionately */
+/* Central 896x1200 logical stage fitted via contain (position + scale set by stage.js resize), never stretched */
 .stage-frame {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 0;
+  top: 0;
   width: 896px;
   height: 1200px;
-  transform-origin: center center;
+  transform-origin: 0 0;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.65);
   background-color: #0b0f19;
   z-index: 2;
   touch-action: none;
+}
+
+/* Camera wrapper: smooth zoom (scale <= 1.06) and whole-scene shake */
+.stage-camera {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 55%;
+  scale: 1;
+  transition: scale var(--cam-ms, 1200ms) ease-in-out;
 }
 
 .stage-bg-image {
@@ -170,23 +177,54 @@ body {
   pointer-events: none;
 }
 
+/* Soft golden light (stage cue "glow") */
+.stage-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--glow-ms, 1200ms) ease;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 42%,
+    rgba(255, 220, 150, 0.95) 0%,
+    rgba(255, 196, 110, 0.45) 45%,
+    rgba(255, 196, 110, 0) 80%
+  );
+  mix-blend-mode: screen;
+}
+
+/*
+ * Characters: x position via the individual `translate` property (set by stage.js),
+ * lean via `rotate`, speaker emphasis via `scale`; cue animations use `transform`, so they compose.
+ */
 .stage-character {
   position: absolute;
+  left: 0;
   bottom: 0;
-  transform: translateX(-50%);
+  translate: -50% 0;
   transform-origin: 50% 100%;
   opacity: 0.92;
-  transition: opacity 150ms ease, transform 150ms ease;
-  will-change: opacity, transform;
+  transition:
+    opacity var(--fade-ms, 150ms) ease,
+    translate var(--move-ms, 600ms) cubic-bezier(0.25, 0.8, 0.3, 1),
+    scale 150ms ease,
+    rotate var(--lean-ms, 500ms) ease;
+  will-change: transform, opacity;
 }
 
 .stage-character.is-active {
   opacity: 1;
-  z-index: 18 !important;
+  scale: 1.04;
+  z-index: 30 !important;
 }
 
 .stage-character.is-dimmed {
   opacity: 0.58;
+}
+
+.stage-character.is-hidden {
+  opacity: 0 !important;
 }
 
 .stage-character-img {
@@ -197,49 +235,51 @@ body {
   pointer-events: none;
 }
 
-/* Stage cue effects (disabled when reducedMotion is active) */
+/* Stage cue effects (05_CUTSCENES library; disabled when reducedMotion is active) */
 @keyframes cueBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(calc(var(--cue-amp, 8px) * -1)); }
 }
 
 @keyframes cueShake {
-  0%, 100% { transform: translateX(-50%); }
-  25% { transform: translateX(calc(-50% - 6px)); }
-  75% { transform: translateX(calc(-50% + 6px)); }
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(calc(var(--cue-amp, 3px) * -1)); }
+  75% { transform: translateX(var(--cue-amp, 3px)); }
 }
 
 @keyframes cueTilt {
-  0%, 100% { transform: translateX(-50%) rotate(0deg); }
-  50% { transform: translateX(-50%) rotate(-2deg); }
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(var(--cue-amp, -2deg)); }
 }
 
 @keyframes cueBreathe {
-  0%, 100% { transform: translateX(-50%) scaleY(1); }
-  50% { transform: translateX(-50%) scaleY(1.012); }
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.008); }
 }
 
-.stage-character.cue-bounce {
+.cue-bounce {
   animation: cueBounce 280ms ease-in-out 2;
 }
 
-.stage-character.cue-shake {
-  animation: cueShake 450ms ease-in-out 1;
+.cue-shake {
+  animation: cueShake 150ms ease-in-out 3;
 }
 
-.stage-character.cue-tilt {
+.cue-tilt {
   animation: cueTilt 500ms ease-in-out 1;
 }
 
-.stage-character.cue-breathe {
+.cue-breathe {
   animation: cueBreathe 2800ms ease-in-out infinite;
 }
 
 .is-reduced-motion .stage-character,
-.is-reduced-motion .stage-character.cue-bounce,
-.is-reduced-motion .stage-character.cue-shake,
-.is-reduced-motion .stage-character.cue-tilt,
-.is-reduced-motion .stage-character.cue-breathe {
+.is-reduced-motion .stage-camera,
+.is-reduced-motion .stage-glow,
+.is-reduced-motion .cue-bounce,
+.is-reduced-motion .cue-shake,
+.is-reduced-motion .cue-tilt,
+.is-reduced-motion .cue-breathe {
   transition: none !important;
   animation: none !important;
 }
@@ -255,12 +295,25 @@ body {
   pointer-events: auto;
 }
 
-/* Dialogue Panel: rgba(12, 18, 30, 0.86), 2px #c7a45a border, 16px radius */
+/*
+ * Dialogue Panel: rgba(12, 18, 30, 0.86), 2px #c7a45a border, 16px radius.
+ * Overlays the bottom of the stage (about 26% of the stage height, min 150px), 10-12px from the
+ * stage edges. When the fitted stage is narrow (phone landscape) the panel may be wider than the
+ * stage (up to 440px), still centred on it.
+ */
 .dialogue-panel {
+  position: absolute;
+  z-index: 20;
+  left: calc(var(--stage-left) + var(--stage-w) / 2);
+  bottom: calc(var(--stage-bottom) + 10px);
+  width: max(
+    calc(var(--stage-w) - 24px),
+    min(440px, calc(100vw - var(--safe-left) - var(--safe-right) - 24px))
+  );
+  height: min(max(150px, calc(var(--stage-h) * 0.26)), calc(var(--stage-h) - 72px));
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
   background: var(--panel-bg);
   border: 2px solid var(--gold);
   border-radius: 16px;
@@ -269,14 +322,24 @@ body {
   overflow: hidden;
 }
 
+/* Choices / retry need more room than a single line of dialogue */
+.dialogue-panel.has-choices {
+  height: auto;
+  min-height: 150px;
+  max-height: calc(var(--stage-h) * 0.7);
+}
+
 .dialogue-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   flex: 0 0 auto;
+}
+
+.dialogue-speaker[hidden] {
+  display: none;
 }
 
 .dialogue-speaker {
@@ -295,7 +358,6 @@ body {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-left: auto;
 }
 
 /* Scrollable dialogue text area (18 CSS px, line-height 1.45, pan-y) */
@@ -348,23 +410,19 @@ body {
   flex-direction: column;
   gap: 8px;
   margin-top: 8px;
-  max-height: 55%;
+  max-height: calc(var(--stage-h) * 0.5);
   overflow-y: auto;
   touch-action: pan-y;
 }
 
-.dialogue-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: 6px;
-  flex: 0 0 auto;
+.dialogue-choices[hidden],
+.dialogue-retry[hidden] {
+  display: none;
 }
 
-.dialogue-hint {
-  font-size: 15px;
-  color: rgba(203, 213, 225, 0.8);
+/* "Далее" sits in the name row so the text area keeps as many lines as possible */
+.dialogue-header .dialogue-next-btn {
+  margin-left: auto;
 }
 
 /* Buttons: minimum 44x44 CSS px, 8px spacing */
@@ -399,6 +457,10 @@ body {
 .ui-btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+.ui-btn[hidden] {
+  display: none !important;
 }
 
 .ui-btn.is-active,

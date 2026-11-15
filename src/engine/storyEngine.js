@@ -43,6 +43,21 @@ export function applyEffects(effects = [], variables = {}) {
   return nextVars;
 }
 
+export function stageCuesOf(node) {
+  if (!node || typeof node !== 'object') return [];
+  if (Array.isArray(node.cues)) return node.cues.filter((c) => c && typeof c === 'object' && c.effect);
+  if (node.cue && typeof node.cue === 'object' && node.cue.effect) return [node.cue];
+  if (typeof node.effect === 'string' && node.effect) return [node];
+  return [];
+}
+
+function isInteractiveTextNode(node) {
+  if (!node || typeof node !== 'object') return false;
+  if (node.type === 'dialogue' || node.type === 'thought' || node.type === 'narration') return true;
+  if (node.type === 'scene' && node.action === 'cue' && Boolean(node.narration)) return true;
+  return false;
+}
+
 /**
  * DEBUG-STUB: Built-in M1 showcase scene to test thought styles (azalia/theo/malfoy),
  * author narration without speaker name, and vertical choice buttons before Scene 2-10 are added in M2.
@@ -190,6 +205,9 @@ export function createEngine({
       if (n.background) ids.add(n.background);
       if (Array.isArray(n.characters)) n.characters.forEach((c) => ids.add(c));
       if (n.speaker) ids.add(n.speaker);
+      stageCuesOf(n).forEach((c) => {
+        if (c.effect === 'fade' && c.target) ids.add(c.target);
+      });
       if (n.next) queue.push(n.next);
     }
     return Array.from(ids);
@@ -236,8 +254,16 @@ export function createEngine({
             });
             if (myInstanceId !== instanceCounter) return;
           } else if (node.action === 'cue') {
-            if (node.effect || node.cue) {
-              stage?.cue?.(node.cue || node);
+            if (node.narration) {
+              // Significant plot stage remark: stop here and display as an author/action line with its stage cues
+              break;
+            }
+            // Non-stopping stage cue: execute explicit cues and optional holdMs, then advance
+            stageCuesOf(node).forEach((c) => stage?.cue?.(c));
+            const holdMs = Number(node.holdMs) || 0;
+            if (holdMs > 0 && !skipMode && !state.settings?.reducedMotion) {
+              await new Promise((resolve) => window.setTimeout(resolve, Math.min(holdMs, 3000)));
+              if (myInstanceId !== instanceCounter) return;
             }
           }
           if (!node.next) break;
@@ -291,14 +317,18 @@ export function createEngine({
         stage?.preload?.(prefetchIds);
       }
 
-      // Handle interactive / episode nodes
-      if (node.type === 'dialogue' || node.type === 'thought' || node.type === 'narration') {
+      // Handle interactive / episode nodes (dialogue, thought, narration, or narrative stage cue)
+      if (isInteractiveTextNode(node)) {
         const wasAlreadyRead = state.readNodeIds.includes(node.id);
         markNodeRead(node.id);
         persistIfAllowed();
 
-        await stage?.setActiveSpeaker?.(node.type === 'narration' ? null : node.speaker);
-        if (myInstanceId !== instanceCounter) return;
+        const isCueNarration = node.type === 'scene' && node.action === 'cue';
+        if (!isCueNarration) {
+          await stage?.setActiveSpeaker?.(node.type === 'narration' ? null : node.speaker);
+          if (myInstanceId !== instanceCounter) return;
+        }
+        stageCuesOf(node).forEach((c) => stage?.cue?.(c));
 
         // If skip mode is active, only skip nodes that were ALREADY in readNodeIds
         if (skipMode && !wasAlreadyRead) {
@@ -306,7 +336,15 @@ export function createEngine({
           ui?.setSkipActive?.(false);
         }
 
-        ui?.show?.(node, { isRead: true });
+        const uiNode = isCueNarration
+          ? {
+              ...node,
+              type: 'narration',
+              speaker: null,
+              text: String(node.annotation || node.text || '').replace(/^\((.*)\)$/s, '$1'),
+            }
+          : node;
+        ui?.show?.(uiNode, { isRead: true });
         isTransitioning = false;
 
         if (skipMode && wasAlreadyRead && node.next) {
@@ -457,28 +495,42 @@ export function createEngine({
     const sc = getScene(targetSceneId);
     const targetNodeId = getNode(targetSceneId, state.nodeId) ? state.nodeId : sc.start;
 
-    // Ensure stage has background/characters if resuming into the middle of a scene
-    const resumeStage = findLastStageEnter(sc, targetNodeId);
-    if (resumeStage) {
-      await stage?.enter?.(resumeStage);
-    }
+    // Ensure stage has background/characters (and staging state) if resuming into the middle of a scene
+    await restoreStage(sc, targetNodeId);
 
     await enterNode(targetSceneId, targetNodeId);
   }
 
-  function findLastStageEnter(scene, targetNodeId) {
+  /**
+   * Rebuilds the stage for a node in the middle of a scene: last `enter` before the node plus the
+   * final state of every explicit cue between them (no delays, no decorative animations).
+   */
+  async function restoreStage(scene, targetNodeId) {
+    const resume = findStageResume(scene, targetNodeId);
+    if (!resume) return;
+    await stage?.enter?.(resume.enter);
+    resume.cues.forEach((c) => stage?.cue?.(c, { instant: true }));
+  }
+
+  function findStageResume(scene, targetNodeId) {
     if (!scene || !Array.isArray(scene.nodes)) return null;
     let lastEnter = null;
+    let cues = [];
     for (const n of scene.nodes) {
-      if (n.type === 'scene' && n.action === 'enter') {
+      const isEnter = n.type === 'scene' && n.action === 'enter';
+      if (isEnter) {
         lastEnter = {
           background: n.background,
           characters: n.characters || [],
         };
+        cues = [];
       }
       if (n.id === targetNodeId) break;
+      if (!isEnter) {
+        cues = cues.concat(stageCuesOf(n));
+      }
     }
-    return lastEnter;
+    return lastEnter ? { enter: lastEnter, cues } : null;
   }
 
   async function advance() {
@@ -487,7 +539,7 @@ export function createEngine({
     // Advancing explicitly resumes normal saving after debug jump
     suppressAutoSave = false;
 
-    if (currentNode.type === 'dialogue' || currentNode.type === 'thought' || currentNode.type === 'narration') {
+    if (isInteractiveTextNode(currentNode)) {
       if (currentNode.next) {
         await enterNode(state.sceneId, currentNode.next);
       }
@@ -535,10 +587,7 @@ export function createEngine({
     const sc = getScene(sceneId);
     if (!sc) return;
     const targetNodeId = nodeId && getNode(sceneId, nodeId) ? nodeId : sc.start;
-    const resumeStage = findLastStageEnter(sc, targetNodeId);
-    if (resumeStage) {
-      await stage?.enter?.(resumeStage);
-    }
+    await restoreStage(sc, targetNodeId);
     await enterNode(sceneId, targetNodeId);
   }
 
@@ -580,7 +629,7 @@ export function createEngine({
         if (ui?.isTyping?.()) {
           ui.completeTyping();
         }
-        if (currentNode.type === 'dialogue' || currentNode.type === 'thought' || currentNode.type === 'narration') {
+        if (isInteractiveTextNode(currentNode)) {
           advance();
         }
       }
