@@ -1,16 +1,18 @@
 import * as parchmentGame from './parchment.js';
 import * as quidditchGame from './quidditch.js';
+import * as stealthGame from './stealth.js';
 
 /**
  * Minigame registry matching M4–M8 contract (docs/03_ARCHITECTURE.md + docs/06_MINIGAMES.md):
  * load(id) -> Promise<{ run(container, params) -> Promise<{ ok, score, details }> }>
  *
- * M4–M5 implemented: 'parchment', 'quidditch'.
- * Remaining minigames ('stealth', 'duel', 'potions') use DEBUG-STUB until M6–M8.
+ * M4–M6 implemented: 'parchment', 'quidditch', 'stealth'.
+ * Remaining minigames ('duel', 'potions') use DEBUG-STUB until M7–M8.
  */
 const IMPLEMENTED_GAMES = Object.freeze({
   parchment: parchmentGame,
   quidditch: quidditchGame,
+  stealth: stealthGame,
 });
 
 export async function load(gameId) {

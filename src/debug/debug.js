@@ -75,7 +75,12 @@ export function mount(engine, root, bus = defaultBus) {
   quidditchBtn.className = 'ui-btn ui-btn-compact';
   quidditchBtn.textContent = 'Квиддич (M5) ▸';
 
-  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn, quidditchBtn);
+  const stealthBtn = document.createElement('button');
+  stealthBtn.type = 'button';
+  stealthBtn.className = 'ui-btn ui-btn-compact';
+  stealthBtn.textContent = 'Стелс (M6) ▸';
+
+  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn, quidditchBtn, stealthBtn);
 
   // Variables editor (5 story variables with type validation)
   const varsBox = document.createElement('div');
@@ -199,6 +204,12 @@ export function mount(engine, root, bus = defaultBus) {
     bus?.emit?.('debug:jump', {
       sceneId: 'scene06',
       nodeId: 's06_game_quidditch',
+    });
+  });
+  stealthBtn.addEventListener('click', () => {
+    bus?.emit?.('debug:jump', {
+      sceneId: 'scene05',
+      nodeId: 's05_game_stealth',
     });
   });
 
