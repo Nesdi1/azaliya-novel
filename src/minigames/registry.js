@@ -1,10 +1,21 @@
+import * as parchmentGame from './parchment.js';
+
 /**
- * Minigame registry matching M4-M8 contract:
+ * Minigame registry matching M4–M8 contract (docs/03_ARCHITECTURE.md + docs/06_MINIGAMES.md):
  * load(id) -> Promise<{ run(container, params) -> Promise<{ ok, score, details }> }>
  *
- * DEBUG-STUB: Temporary stub until M4-M8 minigames (parchment, quidditch, stealth, duel, potions) are implemented.
+ * M4 implemented: 'parchment' (src/minigames/parchment.js).
+ * Remaining minigames ('quidditch', 'stealth', 'duel', 'potions') use DEBUG-STUB until M5–M8.
  */
+const IMPLEMENTED_GAMES = Object.freeze({
+  parchment: parchmentGame,
+});
+
 export async function load(gameId) {
+  if (gameId && IMPLEMENTED_GAMES[gameId]) {
+    return IMPLEMENTED_GAMES[gameId];
+  }
+
   return {
     async run(container, params = {}) {
       const { signal, debugAutoWin } = params;
@@ -32,7 +43,7 @@ export async function load(gameId) {
 
         const title = document.createElement('div');
         title.className = 'minigame-stub-title';
-        title.textContent = `Мини-игра «${gameId}» (DEBUG-STUB до этапов M4–M8)`;
+        title.textContent = `Мини-игра «${gameId}» (DEBUG-STUB до этапов M5–M8)`;
 
         const winBtn = document.createElement('button');
         winBtn.type = 'button';

@@ -65,7 +65,12 @@ export function mount(engine, root, bus = defaultBus) {
   csBtn.className = 'ui-btn ui-btn-compact';
   csBtn.textContent = 'Кат-сцена ▸';
 
-  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn);
+  const parchmentBtn = document.createElement('button');
+  parchmentBtn.type = 'button';
+  parchmentBtn.className = 'ui-btn ui-btn-compact';
+  parchmentBtn.textContent = 'Пергамент (M4) ▸';
+
+  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn);
 
   // Variables editor (5 story variables with type validation)
   const varsBox = document.createElement('div');
@@ -177,6 +182,12 @@ export function mount(engine, root, bus = defaultBus) {
   csBtn.addEventListener('click', () => {
     bus?.emit?.('debug:cutscene', {
       cutsceneId: csSelect.value,
+    });
+  });
+  parchmentBtn.addEventListener('click', () => {
+    bus?.emit?.('debug:jump', {
+      sceneId: 'scene10',
+      nodeId: 's10_enter_parchment',
     });
   });
 
