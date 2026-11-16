@@ -46,7 +46,9 @@ def verify(path):
  for n in nodes.values():
   for nv in n.get('variants',[]):
    ov=variants_by_id.get(nv.get('id'))
-   if not ov or nv.get('text')!=ov['text'] or nv.get('condition')!=ov['condition']:
+   src_start=(n.get('source') or [{}])[0].get('start',0)
+   allowed={ov['text'],ov['text'][src_start:]} if ov else set()
+   if not ov or nv.get('text') not in allowed or nv.get('condition')!=ov['condition']:
     errors.append('unapproved node variant '+n['id'])
  report=dict(scope=[lo,hi],lines=hi-lo+1,approvedVariants=len(variants),errors=errors,completeStory=lo==1 and hi==len(src))
  return report

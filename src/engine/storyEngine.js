@@ -1,5 +1,6 @@
 import { bus as defaultBus } from '../events.js';
 import { createInitialState, normalizeState, HISTORY_LIMIT } from '../storage/save.js';
+import { FINAL_LOVE_LETTER_TEXT } from '../data/finalLetter.js';
 
 /**
  * Safe AST condition evaluator (no eval).
@@ -289,7 +290,10 @@ export function createEngine({
         const matchedVariant = Array.isArray(node.variants)
           ? node.variants.find((v) => v && evaluateCondition(v.condition, state.variables))
           : null;
-        const resolvedNode = matchedVariant ? { ...node, text: matchedVariant.text } : node;
+        let resolvedNode = matchedVariant ? { ...node, text: matchedVariant.text } : node;
+        if (resolvedNode.useFinalLetter && FINAL_LOVE_LETTER_TEXT) {
+          resolvedNode = { ...resolvedNode, text: FINAL_LOVE_LETTER_TEXT };
+        }
         const uiNode = isCueNarration
           ? {
               ...resolvedNode,
@@ -465,7 +469,7 @@ export function createEngine({
           if (myInstanceId !== instanceCounter) return;
           await enterNode(nextSceneId, nextSc.start);
         } else {
-          handleMissingScene(nextSceneId || 'scene05');
+          handleMissingScene(nextSceneId || '__end__');
         }
         return;
       }
@@ -485,19 +489,22 @@ export function createEngine({
       id: '__scene_boundary__',
       type: 'choice',
     };
+    const isFinalEnd = !missingSceneId || missingSceneId === '__end__';
     ui?.show?.({
       id: '__scene_boundary_text__',
       type: 'narration',
-      text: `Сцены 1–7 пройдены! Переход к «${missingSceneId}» будет подключён в следующей части этапа M2.`,
+      text: isFinalEnd
+        ? 'Конец истории. Спасибо за прохождение!'
+        : `Переход к «${missingSceneId}» недоступен.`,
     });
     ui?.showChoices?.([
       {
-        id: '__restart_s07__',
-        text: 'Пройти Сцену 7 сначала',
+        id: '__restart_s10__',
+        text: 'Пройти финал (Сцена 10) ещё раз',
       },
       {
         id: '__restart_s01__',
-        text: 'Начать с самого начала (Сцена 1)',
+        text: 'Начать новую историю с самого начала (Сцена 1)',
       },
     ]);
   }
@@ -575,7 +582,9 @@ export function createEngine({
     suppressAutoSave = false;
 
     if (currentNode.id === '__scene_boundary__') {
-      if (optionId === '__restart_s07__' && getScene('scene07')) {
+      if (optionId === '__restart_s10__' && getScene('scene10')) {
+        await enterNode('scene10', getScene('scene10').start);
+      } else if (optionId === '__restart_s07__' && getScene('scene07')) {
         await enterNode('scene07', getScene('scene07').start);
       } else if (optionId === '__restart_s04__' && getScene('scene04')) {
         await enterNode('scene04', 's04_enter');

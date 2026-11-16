@@ -68,6 +68,18 @@ M3–M10: по07. iPhone/iPad, FPS и офлайн пока не проверя�
   - Подключены `scene05`, `scene06`, `scene07` в `src/main.js` и список переходов `?debug=1`.
   - Проверен `tools/verify_story.py --scenes 1 2 3 4 5 6 7`: `797` строк (`D1–797`), `2` утверждённых расхождения, `"errors": []`.
 - **Что осталось:**
-  - M2 (Часть 3 — сцены 8–10: `scene08.js`, `scene09.js`, `scene10.js`) и этапы M3–M10.
+  - Этапы M3–M10 по `docs/07_MILESTONES.md`.
+
+## Этап M2 — Часть 3 (сцены 8–10, полный перенос 980 строк, выполнено 16.11.2026)
+- **Что сделано:**
+  - Проверена Сцена 7 (`src/data/story/scene07.js`, `D737–797`): все реплики и реакции Тео при разговоре с Роуз о значении слова `Stupend` (`D782–794`, включая `s07_l784_1` «Где сейчас Дима?» и `s07_l788_1` «Хорошо. Пойду с ним поговорю») на месте без пропусков.
+  - Созданы карты переноса `tools/story_maps/scene08.json` (`D798–870`, 64 узла), `tools/story_maps/scene09.json` (`D871–936`, 60 узлов) и `tools/story_maps/scene10.json` (`D937–980`, 39 узлов) и собраны через `tools/build_story.py` файлы `src/data/story/scene08.js`, `src/data/story/scene09.js`, `src/data/story/scene10.js`.
+  - В Сцене 8 реализованы: дневной и ночной разговоры у фонтана (`bg_fountain_day`, `bg_fountain_night`), модификация строки `D824` (`noRose_D824` без упоминания Роуз при `roseFriend=false`), пропуск `D826` и `D832–840` при `roseFriend=false`, кат-сцена `cs08` (`D868`) и прямой переход к `scene10` в обход `scene09` при `roseFriend=false`.
+  - В Сцене 9 реализованы: фоны по переопределению `Q-T09` (`D872–900` `bg_hufflepuff_dorm_morning`, `D901–914` `bg_corridor`, с `D915` `bg_hufflepuff_common`), выбор подарка `choice09_01` (`D882–885`, установка `theoGift` в `"jacket"` или `"guitar"`), примирение Азалии и Тео и кат-сцена `cs09` (`D935`).
+  - В Сцене 10 реализованы: урок травологии в теплице (`bg_greenhouse`, `sprout`, `malfoy`, `dima`, `azalia`), сцена с наушниками (`D965`), выбор `choice10_01` (`D967–969`: поцеловаться сразу или после урока), кат-сцена `cs10` (`D978`), мини-игра с пергаментом (`parchment` на `bg_parchment_clean`) и вывод текста письма из `src/data/finalLetter.js` (`FINAL_LOVE_LETTER_TEXT` на `D979`).
+  - Подключены все 10 сцен (`scene01..scene10`) в `src/main.js` и список переходов `?debug=1`.
+  - Запущена полная проверка `tools/verify_story.py` по всем 10 сценам сразу (`D1–980`): `{"scenes": ["scene01", "scene02", "scene03", "scene04", "scene05", "scene06", "scene07", "scene08", "scene09", "scene10"], "scope": [1, 980], "lines": 980, "approvedVariants": 2, "errors": [], "completeStory": true}`.
+- **Что осталось:**
+  - Следующий этап — **M3** по `docs/07_MILESTONES.md`.
 
 

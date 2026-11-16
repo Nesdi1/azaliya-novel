@@ -204,6 +204,156 @@ const CUTSCENE_DEFS = {
       characters: ['theo'],
     },
   },
+  cs08: {
+    id: 'cs08',
+    kind: 'Sequence',
+    durationMs: 5200,
+    caption: 'Азалия и Дима сидят рядом над одной книгой в библиотеке, обнимаются в коридоре, а ночью в своих спальнях не могут уснуть и счастливо улыбаются в темноту…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_library',
+        characters: ['dima', 'azalia'],
+        cues: [
+          { effect: 'group', targets: ['dima', 'azalia'], durationMs: 600 },
+          { effect: 'glow', to: 0.24, durationMs: 1000 },
+        ],
+      },
+      {
+        atMs: 1800,
+        background: 'bg_corridor',
+        characters: ['dima', 'azalia'],
+        cues: [
+          { effect: 'group', targets: ['dima', 'azalia'], durationMs: 600 },
+          { target: 'dima', effect: 'tilt', amplitude: 2, hold: true, durationMs: 500 },
+          { target: 'azalia', effect: 'tilt', amplitude: -2, hold: true, durationMs: 500 },
+          { effect: 'camera', to: 1.05, durationMs: 1200 },
+        ],
+      },
+      {
+        atMs: 3500,
+        background: 'bg_hufflepuff_dorm',
+        characters: ['azalia', 'dima'],
+        cues: [
+          { target: 'dima', effect: 'tilt', amplitude: 0, hold: true, durationMs: 400 },
+          { target: 'azalia', effect: 'tilt', amplitude: 0, hold: true, durationMs: 400 },
+          { effect: 'group', targets: [], durationMs: 500 },
+          { effect: 'camera', to: 1, durationMs: 800 },
+          { effect: 'glow', to: 0.28, durationMs: 1200 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_hufflepuff_dorm',
+      characters: ['azalia', 'dima'],
+    },
+  },
+  cs09: {
+    id: 'cs09',
+    kind: 'Sequence',
+    durationMs: 4200,
+    caption: 'Азалия и Тео выходят к друзьям, продолжая смеяться, и вся компания вместе с Димой отправляется гулять…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_corridor',
+        characters: ['theo', 'azalia', 'rose', 'dima'],
+        cues: [
+          { target: 'theo', effect: 'bounce', amplitude: 8, durationMs: 520 },
+          { target: 'dima', effect: 'focus', delayMs: 250 },
+          { effect: 'glow', to: 0.22, durationMs: 1000 },
+        ],
+      },
+      {
+        atMs: 2100,
+        background: 'bg_fountain_day',
+        characters: ['twins', 'theo', 'azalia', 'dima'],
+        cues: [
+          { target: 'twins', effect: 'bounce', amplitude: 8, durationMs: 520 },
+          { effect: 'group', targets: ['azalia', 'dima'], durationMs: 650 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_fountain_day',
+      characters: ['twins', 'theo', 'azalia', 'dima'],
+    },
+  },
+  cs10: {
+    id: 'cs10',
+    kind: 'Sequence',
+    durationMs: 4800,
+    caption: 'Азалия и Дима гуляют по замку, держась за руки, Дима кружит её на руках, а затем перед нами ложится чистый пергамент и волшебная палочка…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_corridor',
+        characters: ['dima', 'azalia'],
+        cues: [
+          { effect: 'group', targets: ['dima', 'azalia'], durationMs: 650 },
+          { target: 'dima', effect: 'tilt', amplitude: 2.2, hold: true, durationMs: 550 },
+          { target: 'azalia', effect: 'tilt', amplitude: -2.2, hold: true, durationMs: 550 },
+          { effect: 'camera', to: 1.05, durationMs: 1600 },
+          { effect: 'glow', to: 0.3, durationMs: 1600 },
+        ],
+      },
+      {
+        atMs: 2800,
+        background: 'bg_parchment_clean',
+        characters: [],
+        cues: [
+          { effect: 'camera', to: 1, durationMs: 800 },
+          { effect: 'glow', to: 0.18, durationMs: 1000 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_parchment_clean',
+      characters: [],
+    },
+  },
+  cs06_duel_demo: {
+    id: 'cs06_duel_demo',
+    kind: 'Sequence',
+    durationMs: 3600,
+    caption: 'Тео и Дима выходят на помост: вспышки заклинаний озаряют дуэльный зал…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_dueling_hall',
+        characters: ['theo', 'dima', 'azalia'],
+        cues: [
+          { effect: 'shake', amplitude: 3.5, durationMs: 450 },
+          { effect: 'glow', to: 0.25, durationMs: 800 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_dueling_hall',
+      characters: ['theo', 'dima', 'azalia'],
+    },
+  },
+  cs06_lake: {
+    id: 'cs06_lake',
+    kind: 'Sequence',
+    durationMs: 3600,
+    caption: 'У Чёрного озера заклинание Димы подбрасывает Малфоя в воздух, и тот с плеском летит в воду…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_black_lake',
+        characters: ['dima', 'malfoy', 'pansy', 'azalia'],
+        cues: [
+          { effect: 'shake', amplitude: 4, durationMs: 450 },
+          { target: 'pansy', effect: 'bounce', amplitude: 9, durationMs: 520 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_black_lake',
+      characters: ['dima', 'azalia'],
+    },
+  },
 };
 
 function buildTrainSceneDOM({ captionText, showSkip = true, reducedMotion = false }) {

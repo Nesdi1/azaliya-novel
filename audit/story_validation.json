@@ -1,0 +1,22 @@
+{
+  "scenes": [
+    "scene01",
+    "scene02",
+    "scene03",
+    "scene04",
+    "scene05",
+    "scene06",
+    "scene07",
+    "scene08",
+    "scene09",
+    "scene10"
+  ],
+  "scope": [
+    1,
+    980
+  ],
+  "lines": 980,
+  "approvedVariants": 2,
+  "errors": [],
+  "completeStory": true
+}
