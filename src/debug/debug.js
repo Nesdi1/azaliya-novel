@@ -80,7 +80,12 @@ export function mount(engine, root, bus = defaultBus) {
   stealthBtn.className = 'ui-btn ui-btn-compact';
   stealthBtn.textContent = 'Стелс (M6) ▸';
 
-  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn, quidditchBtn, stealthBtn);
+  const duelBtn = document.createElement('button');
+  duelBtn.type = 'button';
+  duelBtn.className = 'ui-btn ui-btn-compact';
+  duelBtn.textContent = 'Дуэль (M7) ▸';
+
+  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn, quidditchBtn, stealthBtn, duelBtn);
 
   // Variables editor (5 story variables with type validation)
   const varsBox = document.createElement('div');
@@ -210,6 +215,12 @@ export function mount(engine, root, bus = defaultBus) {
     bus?.emit?.('debug:jump', {
       sceneId: 'scene05',
       nodeId: 's05_game_stealth',
+    });
+  });
+  duelBtn.addEventListener('click', () => {
+    bus?.emit?.('debug:jump', {
+      sceneId: 'scene04',
+      nodeId: 's04_game_duel',
     });
   });
 
