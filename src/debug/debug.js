@@ -70,7 +70,12 @@ export function mount(engine, root, bus = defaultBus) {
   parchmentBtn.className = 'ui-btn ui-btn-compact';
   parchmentBtn.textContent = 'Пергамент (M4) ▸';
 
-  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn);
+  const quidditchBtn = document.createElement('button');
+  quidditchBtn.type = 'button';
+  quidditchBtn.className = 'ui-btn ui-btn-compact';
+  quidditchBtn.textContent = 'Квиддич (M5) ▸';
+
+  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn, quidditchBtn);
 
   // Variables editor (5 story variables with type validation)
   const varsBox = document.createElement('div');
@@ -188,6 +193,12 @@ export function mount(engine, root, bus = defaultBus) {
     bus?.emit?.('debug:jump', {
       sceneId: 'scene10',
       nodeId: 's10_enter_parchment',
+    });
+  });
+  quidditchBtn.addEventListener('click', () => {
+    bus?.emit?.('debug:jump', {
+      sceneId: 'scene06',
+      nodeId: 's06_game_quidditch',
     });
   });
 
