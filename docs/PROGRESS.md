@@ -148,6 +148,7 @@ M3–M10: по07. iPhone/iPad, FPS и офлайн пока не проверя�
     * Этап `qte` (`8s` окно): бегунок `0..1` со скоростью `0.35/s` и отражением, зелёная зона `0.32..0.68`, одиночный тап (`qteAccuracy = clamp(1 - abs(pos - 0.5)/0.18, 0, 1)`, `round = round(70 * greenTime/8 + 30 * qteAccuracy)`), интеграция с системным окном `retry / skip` движка.
     * Отрисовка котла кривыми Безье, эллипса жидкости и `20` поднимающихся пузырьков на Canvas.
   - В `src/minigames/registry.js` подключён `potions` и удалены все временные заглушки `DEBUG-STUB` перед этапом M9. В панель `?debug=1` (`src/debug/debug.js`) добавлена кнопка запуска `Зельеварение (M8) ▸`.
+  - **Исправление M8-fix (`potions book close`):** устранён приоритет inline-стиля `display: flex` над атрибутом `hidden` в `src/minigames/potions.js` и `styles/app.css` (`[hidden] { display: none !important; }` + явное переключение `bookOverlay.style.display = 'none' / 'flex'`), добавлена заметная верхняя кнопка `✕ Закрыть` (`>= 48px`, `z-index: 95`), закрытие по клику/тапу мимо карточки книги и по клавише `Escape`.
 - **Что осталось:**
   - Этапы M9–M10 по `docs/07_MILESTONES.md` (следующий этап — **M9**: PWA-манифест `manifest.webmanifest`, Service Worker `sw.js`, иконки и офлайн-режим).
 

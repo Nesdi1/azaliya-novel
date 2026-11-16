@@ -265,26 +265,34 @@ export async function run(container, params = {}) {
     const bookOverlay = document.createElement('div');
     bookOverlay.className = 'potions-book-overlay';
     bookOverlay.style.cssText =
-      'position:absolute;inset:0;z-index:10;background:rgba(8,12,24,0.84);display:flex;align-items:center;justify-content:center;padding:28px;';
+      'position:absolute;inset:0;z-index:90;background:rgba(8,12,24,0.86);display:flex;align-items:center;justify-content:center;padding:28px;pointer-events:auto;';
 
     const bookCard = document.createElement('div');
     bookCard.style.cssText =
-      'width:min(92%,640px);background:linear-gradient(180deg,#241a12,#18110b);border:2px solid #d8b467;border-radius:18px;padding:22px 24px;box-shadow:0 20px 50px rgba(0,0,0,0.85);display:flex;flex-direction:column;gap:14px;color:#f8fafc;';
+      'position:relative;z-index:92;width:min(92%,640px);background:linear-gradient(180deg,#241a12,#18110b);border:2px solid #d8b467;border-radius:18px;padding:22px 24px;box-shadow:0 20px 50px rgba(0,0,0,0.85);display:flex;flex-direction:column;gap:14px;color:#f8fafc;pointer-events:auto;';
 
     const bookHeader = document.createElement('div');
-    bookHeader.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:10px;';
+    bookHeader.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;';
 
     const bookTitle = document.createElement('h2');
-    bookTitle.style.cssText = 'margin:0;font-size:22px;color:#fde68a;';
+    bookTitle.style.cssText = 'margin:0;font-size:22px;color:#fde68a;flex:1;';
     bookTitle.textContent = 'Книга зелий (20 рецептов)';
 
     const targetRecipeBtn = document.createElement('button');
     targetRecipeBtn.type = 'button';
     targetRecipeBtn.className = 'ui-btn ui-btn-compact';
     targetRecipeBtn.style.minHeight = '44px';
-    targetRecipeBtn.textContent = 'Назначенный рецепт раунда';
+    targetRecipeBtn.textContent = 'Рецепт раунда';
 
-    bookHeader.append(bookTitle, targetRecipeBtn);
+    const closeTopBtn = document.createElement('button');
+    closeTopBtn.type = 'button';
+    closeTopBtn.className = 'ui-btn ui-btn-primary';
+    closeTopBtn.setAttribute('aria-label', 'Закрыть книгу рецептов');
+    closeTopBtn.style.cssText =
+      'min-width:116px;min-height:48px;padding:8px 14px;font-size:16px;font-weight:700;z-index:95;cursor:pointer;';
+    closeTopBtn.textContent = '✕ Закрыть';
+
+    bookHeader.append(bookTitle, targetRecipeBtn, closeTopBtn);
 
     const assignedNoticeEl = document.createElement('div');
     assignedNoticeEl.style.cssText =
@@ -420,6 +428,7 @@ export async function run(container, params = {}) {
         lastFrameTs = null;
         pauseStartedAt = performance.now();
         bookOverlay.hidden = false;
+        bookOverlay.style.display = 'flex';
         renderBookPage();
         updateHud();
       }
@@ -433,6 +442,7 @@ export async function run(container, params = {}) {
         pauseStartedAt = null;
       }
       bookOverlay.hidden = true;
+      bookOverlay.style.display = 'none';
       state = stateBeforeBook || 'ingredients';
       lastFrameTs = performance.now();
       updateHud();
@@ -486,10 +496,31 @@ export async function run(container, params = {}) {
       renderBookPage();
     });
 
+    closeTopBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeBook();
+    });
+
     closeBookBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       closeBook();
     });
+
+    // Clicking/tapping on the backdrop outside the book card also closes the book
+    bookOverlay.addEventListener('pointerdown', (e) => {
+      if (e.target === bookOverlay) {
+        e.stopPropagation();
+        closeBook();
+      }
+    });
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape' && isBookOpen) {
+        e.preventDefault();
+        closeBook();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
 
     openBookBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -538,6 +569,7 @@ export async function run(container, params = {}) {
       isBookOpen = true;
       state = 'book';
       bookOverlay.hidden = false;
+      bookOverlay.style.display = 'flex';
       renderBookPage();
       updateHud();
     }
@@ -686,6 +718,7 @@ export async function run(container, params = {}) {
         rafId = null;
       }
       document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('keydown', onKeyDown);
       signal?.removeEventListener?.('abort', onAbort);
       root.removeEventListener('pointerdown', onPointerDown);
       root.removeEventListener('pointermove', onPointerMove);
