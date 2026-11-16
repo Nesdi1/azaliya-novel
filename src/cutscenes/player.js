@@ -332,9 +332,9 @@ function renderParticles(ctx, activeEffects, elapsedMs) {
 
 export function createCutscenePlayer(stage = null, bus = defaultBus) {
   /**
-   * Living train transition screen shown between scenes while next-scene assets preload.
+   * Living train transition screen used strictly for cs01 (Scene 1 -> Scene 2 on the way to Hogwarts).
    */
-  async function playSceneTransition(
+  async function playTrainTransition(
     container,
     { preloadPromise = null, signal = null, reducedMotion = false, caption = null } = {}
   ) {
@@ -404,6 +404,100 @@ export function createCutscenePlayer(stage = null, bus = defaultBus) {
             .finally(() => finish('skipped'));
         });
       }
+
+      if (signal) {
+        if (signal.aborted) {
+          finish('skipped');
+          return;
+        }
+        signal.addEventListener('abort', () => finish('skipped'), { once: true });
+      }
+
+      timerId = window.setTimeout(tryComplete, minDurationMs);
+    });
+  }
+
+  /**
+   * Inter-scene transition loader:
+   * - Uses the train compartment animation ONLY for Scene 1 -> Scene 2 (journey to Hogwarts).
+   * - For all other scenes inside Hogwarts (Scenes 2..10), shows a soft, non-train Hogwarts fade loader.
+   */
+  async function playSceneTransition(
+    container,
+    {
+      fromSceneId = null,
+      toSceneId = null,
+      preloadPromise = null,
+      signal = null,
+      reducedMotion = false,
+      caption = null,
+    } = {}
+  ) {
+    if (fromSceneId === 'scene01' && toSceneId === 'scene02') {
+      return playTrainTransition(container, { preloadPromise, signal, reducedMotion, caption });
+    }
+
+    if (!container) {
+      if (preloadPromise) await preloadPromise;
+      return { status: 'completed' };
+    }
+
+    const minDurationMs = reducedMotion ? 220 : 480;
+    return new Promise((resolve) => {
+      let settled = false;
+      let timerId = null;
+      let fadeTimerId = null;
+      let preloadDone = !preloadPromise;
+
+      const overlay = document.createElement('div');
+      overlay.className = 'cutscene-stage-overlay hogwarts-soft-transition';
+      overlay.style.cssText =
+        'position:absolute;inset:0;z-index:35;background:radial-gradient(circle at 50% 42%, rgba(20,30,52,0.92), rgba(8,12,22,0.98));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px;text-align:center;';
+
+      const ornament = document.createElement('div');
+      ornament.style.cssText =
+        'width:56px;height:56px;border-radius:50%;border:2px solid rgba(216,180,103,0.75);box-shadow:0 0 24px rgba(216,180,103,0.35);display:flex;align-items:center;justify-content:center;color:#fde68a;font-size:24px;';
+      ornament.textContent = '✦';
+
+      const label = document.createElement('div');
+      label.style.cssText = 'font-size:18px;font-weight:700;color:#fde68a;letter-spacing:0.06em;';
+      label.textContent = caption || 'Хогвартс • Следующая сцена…';
+
+      overlay.append(ornament, label);
+      container.innerHTML = '';
+      container.appendChild(overlay);
+
+      if (preloadPromise) {
+        Promise.resolve(preloadPromise)
+          .catch(() => {})
+          .finally(() => {
+            preloadDone = true;
+          });
+      }
+
+      const finish = (status) => {
+        if (settled) return;
+        settled = true;
+        if (timerId !== null) window.clearTimeout(timerId);
+        if (fadeTimerId !== null) window.clearTimeout(fadeTimerId);
+        overlay.classList.add('is-fading-out');
+        const outMs = reducedMotion ? 60 : 240;
+        fadeTimerId = window.setTimeout(() => {
+          if (overlay.parentNode === container) container.removeChild(overlay);
+          resolve({ status });
+        }, outMs);
+      };
+
+      const tryComplete = () => {
+        if (settled) return;
+        if (preloadDone) {
+          finish('completed');
+        } else {
+          Promise.resolve(preloadPromise)
+            .catch(() => {})
+            .finally(() => finish('completed'));
+        }
+      };
 
       if (signal) {
         if (signal.aborted) {
@@ -509,7 +603,7 @@ export function createCutscenePlayer(stage = null, bus = defaultBus) {
       if (def.fallback) {
         await stage?.enter?.(def.fallback);
       }
-      const res = await playSceneTransition(container, {
+      const res = await playTrainTransition(container, {
         preloadPromise,
         signal,
         reducedMotion,

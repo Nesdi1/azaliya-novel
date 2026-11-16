@@ -89,6 +89,7 @@ export function createEngine({
   let skipTimer = null;
   let debugAutoWin = false;
   let suppressAutoSave = false;
+  let lastCutsceneCompletedSceneId = null;
   const unsubscribers = [];
 
   function getScene(sceneId) {
@@ -340,11 +341,19 @@ export function createEngine({
         persistIfAllowed();
         isTransitioning = false;
 
-        // If the cutscene is immediately followed by an end node, preload the next scene's initial assets during playback
+        // If the cutscene is followed by an end node (directly or via an end-of-scene if node), preload next scene assets during playback
         let preloadPromise = null;
         const afterNode = node.next ? getNode(sceneId, node.next) : null;
-        if (afterNode?.type === 'end' && afterNode.nextScene && getScene(afterNode.nextScene)) {
-          const nextIds = collectSceneInitialAssets(getScene(afterNode.nextScene));
+        let targetEndNode = afterNode?.type === 'end' ? afterNode : null;
+        if (!targetEndNode && afterNode?.type === 'if') {
+          const branchId = evaluateCondition(afterNode.condition, state.variables)
+            ? afterNode.then
+            : afterNode.else || afterNode.next;
+          const branchNode = branchId ? getNode(sceneId, branchId) : null;
+          if (branchNode?.type === 'end') targetEndNode = branchNode;
+        }
+        if (targetEndNode?.nextScene && getScene(targetEndNode.nextScene)) {
+          const nextIds = collectSceneInitialAssets(getScene(targetEndNode.nextScene));
           if (nextIds.length > 0) preloadPromise = stage?.preload?.(nextIds);
         }
 
@@ -362,6 +371,9 @@ export function createEngine({
         }
         ui?.setOverlayMode?.(false);
         if (myInstanceId !== instanceCounter) return;
+        if (targetEndNode) {
+          lastCutsceneCompletedSceneId = sceneId;
+        }
         markNodeRead(node.id);
         persistIfAllowed();
         if (node.next) {
@@ -453,6 +465,8 @@ export function createEngine({
       }
 
       if (node.type === 'end') {
+        const hadEndCutscene = lastCutsceneCompletedSceneId === sceneId;
+        lastCutsceneCompletedSceneId = null;
         markNodeRead(node.id);
         persistIfAllowed();
         isTransitioning = false;
@@ -461,14 +475,20 @@ export function createEngine({
           const nextSc = getScene(nextSceneId);
           const nextIds = collectSceneInitialAssets(nextSc);
           const preloadPromise = nextIds.length > 0 ? stage?.preload?.(nextIds) : Promise.resolve();
-          ui?.setOverlayMode?.(true);
-          try {
-            await cutscenes?.playSceneTransition?.(stage?.getOverlayRoot?.(), {
-              preloadPromise,
-              reducedMotion: Boolean(state.settings?.reducedMotion),
-            });
-          } finally {
-            ui?.setOverlayMode?.(false);
+          if (hadEndCutscene) {
+            await preloadPromise;
+          } else {
+            ui?.setOverlayMode?.(true);
+            try {
+              await cutscenes?.playSceneTransition?.(stage?.getOverlayRoot?.(), {
+                fromSceneId: sceneId,
+                toSceneId: nextSceneId,
+                preloadPromise,
+                reducedMotion: Boolean(state.settings?.reducedMotion),
+              });
+            } finally {
+              ui?.setOverlayMode?.(false);
+            }
           }
           if (myInstanceId !== instanceCounter) return;
           await enterNode(nextSceneId, nextSc.start);
