@@ -23,6 +23,7 @@ export const SPEAKER_LABELS_RU = Object.freeze({
   twins: 'Фред и Джордж',
   fred: 'Фред',
   george: 'Джордж',
+  theo_azalia: 'Тео и Азалия',
   sorting_hat: 'Распределяющая шляпа',
   crowd: 'Голоса в зале',
   prefect: 'Староста',

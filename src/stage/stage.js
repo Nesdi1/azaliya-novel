@@ -24,8 +24,16 @@ const SPEAKER_TO_ASSET = {
   george: 'twins',
 };
 
+const OFFSTAGE_SPEAKERS = new Set([
+  'crowd',
+  'prefect',
+  'duel_teacher',
+  'librarian',
+  'theo_azalia',
+]);
+
 export function resolveCharacterAssetId(speakerId) {
-  if (!speakerId) return null;
+  if (!speakerId || OFFSTAGE_SPEAKERS.has(speakerId)) return null;
   return SPEAKER_TO_ASSET[speakerId] || speakerId;
 }
 
@@ -59,6 +67,8 @@ export function createStage(root, manifest, bus = defaultBus) {
   let currentCharacters = [];
   let groupIds = [];
   let activeSpeakerAssetId = null;
+  let activeSpeakerSet = new Set();
+  let dimAllOnOffstageSpeaker = false;
   let reducedMotion = false;
   let sceneToken = 0;
   let cameraZoom = 1;
@@ -108,38 +118,56 @@ export function createStage(root, manifest, bus = defaultBus) {
     return manifest?.assets?.[id] || null;
   }
 
+  function isRealCharacter(id) {
+    const resolved = resolveCharacterAssetId(id);
+    if (!resolved) return false;
+    const entry = getAssetEntry(resolved);
+    return Boolean(
+      entry && (entry.type === 'character' || String(entry.src || '').startsWith('assets/characters/'))
+    );
+  }
+
   function assetUrl(entry) {
     return `./${entry.src.replace(/^\.?\//, '')}`;
   }
 
   function preloadOne(id) {
-    if (!id) return Promise.resolve(null);
-    if (imageCache.has(id)) return imageCache.get(id);
+    if (!id || OFFSTAGE_SPEAKERS.has(id)) return Promise.resolve(null);
+    const resolvedId = SPEAKER_TO_ASSET[id] || id;
+    if (!resolvedId || OFFSTAGE_SPEAKERS.has(resolvedId)) return Promise.resolve(null);
+    if (imageCache.has(resolvedId)) return imageCache.get(resolvedId);
 
-    const entry = getAssetEntry(id);
+    const entry = getAssetEntry(resolvedId);
     if (!entry || !entry.src) {
-      bus?.emit?.('asset:error', { id, reason: 'missing_in_manifest' });
+      bus?.emit?.('asset:error', { id: resolvedId, reason: 'missing_in_manifest' });
       return Promise.resolve(null);
     }
 
     const promise = new Promise((resolve) => {
       const img = new Image();
       img.decoding = 'async';
-      img.onload = () => resolve({ id, src: entry.src, entry, img });
+      img.onload = () => resolve({ id: resolvedId, src: entry.src, entry, img });
       img.onerror = () => {
-        imageCache.delete(id);
-        bus?.emit?.('asset:error', { id, src: entry.src });
+        imageCache.delete(resolvedId);
+        bus?.emit?.('asset:error', { id: resolvedId, src: entry.src });
         resolve(null);
       };
       img.src = assetUrl(entry);
     });
 
-    imageCache.set(id, promise);
+    imageCache.set(resolvedId, promise);
     return promise;
   }
 
   async function preload(ids = []) {
-    const uniqueIds = Array.from(new Set(ids.filter(Boolean)));
+    const uniqueIds = Array.from(
+      new Set(
+        ids
+          .filter((id) => Boolean(id) && !OFFSTAGE_SPEAKERS.has(id))
+          .map((id) => SPEAKER_TO_ASSET[id] || id)
+          .filter((id) => Boolean(id) && !OFFSTAGE_SPEAKERS.has(id) && Boolean(getAssetEntry(id)))
+      )
+    );
     await Promise.all(uniqueIds.map((id) => preloadOne(id)));
     bus?.emit?.('stage:ready', { ids: uniqueIds });
     return uniqueIds;
@@ -231,9 +259,10 @@ export function createStage(root, manifest, bus = defaultBus) {
 
   function updateSpeakerFocus() {
     for (const [charId, el] of charEls) {
-      if (!activeSpeakerAssetId) {
-        el.classList.remove('is-active', 'is-dimmed');
-      } else if (charId === activeSpeakerAssetId) {
+      if (activeSpeakerSet.size === 0) {
+        el.classList.remove('is-active');
+        el.classList.toggle('is-dimmed', dimAllOnOffstageSpeaker);
+      } else if (activeSpeakerSet.has(charId)) {
         el.classList.add('is-active');
         el.classList.remove('is-dimmed');
       } else {
@@ -297,6 +326,8 @@ export function createStage(root, manifest, bus = defaultBus) {
     groupIds = [];
     leans.clear();
     activeSpeakerAssetId = null;
+    activeSpeakerSet.clear();
+    dimAllOnOffstageSpeaker = false;
     setCamera(1, 0);
     setGlow(0, 0);
 
@@ -321,11 +352,40 @@ export function createStage(root, manifest, bus = defaultBus) {
     return { background: currentBackground, characters: [...currentCharacters] };
   }
 
-  // Highlights the speaker if (s)he is on stage. Off-stage voices (e.g. D42 «Голос Андромеды»)
-  // do not add a sprite: entrances are explicit `fade` cues.
+  // Highlights the speaker if (s)he is a real character from manifest.json (or an explicitly
+  // placed stage prop like sorting_hat) currently on stage. For crowd and other off-stage voices,
+  // never attempt to load an image or auto-add a sprite — leave current heroes on stage slightly dimmed.
   async function setActiveSpeaker(speakerId) {
+    if (!speakerId) {
+      activeSpeakerAssetId = null;
+      activeSpeakerSet.clear();
+      dimAllOnOffstageSpeaker = false;
+      updateSpeakerFocus();
+      return;
+    }
+    if (speakerId === 'theo_azalia') {
+      const both = ['theo', 'azalia'].filter((id) => isRealCharacter(id) && currentCharacters.includes(id));
+      activeSpeakerAssetId = both[0] || null;
+      activeSpeakerSet = new Set(both);
+      dimAllOnOffstageSpeaker = both.length === 0;
+      updateSpeakerFocus();
+      return;
+    }
     const assetId = resolveCharacterAssetId(speakerId);
-    activeSpeakerAssetId = assetId && currentCharacters.includes(assetId) ? assetId : null;
+    const canHighlight = Boolean(
+      assetId &&
+        currentCharacters.includes(assetId) &&
+        (isRealCharacter(assetId) || getAssetEntry(assetId)?.type === 'prop')
+    );
+    if (canHighlight) {
+      activeSpeakerAssetId = assetId;
+      activeSpeakerSet = new Set([assetId]);
+      dimAllOnOffstageSpeaker = false;
+    } else {
+      activeSpeakerAssetId = null;
+      activeSpeakerSet.clear();
+      dimAllOnOffstageSpeaker = true;
+    }
     updateSpeakerFocus();
   }
 
@@ -387,8 +447,11 @@ export function createStage(root, manifest, bus = defaultBus) {
     currentCharacters = currentCharacters.filter((id) => id !== charId);
     groupIds = groupIds.filter((id) => id !== charId);
     leans.delete(charId);
-    if (activeSpeakerAssetId === charId) {
-      activeSpeakerAssetId = null;
+    if (activeSpeakerSet.has(charId)) {
+      activeSpeakerSet.delete(charId);
+      if (activeSpeakerAssetId === charId) {
+        activeSpeakerAssetId = Array.from(activeSpeakerSet)[0] || null;
+      }
       updateSpeakerFocus();
     }
     setMs(el, '--move-ms', ms);
@@ -555,6 +618,7 @@ export function createStage(root, manifest, bus = defaultBus) {
     resize,
     destroy,
     setActiveSpeaker,
+    isCharacter: isRealCharacter,
     setReducedMotion,
     getOverlayRoot,
     getState() {

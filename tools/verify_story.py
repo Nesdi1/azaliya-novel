@@ -34,6 +34,7 @@ def verify(path):
   for route in (n.get('resultRoutes') or {}).values():
    if route is not None and route not in nodes:errors.append('broken route '+n['id'])
  variants=json.loads((P/'tools/story_overrides.json').read_text(encoding='utf-8'))
+ variants_by_id={v['id']:v for v in variants}
  for v in variants:
   base=src[v['line']-1]
   if base!=v['base']:errors.append('variant base changed '+v['id'])
@@ -42,6 +43,11 @@ def verify(path):
    if not 0<=op['start']<=op['end']<=len(base):errors.append('bad variant span '+v['id'])
    result=result[:op['start']]+op['replacement']+result[op['end']:]
   if result!=v['text']:errors.append('unapproved variant text '+v['id'])
+ for n in nodes.values():
+  for nv in n.get('variants',[]):
+   ov=variants_by_id.get(nv.get('id'))
+   if not ov or nv.get('text')!=ov['text'] or nv.get('condition')!=ov['condition']:
+    errors.append('unapproved node variant '+n['id'])
  report=dict(scope=[lo,hi],lines=hi-lo+1,approvedVariants=len(variants),errors=errors,completeStory=lo==1 and hi==len(src))
  return report
 def verify_many(paths):

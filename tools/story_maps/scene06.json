@@ -1,0 +1,2686 @@
+{
+  "schemaVersion": 1,
+  "id": "scene06",
+  "start": "s06_enter",
+  "scope": [
+    613,
+    736
+  ],
+  "sourceSha256": "25963956c5835837610786dd375bc5aa6ddb66a4052bbc65362c266a09ca73eb",
+  "nodes": [
+    {
+      "id": "s06_enter",
+      "type": "scene",
+      "action": "enter",
+      "background": "bg_dueling_hall",
+      "characters": [
+        "azalia",
+        "malfoy",
+        "theo"
+      ],
+      "source": [],
+      "next": "s06_l617_0"
+    },
+    {
+      "id": "s06_l617_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "malfoy",
+          "effect": "focus"
+        },
+        {
+          "target": "malfoy",
+          "effect": "tilt",
+          "amplitude": -2,
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_l619_0"
+    },
+    {
+      "id": "s06_l619_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l619_1"
+    },
+    {
+      "id": "s06_l619_1",
+      "type": "dialogue",
+      "speaker": "theo",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "theo",
+          "effect": "bounce",
+          "amplitude": 9,
+          "durationMs": 520
+        }
+      ],
+      "next": "s06_if_rose_621"
+    },
+    {
+      "id": "s06_if_rose_621",
+      "type": "if",
+      "condition": {
+        "op": "eq",
+        "left": {
+          "var": "roseFriend"
+        },
+        "right": false
+      },
+      "then": "s06_l623_0",
+      "source": [],
+      "else": "s06_l621_0",
+      "next": null
+    },
+    {
+      "id": "s06_l621_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "rose",
+          "effect": "fade",
+          "to": 1,
+          "side": "right",
+          "durationMs": 450
+        }
+      ],
+      "next": "s06_l621_1"
+    },
+    {
+      "id": "s06_l621_1",
+      "type": "dialogue",
+      "speaker": "rose",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "rose",
+          "effect": "bounce",
+          "amplitude": 9,
+          "durationMs": 520
+        }
+      ],
+      "next": "s06_l623_0"
+    },
+    {
+      "id": "s06_l623_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "focus"
+        }
+      ],
+      "next": "s06_l625_0"
+    },
+    {
+      "id": "s06_l625_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l625_1"
+    },
+    {
+      "id": "s06_l625_1",
+      "type": "thought",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_game_duel"
+    },
+    {
+      "id": "s06_game_duel",
+      "type": "minigame",
+      "gameId": "duel",
+      "params": {
+        "round": 2,
+        "opponent": "malfoy",
+        "forceStoryWin": true
+      },
+      "resultRoutes": {
+        "success": "s06_l629_0",
+        "failure": "s06_l629_0"
+      },
+      "source": [
+        {
+          "file": "dialogues",
+          "line": 627,
+          "start": 0,
+          "end": 52
+        }
+      ],
+      "next": "s06_l629_0"
+    },
+    {
+      "id": "s06_l629_0",
+      "type": "narration",
+      "text": "",
+      "cues": [
+        {
+          "effect": "shake",
+          "amplitude": 4,
+          "durationMs": 450
+        },
+        {
+          "target": "malfoy",
+          "effect": "fade",
+          "to": 0,
+          "side": "left",
+          "durationMs": 480
+        },
+        {
+          "target": "theo",
+          "effect": "bounce",
+          "amplitude": 9,
+          "durationMs": 520
+        }
+      ],
+      "variants": [
+        {
+          "id": "noRose_D629",
+          "condition": {
+            "op": "eq",
+            "left": {
+              "var": "roseFriend"
+            },
+            "right": false
+          },
+          "text": "Малфой отлетает назад, спотыкается и падает. Трибуны взрываются криками. Тео вопит от восторга."
+        }
+      ],
+      "source": [],
+      "next": "s06_l631_0"
+    },
+    {
+      "id": "s06_l631_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l631_1"
+    },
+    {
+      "id": "s06_l631_1",
+      "type": "dialogue",
+      "speaker": "duel_teacher",
+      "text": "",
+      "source": [],
+      "next": "s06_enter_duel_theo_dima"
+    },
+    {
+      "id": "s06_enter_duel_theo_dima",
+      "type": "scene",
+      "action": "enter",
+      "background": "bg_dueling_hall",
+      "characters": [
+        "theo",
+        "dima",
+        "azalia"
+      ],
+      "source": [],
+      "next": "s06_l633_0"
+    },
+    {
+      "id": "s06_l633_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "theo",
+          "effect": "focus"
+        },
+        {
+          "target": "dima",
+          "effect": "tilt",
+          "amplitude": -2,
+          "durationMs": 500,
+          "delayMs": 200
+        }
+      ],
+      "next": "s06_l635_0"
+    },
+    {
+      "id": "s06_l635_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "effect": "shake",
+          "amplitude": 3.5,
+          "durationMs": 450
+        },
+        {
+          "effect": "glow",
+          "to": 0.25,
+          "durationMs": 600
+        },
+        {
+          "target": "theo",
+          "effect": "bounce",
+          "amplitude": 8,
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_l637_0"
+    },
+    {
+      "id": "s06_l637_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "effect": "glow",
+          "to": 0,
+          "durationMs": 500
+        },
+        {
+          "effect": "group",
+          "targets": [
+            "theo",
+            "dima"
+          ],
+          "durationMs": 600
+        }
+      ],
+      "next": "s06_l639_0"
+    },
+    {
+      "id": "s06_l639_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l639_1"
+    },
+    {
+      "id": "s06_l639_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_l641_0"
+    },
+    {
+      "id": "s06_l641_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l641_1"
+    },
+    {
+      "id": "s06_l641_1",
+      "type": "dialogue",
+      "speaker": "theo",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "theo",
+          "effect": "bounce",
+          "amplitude": 7,
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_enter_corridor"
+    },
+    {
+      "id": "s06_enter_corridor",
+      "type": "scene",
+      "action": "enter",
+      "background": "bg_corridor",
+      "characters": [
+        "azalia",
+        "theo"
+      ],
+      "source": [],
+      "next": "s06_l643_0"
+    },
+    {
+      "id": "s06_l643_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "next": "s06_if_rose_645"
+    },
+    {
+      "id": "s06_if_rose_645",
+      "type": "if",
+      "condition": {
+        "op": "eq",
+        "left": {
+          "var": "roseFriend"
+        },
+        "right": false
+      },
+      "then": "s06_l649_0",
+      "source": [],
+      "else": "s06_l645_0",
+      "next": null
+    },
+    {
+      "id": "s06_l645_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "rose",
+          "effect": "fade",
+          "to": 1,
+          "side": "right",
+          "durationMs": 450
+        }
+      ],
+      "next": "s06_l647_0"
+    },
+    {
+      "id": "s06_l647_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l647_1"
+    },
+    {
+      "id": "s06_l647_1",
+      "type": "dialogue",
+      "speaker": "rose",
+      "text": "",
+      "source": [],
+      "next": "s06_l649_0"
+    },
+    {
+      "id": "s06_l649_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l649_1"
+    },
+    {
+      "id": "s06_l649_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "shake",
+          "amplitude": 3.5,
+          "durationMs": 450
+        }
+      ],
+      "next": "choice06_01"
+    },
+    {
+      "id": "choice06_01",
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice06_01_1",
+          "text": "",
+          "effects": [
+            {
+              "variable": "scene6Route",
+              "value": "lake"
+            }
+          ],
+          "next": "s06_enter_lake",
+          "source": []
+        },
+        {
+          "id": "choice06_01_2",
+          "text": "",
+          "effects": [
+            {
+              "variable": "scene6Route",
+              "value": "quidditch"
+            }
+          ],
+          "next": "s06_enter_quidditch",
+          "source": []
+        }
+      ],
+      "source": [],
+      "next": null
+    },
+    {
+      "id": "s06_enter_quidditch",
+      "type": "scene",
+      "action": "enter",
+      "background": "bg_quidditch",
+      "characters": [
+        "azalia",
+        "dima"
+      ],
+      "source": [],
+      "next": "s06_l655_0"
+    },
+    {
+      "id": "s06_l655_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "focus"
+        },
+        {
+          "target": "dima",
+          "effect": "breathe",
+          "durationMs": 2800
+        }
+      ],
+      "next": "s06_game_quidditch"
+    },
+    {
+      "id": "s06_game_quidditch",
+      "type": "minigame",
+      "gameId": "quidditch",
+      "params": {
+        "rings": 7
+      },
+      "resultRoutes": {
+        "success": "s06_l657_1",
+        "failure": "s06_l657_1"
+      },
+      "source": [
+        {
+          "file": "dialogues",
+          "line": 656,
+          "start": 0,
+          "end": 30
+        }
+      ],
+      "next": "s06_l657_1"
+    },
+    {
+      "id": "s06_l657_1",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "next": "choice06_02"
+    },
+    {
+      "id": "choice06_02",
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice06_02_1",
+          "text": "",
+          "next": "s06_l663_1",
+          "source": []
+        },
+        {
+          "id": "choice06_02_2",
+          "text": "",
+          "next": "s06_l661_1",
+          "source": []
+        }
+      ],
+      "source": [],
+      "next": null
+    },
+    {
+      "id": "s06_l661_1",
+      "type": "narration",
+      "text": "",
+      "cues": [
+        {
+          "target": "dima",
+          "effect": "focus"
+        },
+        {
+          "effect": "group",
+          "targets": [
+            "dima",
+            "azalia"
+          ],
+          "durationMs": 600
+        }
+      ],
+      "source": [],
+      "next": "s06_l662_0"
+    },
+    {
+      "id": "s06_l662_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l662_1"
+    },
+    {
+      "id": "s06_l662_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_if_route_after_quidditch"
+    },
+    {
+      "id": "s06_l663_1",
+      "type": "narration",
+      "text": "",
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "bounce",
+          "amplitude": 8,
+          "durationMs": 500
+        },
+        {
+          "effect": "group",
+          "targets": [
+            "dima",
+            "azalia"
+          ],
+          "durationMs": 600
+        }
+      ],
+      "source": [],
+      "next": "s06_if_route_after_quidditch"
+    },
+    {
+      "id": "s06_if_route_after_quidditch",
+      "type": "if",
+      "condition": {
+        "op": "eq",
+        "left": {
+          "var": "scene6Route"
+        },
+        "right": "lake"
+      },
+      "then": "s06_if_rose_724",
+      "source": [],
+      "else": "s06_l665_0",
+      "next": null
+    },
+    {
+      "id": "s06_l665_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l665_1"
+    },
+    {
+      "id": "s06_l665_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "bounce",
+          "amplitude": 7,
+          "durationMs": 480
+        }
+      ],
+      "next": "s06_l666_0"
+    },
+    {
+      "id": "s06_l666_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l666_1"
+    },
+    {
+      "id": "s06_l666_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_l667_0"
+    },
+    {
+      "id": "s06_l667_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l667_1"
+    },
+    {
+      "id": "s06_l667_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_l668_0"
+    },
+    {
+      "id": "s06_l668_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l668_1"
+    },
+    {
+      "id": "s06_l668_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_if_rose_724"
+    },
+    {
+      "id": "s06_enter_lake",
+      "type": "scene",
+      "action": "enter",
+      "background": "bg_black_lake",
+      "characters": [
+        "dima",
+        "malfoy",
+        "azalia"
+      ],
+      "source": [],
+      "next": "s06_l670_0"
+    },
+    {
+      "id": "s06_l670_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "dima",
+          "effect": "focus"
+        },
+        {
+          "target": "malfoy",
+          "effect": "tilt",
+          "amplitude": -2,
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_l672_0"
+    },
+    {
+      "id": "s06_l672_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l672_1"
+    },
+    {
+      "id": "s06_l672_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "shake",
+          "amplitude": 3,
+          "durationMs": 450
+        }
+      ],
+      "next": "s06_l674_0"
+    },
+    {
+      "id": "s06_l674_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "effect": "shake",
+          "amplitude": 4,
+          "durationMs": 450
+        },
+        {
+          "target": "malfoy",
+          "effect": "bounce",
+          "amplitude": 10,
+          "durationMs": 520
+        }
+      ],
+      "next": "s06_l676_0"
+    },
+    {
+      "id": "s06_l676_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "pansy",
+          "effect": "fade",
+          "to": 1,
+          "side": "right",
+          "durationMs": 460
+        },
+        {
+          "target": "pansy",
+          "effect": "bounce",
+          "amplitude": 9,
+          "durationMs": 500,
+          "delayMs": 100
+        }
+      ],
+      "next": "s06_l678_0"
+    },
+    {
+      "id": "s06_l678_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l678_1"
+    },
+    {
+      "id": "s06_l678_1",
+      "type": "dialogue",
+      "speaker": "pansy",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "pansy",
+          "effect": "shake",
+          "amplitude": 3.5,
+          "durationMs": 450
+        }
+      ],
+      "next": "s06_l680_0"
+    },
+    {
+      "id": "s06_l680_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "effect": "group",
+          "targets": [
+            "pansy",
+            "malfoy"
+          ],
+          "durationMs": 550
+        }
+      ],
+      "next": "s06_l682_0"
+    },
+    {
+      "id": "s06_l682_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l682_1"
+    },
+    {
+      "id": "s06_l682_1",
+      "type": "dialogue",
+      "speaker": "pansy",
+      "text": "",
+      "source": [],
+      "next": "s06_l684_0"
+    },
+    {
+      "id": "s06_l684_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "malfoy",
+          "effect": "fade",
+          "to": 0,
+          "side": "left",
+          "durationMs": 500
+        },
+        {
+          "target": "pansy",
+          "effect": "fade",
+          "to": 0,
+          "side": "left",
+          "durationMs": 500,
+          "delayMs": 80
+        },
+        {
+          "effect": "group",
+          "targets": [],
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_l686_0"
+    },
+    {
+      "id": "s06_l686_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l686_1"
+    },
+    {
+      "id": "s06_l686_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_l688_0"
+    },
+    {
+      "id": "s06_l688_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "effect": "group",
+          "targets": [
+            "dima",
+            "azalia"
+          ],
+          "durationMs": 600
+        },
+        {
+          "target": "dima",
+          "effect": "focus"
+        }
+      ],
+      "next": "s06_l690_0"
+    },
+    {
+      "id": "s06_l690_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l690_1"
+    },
+    {
+      "id": "s06_l690_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_l692_0"
+    },
+    {
+      "id": "s06_l692_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l692_1"
+    },
+    {
+      "id": "s06_l692_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_l692_2"
+    },
+    {
+      "id": "s06_l692_2",
+      "type": "scene",
+      "action": "cue",
+      "narration": true,
+      "annotation": "",
+      "source": [],
+      "next": "s06_l692_3"
+    },
+    {
+      "id": "s06_l692_3",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "choice06_03"
+    },
+    {
+      "id": "choice06_03",
+      "type": "choice",
+      "options": [
+        {
+          "id": "choice06_03_1",
+          "text": "",
+          "next": "s06_l707_0",
+          "source": []
+        },
+        {
+          "id": "choice06_03_2",
+          "text": "",
+          "next": "s06_l697_1",
+          "source": []
+        }
+      ],
+      "source": [],
+      "next": null
+    },
+    {
+      "id": "s06_l697_1",
+      "type": "narration",
+      "text": "",
+      "cues": [],
+      "source": [],
+      "next": "s06_l699_0"
+    },
+    {
+      "id": "s06_l699_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l699_1"
+    },
+    {
+      "id": "s06_l699_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_l701_0"
+    },
+    {
+      "id": "s06_l701_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "next": "s06_l703_0"
+    },
+    {
+      "id": "s06_l703_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l703_1"
+    },
+    {
+      "id": "s06_l703_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_l705_0"
+    },
+    {
+      "id": "s06_l705_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "next": "s06_l707_0"
+    },
+    {
+      "id": "s06_l707_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l707_1"
+    },
+    {
+      "id": "s06_l707_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_l709_0"
+    },
+    {
+      "id": "s06_l709_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "dima",
+          "effect": "tilt",
+          "amplitude": 1.8,
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_l711_0"
+    },
+    {
+      "id": "s06_l711_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l711_1"
+    },
+    {
+      "id": "s06_l711_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_l713_0"
+    },
+    {
+      "id": "s06_l713_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "next": "s06_l715_0"
+    },
+    {
+      "id": "s06_l715_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l715_1"
+    },
+    {
+      "id": "s06_l715_1",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "",
+      "source": [],
+      "next": "s06_l717_0"
+    },
+    {
+      "id": "s06_l717_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "effect": "group",
+          "targets": [],
+          "durationMs": 500
+        },
+        {
+          "target": "dima",
+          "effect": "fade",
+          "to": 0,
+          "side": "left",
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_l719_0"
+    },
+    {
+      "id": "s06_l719_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l719_1"
+    },
+    {
+      "id": "s06_l719_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_l721_0"
+    },
+    {
+      "id": "s06_l721_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "next": "s06_enter_quidditch"
+    },
+    {
+      "id": "s06_if_rose_724",
+      "type": "if",
+      "condition": {
+        "op": "eq",
+        "left": {
+          "var": "roseFriend"
+        },
+        "right": false
+      },
+      "then": "s06_end",
+      "source": [],
+      "else": "s06_enter_quidditch_end",
+      "next": null
+    },
+    {
+      "id": "s06_enter_quidditch_end",
+      "type": "scene",
+      "action": "enter",
+      "background": "bg_quidditch",
+      "characters": [
+        "azalia",
+        "rose"
+      ],
+      "source": [],
+      "next": "s06_l724_0"
+    },
+    {
+      "id": "s06_l724_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "rose",
+          "effect": "bounce",
+          "amplitude": 8,
+          "durationMs": 500
+        }
+      ],
+      "next": "s06_l725_0"
+    },
+    {
+      "id": "s06_l725_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l725_1"
+    },
+    {
+      "id": "s06_l725_1",
+      "type": "dialogue",
+      "speaker": "rose",
+      "text": "",
+      "source": [],
+      "next": "s06_l726_0"
+    },
+    {
+      "id": "s06_l726_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l726_1"
+    },
+    {
+      "id": "s06_l726_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "next": "s06_l727_0"
+    },
+    {
+      "id": "s06_l727_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l727_1"
+    },
+    {
+      "id": "s06_l727_1",
+      "type": "dialogue",
+      "speaker": "rose",
+      "text": "",
+      "source": [],
+      "next": "s06_l729_0"
+    },
+    {
+      "id": "s06_l729_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l729_1"
+    },
+    {
+      "id": "s06_l729_1",
+      "type": "dialogue",
+      "speaker": "azalia",
+      "text": "",
+      "source": [],
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "shake",
+          "amplitude": 3.5,
+          "durationMs": 450
+        }
+      ],
+      "next": "s06_l731_0"
+    },
+    {
+      "id": "s06_l731_0",
+      "type": "narration",
+      "text": "",
+      "source": [],
+      "next": "s06_l733_0"
+    },
+    {
+      "id": "s06_l733_0",
+      "type": "scene",
+      "action": "cue",
+      "annotation": "",
+      "source": [],
+      "next": "s06_l733_1"
+    },
+    {
+      "id": "s06_l733_1",
+      "type": "dialogue",
+      "speaker": "rose",
+      "text": "",
+      "source": [],
+      "next": "s06_l735_1"
+    },
+    {
+      "id": "s06_l735_1",
+      "type": "scene",
+      "action": "cue",
+      "narration": true,
+      "annotation": "",
+      "source": [],
+      "next": "s06_cs06"
+    },
+    {
+      "id": "s06_cs06",
+      "type": "cutscene",
+      "cutsceneId": "cs06",
+      "source": [],
+      "next": "s06_end"
+    },
+    {
+      "id": "s06_end",
+      "type": "end",
+      "nextScene": "scene07",
+      "source": [],
+      "next": null
+    }
+  ],
+  "sourceLedger": [
+    {
+      "line": 613,
+      "parts": [
+        {
+          "start": 0,
+          "end": 24,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 614,
+      "parts": []
+    },
+    {
+      "line": 615,
+      "parts": [
+        {
+          "start": 0,
+          "end": 50,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 616,
+      "parts": []
+    },
+    {
+      "line": 617,
+      "parts": [
+        {
+          "start": 0,
+          "end": 163,
+          "kind": "narration",
+          "node": "s06_l617_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 618,
+      "parts": []
+    },
+    {
+      "line": 619,
+      "parts": [
+        {
+          "start": 0,
+          "end": 36,
+          "kind": "stage",
+          "node": "s06_l619_0",
+          "field": "annotation"
+        },
+        {
+          "start": 36,
+          "end": 58,
+          "kind": "dialogue",
+          "node": "s06_l619_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 620,
+      "parts": []
+    },
+    {
+      "line": 621,
+      "parts": [
+        {
+          "start": 0,
+          "end": 27,
+          "kind": "stage",
+          "node": "s06_l621_0",
+          "field": "annotation"
+        },
+        {
+          "start": 27,
+          "end": 44,
+          "kind": "dialogue",
+          "node": "s06_l621_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 622,
+      "parts": []
+    },
+    {
+      "line": 623,
+      "parts": [
+        {
+          "start": 0,
+          "end": 85,
+          "kind": "narration",
+          "node": "s06_l623_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 624,
+      "parts": []
+    },
+    {
+      "line": 625,
+      "parts": [
+        {
+          "start": 0,
+          "end": 14,
+          "kind": "stage",
+          "node": "s06_l625_0",
+          "field": "annotation"
+        },
+        {
+          "start": 14,
+          "end": 118,
+          "kind": "thought",
+          "node": "s06_l625_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 626,
+      "parts": []
+    },
+    {
+      "line": 627,
+      "parts": [
+        {
+          "start": 0,
+          "end": 52,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 628,
+      "parts": []
+    },
+    {
+      "line": 629,
+      "parts": [
+        {
+          "start": 0,
+          "end": 102,
+          "kind": "narration",
+          "node": "s06_l629_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 630,
+      "parts": []
+    },
+    {
+      "line": 631,
+      "parts": [
+        {
+          "start": 0,
+          "end": 15,
+          "kind": "stage",
+          "node": "s06_l631_0",
+          "field": "annotation"
+        },
+        {
+          "start": 15,
+          "end": 63,
+          "kind": "dialogue",
+          "node": "s06_l631_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 632,
+      "parts": []
+    },
+    {
+      "line": 633,
+      "parts": [
+        {
+          "start": 0,
+          "end": 109,
+          "kind": "narration",
+          "node": "s06_l633_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 634,
+      "parts": []
+    },
+    {
+      "line": 635,
+      "parts": [
+        {
+          "start": 0,
+          "end": 202,
+          "kind": "narration",
+          "node": "s06_l635_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 636,
+      "parts": []
+    },
+    {
+      "line": 637,
+      "parts": [
+        {
+          "start": 0,
+          "end": 75,
+          "kind": "narration",
+          "node": "s06_l637_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 638,
+      "parts": []
+    },
+    {
+      "line": 639,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l639_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 27,
+          "kind": "dialogue",
+          "node": "s06_l639_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 640,
+      "parts": []
+    },
+    {
+      "line": 641,
+      "parts": [
+        {
+          "start": 0,
+          "end": 26,
+          "kind": "stage",
+          "node": "s06_l641_0",
+          "field": "annotation"
+        },
+        {
+          "start": 26,
+          "end": 77,
+          "kind": "dialogue",
+          "node": "s06_l641_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 642,
+      "parts": []
+    },
+    {
+      "line": 643,
+      "parts": [
+        {
+          "start": 0,
+          "end": 282,
+          "kind": "narration",
+          "node": "s06_l643_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 644,
+      "parts": []
+    },
+    {
+      "line": 645,
+      "parts": [
+        {
+          "start": 0,
+          "end": 48,
+          "kind": "narration",
+          "node": "s06_l645_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 646,
+      "parts": []
+    },
+    {
+      "line": 647,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l647_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 58,
+          "kind": "dialogue",
+          "node": "s06_l647_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 648,
+      "parts": []
+    },
+    {
+      "line": 649,
+      "parts": [
+        {
+          "start": 0,
+          "end": 18,
+          "kind": "stage",
+          "node": "s06_l649_0",
+          "field": "annotation"
+        },
+        {
+          "start": 18,
+          "end": 47,
+          "kind": "dialogue",
+          "node": "s06_l649_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 650,
+      "parts": []
+    },
+    {
+      "line": 651,
+      "parts": [
+        {
+          "start": 0,
+          "end": 18,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 652,
+      "parts": [
+        {
+          "start": 0,
+          "end": 11,
+          "kind": "metadata"
+        },
+        {
+          "start": 11,
+          "end": 39,
+          "kind": "choice",
+          "node": "choice06_01",
+          "option": "choice06_01_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 653,
+      "parts": [
+        {
+          "start": 0,
+          "end": 11,
+          "kind": "metadata"
+        },
+        {
+          "start": 11,
+          "end": 38,
+          "kind": "choice",
+          "node": "choice06_01",
+          "option": "choice06_01_2",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 654,
+      "parts": [
+        {
+          "start": 0,
+          "end": 29,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 655,
+      "parts": [
+        {
+          "start": 0,
+          "end": 203,
+          "kind": "narration",
+          "node": "s06_l655_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 656,
+      "parts": [
+        {
+          "start": 0,
+          "end": 30,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 657,
+      "parts": [
+        {
+          "start": 0,
+          "end": 32,
+          "kind": "metadata"
+        },
+        {
+          "start": 32,
+          "end": 69,
+          "kind": "narration",
+          "node": "s06_l657_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 658,
+      "parts": [
+        {
+          "start": 0,
+          "end": 19,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 659,
+      "parts": [
+        {
+          "start": 0,
+          "end": 11,
+          "kind": "metadata"
+        },
+        {
+          "start": 11,
+          "end": 35,
+          "kind": "choice",
+          "node": "choice06_02",
+          "option": "choice06_02_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 660,
+      "parts": [
+        {
+          "start": 0,
+          "end": 11,
+          "kind": "metadata"
+        },
+        {
+          "start": 11,
+          "end": 38,
+          "kind": "choice",
+          "node": "choice06_02",
+          "option": "choice06_02_2",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 661,
+      "parts": [
+        {
+          "start": 0,
+          "end": 16,
+          "kind": "metadata"
+        },
+        {
+          "start": 16,
+          "end": 67,
+          "kind": "narration",
+          "node": "s06_l661_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 662,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l662_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 70,
+          "kind": "dialogue",
+          "node": "s06_l662_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 663,
+      "parts": [
+        {
+          "start": 0,
+          "end": 13,
+          "kind": "metadata"
+        },
+        {
+          "start": 13,
+          "end": 112,
+          "kind": "narration",
+          "node": "s06_l663_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 664,
+      "parts": [
+        {
+          "start": 0,
+          "end": 33,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 665,
+      "parts": [
+        {
+          "start": 0,
+          "end": 23,
+          "kind": "stage",
+          "node": "s06_l665_0",
+          "field": "annotation"
+        },
+        {
+          "start": 23,
+          "end": 53,
+          "kind": "dialogue",
+          "node": "s06_l665_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 666,
+      "parts": [
+        {
+          "start": 0,
+          "end": 17,
+          "kind": "stage",
+          "node": "s06_l666_0",
+          "field": "annotation"
+        },
+        {
+          "start": 17,
+          "end": 38,
+          "kind": "dialogue",
+          "node": "s06_l666_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 667,
+      "parts": [
+        {
+          "start": 0,
+          "end": 8,
+          "kind": "stage",
+          "node": "s06_l667_0",
+          "field": "annotation"
+        },
+        {
+          "start": 8,
+          "end": 36,
+          "kind": "dialogue",
+          "node": "s06_l667_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 668,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l668_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 99,
+          "kind": "dialogue",
+          "node": "s06_l668_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 669,
+      "parts": [
+        {
+          "start": 0,
+          "end": 23,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 670,
+      "parts": [
+        {
+          "start": 0,
+          "end": 228,
+          "kind": "narration",
+          "node": "s06_l670_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 671,
+      "parts": []
+    },
+    {
+      "line": 672,
+      "parts": [
+        {
+          "start": 0,
+          "end": 22,
+          "kind": "stage",
+          "node": "s06_l672_0",
+          "field": "annotation"
+        },
+        {
+          "start": 22,
+          "end": 32,
+          "kind": "dialogue",
+          "node": "s06_l672_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 673,
+      "parts": []
+    },
+    {
+      "line": 674,
+      "parts": [
+        {
+          "start": 0,
+          "end": 189,
+          "kind": "narration",
+          "node": "s06_l674_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 675,
+      "parts": []
+    },
+    {
+      "line": 676,
+      "parts": [
+        {
+          "start": 0,
+          "end": 35,
+          "kind": "narration",
+          "node": "s06_l676_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 677,
+      "parts": []
+    },
+    {
+      "line": 678,
+      "parts": [
+        {
+          "start": 0,
+          "end": 15,
+          "kind": "stage",
+          "node": "s06_l678_0",
+          "field": "annotation"
+        },
+        {
+          "start": 15,
+          "end": 83,
+          "kind": "dialogue",
+          "node": "s06_l678_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 679,
+      "parts": []
+    },
+    {
+      "line": 680,
+      "parts": [
+        {
+          "start": 0,
+          "end": 105,
+          "kind": "narration",
+          "node": "s06_l680_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 681,
+      "parts": []
+    },
+    {
+      "line": 682,
+      "parts": [
+        {
+          "start": 0,
+          "end": 7,
+          "kind": "stage",
+          "node": "s06_l682_0",
+          "field": "annotation"
+        },
+        {
+          "start": 7,
+          "end": 38,
+          "kind": "dialogue",
+          "node": "s06_l682_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 683,
+      "parts": []
+    },
+    {
+      "line": 684,
+      "parts": [
+        {
+          "start": 0,
+          "end": 50,
+          "kind": "narration",
+          "node": "s06_l684_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 685,
+      "parts": []
+    },
+    {
+      "line": 686,
+      "parts": [
+        {
+          "start": 0,
+          "end": 15,
+          "kind": "stage",
+          "node": "s06_l686_0",
+          "field": "annotation"
+        },
+        {
+          "start": 15,
+          "end": 24,
+          "kind": "dialogue",
+          "node": "s06_l686_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 687,
+      "parts": []
+    },
+    {
+      "line": 688,
+      "parts": [
+        {
+          "start": 0,
+          "end": 42,
+          "kind": "narration",
+          "node": "s06_l688_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 689,
+      "parts": []
+    },
+    {
+      "line": 690,
+      "parts": [
+        {
+          "start": 0,
+          "end": 8,
+          "kind": "stage",
+          "node": "s06_l690_0",
+          "field": "annotation"
+        },
+        {
+          "start": 8,
+          "end": 47,
+          "kind": "dialogue",
+          "node": "s06_l690_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 691,
+      "parts": []
+    },
+    {
+      "line": 692,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l692_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 23,
+          "kind": "dialogue",
+          "node": "s06_l692_1",
+          "field": "text"
+        },
+        {
+          "start": 23,
+          "end": 33,
+          "kind": "stage",
+          "node": "s06_l692_2",
+          "field": "annotation"
+        },
+        {
+          "start": 33,
+          "end": 82,
+          "kind": "dialogue",
+          "node": "s06_l692_3",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 693,
+      "parts": []
+    },
+    {
+      "line": 694,
+      "parts": [
+        {
+          "start": 0,
+          "end": 20,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 695,
+      "parts": [
+        {
+          "start": 0,
+          "end": 11,
+          "kind": "metadata"
+        },
+        {
+          "start": 11,
+          "end": 26,
+          "kind": "choice",
+          "node": "choice06_03",
+          "option": "choice06_03_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 696,
+      "parts": [
+        {
+          "start": 0,
+          "end": 11,
+          "kind": "metadata"
+        },
+        {
+          "start": 11,
+          "end": 40,
+          "kind": "choice",
+          "node": "choice06_03",
+          "option": "choice06_03_2",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 697,
+      "parts": [
+        {
+          "start": 0,
+          "end": 35,
+          "kind": "metadata"
+        },
+        {
+          "start": 35,
+          "end": 69,
+          "kind": "narration",
+          "node": "s06_l697_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 698,
+      "parts": []
+    },
+    {
+      "line": 699,
+      "parts": [
+        {
+          "start": 0,
+          "end": 17,
+          "kind": "stage",
+          "node": "s06_l699_0",
+          "field": "annotation"
+        },
+        {
+          "start": 17,
+          "end": 91,
+          "kind": "dialogue",
+          "node": "s06_l699_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 700,
+      "parts": []
+    },
+    {
+      "line": 701,
+      "parts": [
+        {
+          "start": 0,
+          "end": 16,
+          "kind": "narration",
+          "node": "s06_l701_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 702,
+      "parts": []
+    },
+    {
+      "line": 703,
+      "parts": [
+        {
+          "start": 0,
+          "end": 8,
+          "kind": "stage",
+          "node": "s06_l703_0",
+          "field": "annotation"
+        },
+        {
+          "start": 8,
+          "end": 70,
+          "kind": "dialogue",
+          "node": "s06_l703_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 704,
+      "parts": []
+    },
+    {
+      "line": 705,
+      "parts": [
+        {
+          "start": 0,
+          "end": 13,
+          "kind": "narration",
+          "node": "s06_l705_0",
+          "field": "text"
+        },
+        {
+          "start": 13,
+          "end": 43,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 706,
+      "parts": []
+    },
+    {
+      "line": 707,
+      "parts": [
+        {
+          "start": 0,
+          "end": 21,
+          "kind": "metadata"
+        },
+        {
+          "start": 21,
+          "end": 29,
+          "kind": "stage",
+          "node": "s06_l707_0",
+          "field": "annotation"
+        },
+        {
+          "start": 29,
+          "end": 130,
+          "kind": "dialogue",
+          "node": "s06_l707_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 708,
+      "parts": []
+    },
+    {
+      "line": 709,
+      "parts": [
+        {
+          "start": 0,
+          "end": 28,
+          "kind": "narration",
+          "node": "s06_l709_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 710,
+      "parts": []
+    },
+    {
+      "line": 711,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l711_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 114,
+          "kind": "dialogue",
+          "node": "s06_l711_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 712,
+      "parts": []
+    },
+    {
+      "line": 713,
+      "parts": [
+        {
+          "start": 0,
+          "end": 10,
+          "kind": "narration",
+          "node": "s06_l713_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 714,
+      "parts": []
+    },
+    {
+      "line": 715,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l715_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 76,
+          "kind": "dialogue",
+          "node": "s06_l715_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 716,
+      "parts": []
+    },
+    {
+      "line": 717,
+      "parts": [
+        {
+          "start": 0,
+          "end": 27,
+          "kind": "narration",
+          "node": "s06_l717_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 718,
+      "parts": []
+    },
+    {
+      "line": 719,
+      "parts": [
+        {
+          "start": 0,
+          "end": 8,
+          "kind": "stage",
+          "node": "s06_l719_0",
+          "field": "annotation"
+        },
+        {
+          "start": 8,
+          "end": 78,
+          "kind": "dialogue",
+          "node": "s06_l719_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 720,
+      "parts": []
+    },
+    {
+      "line": 721,
+      "parts": [
+        {
+          "start": 0,
+          "end": 40,
+          "kind": "narration",
+          "node": "s06_l721_0",
+          "field": "text"
+        },
+        {
+          "start": 40,
+          "end": 139,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 722,
+      "parts": []
+    },
+    {
+      "line": 723,
+      "parts": [
+        {
+          "start": 0,
+          "end": 11,
+          "kind": "metadata"
+        }
+      ]
+    },
+    {
+      "line": 724,
+      "parts": [
+        {
+          "start": 0,
+          "end": 83,
+          "kind": "narration",
+          "node": "s06_l724_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 725,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l725_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 23,
+          "kind": "dialogue",
+          "node": "s06_l725_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 726,
+      "parts": [
+        {
+          "start": 0,
+          "end": 8,
+          "kind": "stage",
+          "node": "s06_l726_0",
+          "field": "annotation"
+        },
+        {
+          "start": 8,
+          "end": 23,
+          "kind": "dialogue",
+          "node": "s06_l726_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 727,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l727_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 14,
+          "kind": "dialogue",
+          "node": "s06_l727_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 728,
+      "parts": []
+    },
+    {
+      "line": 729,
+      "parts": [
+        {
+          "start": 0,
+          "end": 21,
+          "kind": "stage",
+          "node": "s06_l729_0",
+          "field": "annotation"
+        },
+        {
+          "start": 21,
+          "end": 189,
+          "kind": "dialogue",
+          "node": "s06_l729_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 730,
+      "parts": []
+    },
+    {
+      "line": 731,
+      "parts": [
+        {
+          "start": 0,
+          "end": 13,
+          "kind": "narration",
+          "node": "s06_l731_0",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 732,
+      "parts": []
+    },
+    {
+      "line": 733,
+      "parts": [
+        {
+          "start": 0,
+          "end": 6,
+          "kind": "stage",
+          "node": "s06_l733_0",
+          "field": "annotation"
+        },
+        {
+          "start": 6,
+          "end": 23,
+          "kind": "dialogue",
+          "node": "s06_l733_1",
+          "field": "text"
+        }
+      ]
+    },
+    {
+      "line": 734,
+      "parts": []
+    },
+    {
+      "line": 735,
+      "parts": [
+        {
+          "start": 0,
+          "end": 15,
+          "kind": "metadata"
+        },
+        {
+          "start": 15,
+          "end": 64,
+          "kind": "stage",
+          "node": "s06_l735_1",
+          "field": "annotation"
+        }
+      ]
+    },
+    {
+      "line": 736,
+      "parts": []
+    }
+  ]
+}

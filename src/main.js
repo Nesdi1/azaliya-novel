@@ -11,6 +11,9 @@ import scene01 from './data/story/scene01.js';
 import scene02 from './data/story/scene02.js';
 import scene03 from './data/story/scene03.js';
 import scene04 from './data/story/scene04.js';
+import scene05 from './data/story/scene05.js';
+import scene06 from './data/story/scene06.js';
+import scene07 from './data/story/scene07.js';
 
 async function bootstrap() {
   const bootWarning = document.getElementById('file-protocol-warning');
@@ -55,6 +58,9 @@ async function bootstrap() {
       scene02,
       scene03,
       scene04,
+      scene05,
+      scene06,
+      scene07,
     },
   });
 

@@ -137,7 +137,9 @@ export function createEngine({
       steps += 1;
       if (n.background) ids.add(n.background);
       if (Array.isArray(n.characters)) n.characters.forEach((c) => ids.add(c));
-      if (n.speaker) ids.add(n.speaker);
+      if (n.speaker && (!stage?.isCharacter || stage.isCharacter(n.speaker))) {
+        ids.add(n.speaker);
+      }
       stageCuesOf(n).forEach((c) => {
         if (c.effect === 'fade' && c.target) ids.add(c.target);
       });
@@ -237,6 +239,7 @@ export function createEngine({
         }
 
         if (node.type === 'goto') {
+          if (node.retryPrompt) break;
           markNodeRead(node.id);
           const target = node.target || node.next;
           if (!target) break;
@@ -283,14 +286,18 @@ export function createEngine({
           ui?.setSkipActive?.(false);
         }
 
+        const matchedVariant = Array.isArray(node.variants)
+          ? node.variants.find((v) => v && evaluateCondition(v.condition, state.variables))
+          : null;
+        const resolvedNode = matchedVariant ? { ...node, text: matchedVariant.text } : node;
         const uiNode = isCueNarration
           ? {
-              ...node,
+              ...resolvedNode,
               type: 'narration',
               speaker: null,
-              text: String(node.annotation || node.text || '').replace(/^\((.*)\)$/s, '$1'),
+              text: String(resolvedNode.annotation || resolvedNode.text || '').replace(/^\((.*)\)$/s, '$1'),
             }
-          : node;
+          : resolvedNode;
         ui?.show?.(uiNode, { isRead: true, stageNote: isCueNarration ? '' : pendingStageNote });
         isTransitioning = false;
 
@@ -384,9 +391,16 @@ export function createEngine({
 
           const successRoute = node.resultRoutes?.success || node.next;
           const failureRoute = node.resultRoutes?.failure || node.next;
+          const forceStoryWin = Boolean(node.params?.forceStoryWin);
           // Potions/quidditch failure without a distinct story failure branch offers UI retry/skip (04_STORY_SCHEMA L39)
-          if (!result?.ok && (!node.resultRoutes?.failure || failureRoute === successRoute)) {
-            pendingRetryNode = { sceneId, node };
+          if (!result?.ok && !forceStoryWin && (!node.resultRoutes?.failure || failureRoute === successRoute)) {
+            pendingRetryNode = {
+              sceneId,
+              node,
+              retryTarget: node.id,
+              skipTarget: successRoute,
+              gameId: node.gameId,
+            };
             ui?.showRetry?.({
               kind: node.gameId,
               message: 'Испытание не пройдено. Попробовать снова или пропустить испытание?',
@@ -398,7 +412,7 @@ export function createEngine({
           markNodeRead(node.id);
           persistIfAllowed();
 
-          const nextTarget = result?.ok ? successRoute : failureRoute;
+          const nextTarget = result?.ok || forceStoryWin ? successRoute : failureRoute;
           if (nextTarget) {
             await enterNode(sceneId, nextTarget);
           }
@@ -406,6 +420,27 @@ export function createEngine({
           ui?.setOverlayMode?.(false);
           if (err?.name === 'AbortError' || myInstanceId !== instanceCounter) return;
         }
+        return;
+      }
+
+      if (node.type === 'goto' && node.retryPrompt) {
+        skipMode = false;
+        ui?.setSkipActive?.(false);
+        markNodeRead(node.id);
+        persistIfAllowed();
+        isTransitioning = false;
+
+        pendingRetryNode = {
+          sceneId,
+          node,
+          retryTarget: node.target,
+          skipTarget: node.else || node.next,
+          gameId: node.retryKind || 'stealth',
+        };
+        ui?.showRetry?.({
+          kind: node.retryKind || 'stealth',
+          message: 'Испытание не пройдено. Попробовать снова или пропустить испытание?',
+        });
         return;
       }
 
@@ -453,12 +488,12 @@ export function createEngine({
     ui?.show?.({
       id: '__scene_boundary_text__',
       type: 'narration',
-      text: `Сцены 1–4 пройдены! Переход к «${missingSceneId}» будет подключён в следующей части этапа M2.`,
+      text: `Сцены 1–7 пройдены! Переход к «${missingSceneId}» будет подключён в следующей части этапа M2.`,
     });
     ui?.showChoices?.([
       {
-        id: '__restart_s04__',
-        text: 'Пройти Сцену 4 сначала (проверить другую ветку)',
+        id: '__restart_s07__',
+        text: 'Пройти Сцену 7 сначала',
       },
       {
         id: '__restart_s01__',
@@ -540,7 +575,9 @@ export function createEngine({
     suppressAutoSave = false;
 
     if (currentNode.id === '__scene_boundary__') {
-      if (optionId === '__restart_s04__' && getScene('scene04')) {
+      if (optionId === '__restart_s07__' && getScene('scene07')) {
+        await enterNode('scene07', getScene('scene07').start);
+      } else if (optionId === '__restart_s04__' && getScene('scene04')) {
         await enterNode('scene04', 's04_enter');
       } else if (optionId === '__restart_s01__') {
         await enterNode('scene01', 's01_enter');
@@ -613,16 +650,16 @@ export function createEngine({
     }),
     bus.on('ui:retry', async ({ action }) => {
       if (!pendingRetryNode) return;
-      const { sceneId: retrySceneId, node: retryNode } = pendingRetryNode;
+      const { sceneId: retrySceneId, node: retryNode, retryTarget, skipTarget } = pendingRetryNode;
       pendingRetryNode = null;
       if (action === 'retry') {
-        await enterNode(retrySceneId, retryNode.id);
+        await enterNode(retrySceneId, retryTarget || retryNode.id);
       } else if (action === 'skip') {
         const skipResult = { ok: true, score: 0, details: { reason: 'skipped' } };
         bus?.emit?.('game:result', { instanceId: instanceCounter, result: skipResult });
         markNodeRead(retryNode.id);
         persistIfAllowed();
-        const nextTarget = retryNode.resultRoutes?.success || retryNode.next;
+        const nextTarget = skipTarget || retryNode.resultRoutes?.success || retryNode.next;
         if (nextTarget) {
           await enterNode(retrySceneId, nextTarget);
         }

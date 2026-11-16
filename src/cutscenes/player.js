@@ -128,6 +128,82 @@ const CUTSCENE_DEFS = {
       characters: ['harry', 'ron', 'rose', 'azalia'],
     },
   },
+  cs05: {
+    id: 'cs05',
+    kind: 'Sequence',
+    durationMs: 4600,
+    caption: 'Успокоившись, Азалия читает у фонтана при свете луны, из окна замка на неё смотрит Дима, а затем она крепко засыпает в своей постели…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_fountain_night',
+        characters: ['dima', 'azalia'],
+        cues: [
+          { target: 'azalia', effect: 'focus' },
+          { effect: 'camera', to: 1.04, durationMs: 2200 },
+          { effect: 'glow', to: 0.22, durationMs: 1400 },
+        ],
+      },
+      {
+        atMs: 2400,
+        background: 'bg_hufflepuff_dorm',
+        characters: ['azalia'],
+        cues: [
+          { target: 'azalia', effect: 'focus' },
+          { target: 'azalia', effect: 'breathe', durationMs: 2800 },
+          { effect: 'glow', to: 0.16, durationMs: 1200 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_hufflepuff_dorm',
+      characters: ['azalia'],
+    },
+  },
+  cs06: {
+    id: 'cs06',
+    kind: 'Sequence',
+    durationMs: 3000,
+    caption: 'Роуз, смеясь, идёт вместе с Азалией по коридору в библиотеку…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_corridor',
+        characters: ['rose', 'azalia'],
+        cues: [
+          { effect: 'group', targets: ['rose', 'azalia'], durationMs: 600 },
+          { target: 'rose', effect: 'bounce', amplitude: 7, durationMs: 520 },
+          { target: 'azalia', effect: 'breathe', durationMs: 2800 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_corridor',
+      characters: ['rose', 'azalia'],
+    },
+  },
+  cs07: {
+    id: 'cs07',
+    kind: 'Sequence',
+    durationMs: 3000,
+    caption: 'Тео решительно шагает по коридору к выходу во двор, сжимая кулаки…',
+    steps: [
+      {
+        atMs: 0,
+        background: 'bg_corridor',
+        characters: ['theo'],
+        cues: [
+          { target: 'theo', effect: 'focus' },
+          { target: 'theo', effect: 'shake', amplitude: 3, durationMs: 450 },
+          { effect: 'camera', to: 1.03, durationMs: 1800 },
+        ],
+      },
+    ],
+    fallback: {
+      background: 'bg_corridor',
+      characters: ['theo'],
+    },
+  },
 };
 
 function buildTrainSceneDOM({ captionText, showSkip = true, reducedMotion = false }) {
