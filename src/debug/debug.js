@@ -1,4 +1,5 @@
 import { bus as defaultBus } from '../events.js';
+import { CUTSCENE_IDS, CUTSCENES } from '../data/cutscenes.js';
 
 /**
  * Debug overlay mounted only when URL has ?debug=1.
@@ -48,12 +49,23 @@ export function mount(engine, root, bus = defaultBus) {
   jumpBtn.className = 'ui-btn ui-btn-compact';
   jumpBtn.textContent = 'Перейти';
 
-  const demoBtn = document.createElement('button');
-  demoBtn.type = 'button';
-  demoBtn.className = 'ui-btn ui-btn-compact';
-  demoBtn.textContent = 'Демо мысли/выбор (DEBUG-STUB)';
+  const csSelect = document.createElement('select');
+  csSelect.className = 'debug-select';
+  csSelect.setAttribute('aria-label', 'Выбор кат-сцены');
+  for (const csId of CUTSCENE_IDS) {
+    const opt = document.createElement('option');
+    opt.value = csId;
+    const def = CUTSCENES[csId];
+    opt.textContent = def?.title ? `${csId} — ${def.title}` : csId;
+    csSelect.appendChild(opt);
+  }
 
-  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, demoBtn);
+  const csBtn = document.createElement('button');
+  csBtn.type = 'button';
+  csBtn.className = 'ui-btn ui-btn-compact';
+  csBtn.textContent = 'Кат-сцена ▸';
+
+  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn);
 
   // Variables editor (5 story variables with type validation)
   const varsBox = document.createElement('div');
@@ -139,6 +151,20 @@ export function mount(engine, root, bus = defaultBus) {
     });
     autoWinLabel.append(autoWinSpan, autoWinCheck);
     varsBox.appendChild(autoWinLabel);
+
+    // reducedMotion toggle for testing cutscene fallback mode
+    const rmLabel = document.createElement('label');
+    rmLabel.className = 'debug-var-item';
+    const rmSpan = document.createElement('span');
+    rmSpan.textContent = 'Без анимаций';
+    const rmCheck = document.createElement('input');
+    rmCheck.type = 'checkbox';
+    rmCheck.checked = Boolean(st.settings?.reducedMotion);
+    rmCheck.addEventListener('change', () => {
+      engine.setSettings?.({ reducedMotion: rmCheck.checked });
+    });
+    rmLabel.append(rmSpan, rmCheck);
+    varsBox.appendChild(rmLabel);
   }
 
   sceneSelect.addEventListener('change', () => populateNodes(sceneSelect.value));
@@ -148,10 +174,9 @@ export function mount(engine, root, bus = defaultBus) {
       nodeId: nodeSelect.value,
     });
   });
-  demoBtn.addEventListener('click', () => {
-    bus?.emit?.('debug:jump', {
-      sceneId: 'm1_demo',
-      nodeId: 'm1_demo_enter',
+  csBtn.addEventListener('click', () => {
+    bus?.emit?.('debug:cutscene', {
+      cutsceneId: csSelect.value,
     });
   });
 

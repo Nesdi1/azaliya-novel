@@ -367,7 +367,14 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_l637_0"
+      "next": "s06_cs06_duel_demo"
+    },
+    {
+      "id": "s06_cs06_duel_demo",
+      "type": "cutscene",
+      "cutsceneId": "cs06_duel_demo",
+      "next": "s06_l637_0",
+      "source": []
     },
     {
       "id": "s06_l637_0",
@@ -1241,7 +1248,14 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_l686_0"
+      "next": "s06_cs06_lake"
+    },
+    {
+      "id": "s06_cs06_lake",
+      "type": "cutscene",
+      "cutsceneId": "cs06_lake",
+      "next": "s06_l686_0",
+      "source": []
     },
     {
       "id": "s06_l686_0",

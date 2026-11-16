@@ -805,6 +805,15 @@ body {
   padding: 8px 16px;
 }
 
+.cutscene-stage-overlay {
+  transition: opacity 280ms ease;
+}
+
+.cutscene-stage-overlay.is-fading-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .is-reduced-motion .train-carriage,
 .is-reduced-motion .train-window-sky,
 .is-reduced-motion .train-window-hills-far,

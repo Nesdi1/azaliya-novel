@@ -29,10 +29,17 @@
       "action": "enter",
       "background": "bg_library",
       "characters": [
-        "azalia"
+        "azalia",
+        "theo"
       ],
       "source": [],
-      "next": "s07_goto_759"
+      "next": "s07_goto_759",
+      "cues": [
+        {
+          "target": "azalia",
+          "effect": "focus"
+        }
+      ]
     },
     {
       "id": "s07_goto_759",
@@ -224,7 +231,8 @@
           "effect": "focus"
         }
       ],
-      "next": "s07_if_rose_after_759"
+      "next": "s07_if_rose_after_759",
+      "stageNoteWhenNoRose": "В глубине библиотеки за стеллажом стоит Тео"
     },
     {
       "id": "s07_if_rose_after_759",
@@ -284,6 +292,13 @@
           "effect": "focus"
         },
         {
+          "target": "theo",
+          "effect": "tilt",
+          "amplitude": -2,
+          "durationMs": 500,
+          "delayMs": 250
+        },
+        {
           "effect": "camera",
           "to": 1.05,
           "durationMs": 900
@@ -294,7 +309,8 @@
           "durationMs": 900
         }
       ],
-      "next": "s07_l766_0"
+      "next": "s07_l766_0",
+      "stageNoteWhenNoRose": "Тео за стеллажом слышит перевод слова «Stupend»"
     },
     {
       "id": "s07_l766_0",
@@ -328,7 +344,7 @@
         },
         "right": false
       },
-      "then": "s07_end",
+      "then": "s07_l782_0",
       "source": [],
       "else": "s07_l768_0",
       "next": null
@@ -509,7 +525,23 @@
           "durationMs": 450
         }
       ],
-      "next": "s07_l784_0"
+      "next": "s07_if_rose_after_782",
+      "stageNoteWhenNoRose": "Тео (услышав перевод за стеллажом в библиотеке)"
+    },
+    {
+      "id": "s07_if_rose_after_782",
+      "type": "if",
+      "condition": {
+        "op": "eq",
+        "left": {
+          "var": "roseFriend"
+        },
+        "right": false
+      },
+      "then": "s07_l788_0",
+      "next": null,
+      "source": [],
+      "else": "s07_l784_0"
     },
     {
       "id": "s07_l784_0",
@@ -557,7 +589,34 @@
       "speaker": "theo",
       "text": "",
       "source": [],
-      "next": "s07_l790_0"
+      "next": "s07_if_rose_after_788",
+      "stageNoteWhenNoRose": "услышав всё за стеллажом"
+    },
+    {
+      "id": "s07_if_rose_after_788",
+      "type": "if",
+      "condition": {
+        "op": "eq",
+        "left": {
+          "var": "roseFriend"
+        },
+        "right": false
+      },
+      "then": "s07_enter_corridor_no_rose",
+      "next": null,
+      "source": [],
+      "else": "s07_l790_0"
+    },
+    {
+      "id": "s07_enter_corridor_no_rose",
+      "type": "scene",
+      "action": "enter",
+      "background": "bg_corridor",
+      "characters": [
+        "theo"
+      ],
+      "next": "s07_l794_0",
+      "source": []
     },
     {
       "id": "s07_l790_0",

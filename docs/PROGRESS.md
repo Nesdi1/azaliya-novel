@@ -80,6 +80,15 @@ M3–M10: по07. iPhone/iPad, FPS и офлайн пока не проверя�
   - Подключены все 10 сцен (`scene01..scene10`) в `src/main.js` и список переходов `?debug=1`.
   - Запущена полная проверка `tools/verify_story.py` по всем 10 сценам сразу (`D1–980`): `{"scenes": ["scene01", "scene02", "scene03", "scene04", "scene05", "scene06", "scene07", "scene08", "scene09", "scene10"], "scope": [1, 980], "lines": 980, "approvedVariants": 2, "errors": [], "completeStory": true}`.
 - **Что осталось:**
-  - Следующий этап — **M3** по `docs/07_MILESTONES.md`.
+  - Следующий этап — **M4** по `docs/07_MILESTONES.md`.
+
+## Этап M3 — Кат-сцены и анимации (выполнено 16.11.2026)
+- **Что сделано:**
+  - Внесено сценарное уточнение владельца для Сцены 7 (`tools/story_maps/scene07.json` -> `src/data/story/scene07.js`): при `roseFriend=false` в библиотеке (`bg_library`) на заднем плане стоит спрайт Тео (`theo`), который невольно слышит перевод слова `Stupend` за стеллажом (`D759–766`), после чего следует его собственная реакция (`D782`), реплика «Хорошо. Пойду с ним поговорю» (`D788`) и выход во двор (`D794` + `cs07`). Полная проверка `tools/verify_story.py` по всем 10 сценам (`D1–980`) подтверждает `"errors": []` и `"completeStory": true`.
+  - Создан декларативный реестр `src/data/cutscenes.js` со всеми 12 кат-сценами по `docs/05_CUTSCENES.md` (`cs01`–`cs10`, `cs06_duel_demo` / `cs11`, `cs06_lake` / `cs12`): слои `layers` в координатах `896×1200` (`z: background 0..9, figures 10..19, split 20, overlay 30, particles 40, UI 100`), таймлайны `timeline` (`breathe`, `sway`, `trainShake`, `panZoom`, `crossfade`, `translateX/Y`, `bounce`, `shake`, `focus`, `camera`, `glow`, `windowGlint`, `particles`) и финальные состояния `fallback`.
+  - Обновлён проигрыватель `src/cutscenes/player.js`: реализованы `requestAnimationFrame`-движок таймлайнов, детерминированный Canvas-генератор частиц (`stars: 24`, `fireflies: 30`, `sparks: 50`, `zzz: 3`, `ripples`, всего `<= 150`), разделение экрана `split` (`448×1200` × 2 с золотым швом `2px` для `cs08`), маска окна `clipRect` (`cs05`), живая сцена поезда (`cs01` и переходы между сценами), кнопка «Пропустить ▸» (`>= 44×44px`, гарантированно резолвит ровно один раз), поддержка `AbortSignal` и режима `reducedMotion` (`fallback` на `1500ms`).
+  - В `src/debug/debug.js` и `src/engine/storyEngine.js` добавлен селектор запуска любой из 12 кат-сцен (`Кат-сцена ▸`) и переключатель `Без анимаций` (`reducedMotion`).
+- **Что осталось:**
+  - Этапы M4–M10 по `docs/07_MILESTONES.md` (следующий этап — **M4**: мини-игра `src/minigames/parchment.js` и `src/minigames/registry.js`).
 
 

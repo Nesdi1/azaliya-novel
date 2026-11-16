@@ -302,7 +302,11 @@ export function createEngine({
               text: String(resolvedNode.annotation || resolvedNode.text || '').replace(/^\((.*)\)$/s, '$1'),
             }
           : resolvedNode;
-        ui?.show?.(uiNode, { isRead: true, stageNote: isCueNarration ? '' : pendingStageNote });
+        const customStageNote =
+          resolvedNode.stageNoteWhenNoRose && state.variables?.roseFriend === false
+            ? resolvedNode.stageNoteWhenNoRose
+            : resolvedNode.stageNote || pendingStageNote;
+        ui?.show?.(uiNode, { isRead: true, stageNote: isCueNarration ? '' : customStageNote });
         isTransitioning = false;
 
         if (skipMode && wasAlreadyRead && node.next) {
@@ -690,6 +694,25 @@ export function createEngine({
     }),
     bus.on('debug:jump', ({ sceneId, nodeId }) => {
       jump(sceneId, nodeId, { preserveProductionSave: true });
+    }),
+    bus.on('debug:cutscene', async ({ cutsceneId }) => {
+      if (!cutsceneId) return;
+      abortActiveAsync();
+      isTransitioning = false;
+      skipMode = false;
+      ui?.setSkipActive?.(false);
+      ui?.setOverlayMode?.(true);
+      activeAbortController = new AbortController();
+      try {
+        await cutscenes?.play?.(stage?.getOverlayRoot?.(), cutsceneId, {
+          signal: activeAbortController.signal,
+          reducedMotion: Boolean(state.settings?.reducedMotion),
+        });
+      } catch (err) {
+        // Ignore abort errors on debug cutscene preview
+      } finally {
+        ui?.setOverlayMode?.(false);
+      }
     })
   );
 

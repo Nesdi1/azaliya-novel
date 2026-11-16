@@ -238,8 +238,13 @@ export function createDialogue(root, bus = defaultBus, { hudRoot = null } = {}) 
     root.dataset.speaker = speaker || '';
 
     if (type === 'narration' || !speaker) {
-      speakerBadgeEl.hidden = true;
-      speakerBadgeEl.textContent = '';
+      if (stageNote) {
+        speakerBadgeEl.hidden = false;
+        speakerBadgeEl.textContent = stageNote;
+      } else {
+        speakerBadgeEl.hidden = true;
+        speakerBadgeEl.textContent = '';
+      }
       textEl.classList.add('is-narration');
     } else {
       speakerBadgeEl.hidden = false;
