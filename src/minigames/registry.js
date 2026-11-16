@@ -2,93 +2,33 @@ import * as parchmentGame from './parchment.js';
 import * as quidditchGame from './quidditch.js';
 import * as stealthGame from './stealth.js';
 import * as duelGame from './duel.js';
+import * as potionsGame from './potions.js';
 
 /**
  * Minigame registry matching M4–M8 contract (docs/03_ARCHITECTURE.md + docs/06_MINIGAMES.md):
  * load(id) -> Promise<{ run(container, params) -> Promise<{ ok, score, details }> }>
  *
- * M4–M7 implemented: 'parchment', 'quidditch', 'stealth', 'duel'.
- * Remaining minigame ('potions') uses DEBUG-STUB until M8.
+ * All 5 minigames are implemented:
+ * - parchment (M4)
+ * - quidditch (M5)
+ * - stealth   (M6)
+ * - duel      (M7)
+ * - potions   (M8)
  */
-const IMPLEMENTED_GAMES = Object.freeze({
+const GAMES = Object.freeze({
   parchment: parchmentGame,
   quidditch: quidditchGame,
   stealth: stealthGame,
   duel: duelGame,
+  potions: potionsGame,
 });
 
 export async function load(gameId) {
-  if (gameId && IMPLEMENTED_GAMES[gameId]) {
-    return IMPLEMENTED_GAMES[gameId];
+  const mod = gameId ? GAMES[gameId] : null;
+  if (!mod) {
+    throw new Error(`Unknown minigame ID: ${String(gameId)}`);
   }
-
-  return {
-    async run(container, params = {}) {
-      const { signal, debugAutoWin } = params;
-      if (signal?.aborted) {
-        throw new DOMException('Minigame aborted', 'AbortError');
-      }
-      if (debugAutoWin) {
-        return {
-          ok: true,
-          score: 100,
-          details: { gameId, stub: 'DEBUG-STUB', autoWin: true },
-        };
-      }
-      if (!container) {
-        return {
-          ok: true,
-          score: 100,
-          details: { gameId, stub: 'DEBUG-STUB' },
-        };
-      }
-
-      return new Promise((resolve, reject) => {
-        const box = document.createElement('div');
-        box.className = 'minigame-stub-overlay';
-
-        const title = document.createElement('div');
-        title.className = 'minigame-stub-title';
-        title.textContent = `Мини-игра «${gameId}» (DEBUG-STUB до этапов M5–M8)`;
-
-        const winBtn = document.createElement('button');
-        winBtn.type = 'button';
-        winBtn.className = 'ui-btn';
-        winBtn.textContent = 'Завершить успешно (DEBUG-STUB)';
-
-        const failBtn = document.createElement('button');
-        failBtn.type = 'button';
-        failBtn.className = 'ui-btn';
-        failBtn.textContent = 'Завершить неудачей (DEBUG-STUB)';
-
-        box.append(title, winBtn, failBtn);
-        container.innerHTML = '';
-        container.appendChild(box);
-
-        const cleanup = () => {
-          signal?.removeEventListener?.('abort', onAbort);
-          if (box.parentNode === container) container.removeChild(box);
-        };
-
-        const onAbort = () => {
-          cleanup();
-          reject(new DOMException('Minigame aborted', 'AbortError'));
-        };
-
-        winBtn.addEventListener('click', () => {
-          cleanup();
-          resolve({ ok: true, score: 100, details: { gameId, stub: 'DEBUG-STUB' } });
-        });
-
-        failBtn.addEventListener('click', () => {
-          cleanup();
-          resolve({ ok: false, score: 0, details: { gameId, stub: 'DEBUG-STUB' } });
-        });
-
-        signal?.addEventListener?.('abort', onAbort, { once: true });
-      });
-    },
-  };
+  return mod;
 }
 
 export function createMinigameRegistry() {

@@ -85,7 +85,23 @@ export function mount(engine, root, bus = defaultBus) {
   duelBtn.className = 'ui-btn ui-btn-compact';
   duelBtn.textContent = 'Дуэль (M7) ▸';
 
-  jumpRow.append(sceneSelect, nodeSelect, jumpBtn, csSelect, csBtn, parchmentBtn, quidditchBtn, stealthBtn, duelBtn);
+  const potionsBtn = document.createElement('button');
+  potionsBtn.type = 'button';
+  potionsBtn.className = 'ui-btn ui-btn-compact';
+  potionsBtn.textContent = 'Зельеварение (M8) ▸';
+
+  jumpRow.append(
+    sceneSelect,
+    nodeSelect,
+    jumpBtn,
+    csSelect,
+    csBtn,
+    parchmentBtn,
+    quidditchBtn,
+    stealthBtn,
+    duelBtn,
+    potionsBtn
+  );
 
   // Variables editor (5 story variables with type validation)
   const varsBox = document.createElement('div');
@@ -221,6 +237,12 @@ export function mount(engine, root, bus = defaultBus) {
     bus?.emit?.('debug:jump', {
       sceneId: 'scene04',
       nodeId: 's04_game_duel',
+    });
+  });
+  potionsBtn.addEventListener('click', () => {
+    bus?.emit?.('debug:jump', {
+      sceneId: 'scene03',
+      nodeId: 's03_game_potions',
     });
   });
 
