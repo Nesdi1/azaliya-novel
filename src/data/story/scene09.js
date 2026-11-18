@@ -21,7 +21,8 @@ export default {
       "then": "s09_end",
       "source": [],
       "else": "s09_enter",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s09_enter",
@@ -33,7 +34,8 @@ export default {
         "rose"
       ],
       "source": [],
-      "next": "s09_l873_0"
+      "next": "s09_l873_0",
+      "emotions": {}
     },
     {
       "id": "s09_l873_0",
@@ -59,7 +61,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s09_l875_0"
+      "next": "s09_l875_0",
+      "emotions": {}
     },
     {
       "id": "s09_l875_0",
@@ -74,7 +77,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s09_l875_1"
+      "next": "s09_l875_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s09_l875_1",
@@ -89,7 +95,10 @@ export default {
           "end": 123
         }
       ],
-      "next": "s09_l877_0"
+      "next": "s09_l877_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s09_l877_0",
@@ -104,7 +113,11 @@ export default {
           "end": 17
         }
       ],
-      "next": "s09_l877_1"
+      "next": "s09_l877_1",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "guilty"
+      }
     },
     {
       "id": "s09_l877_1",
@@ -127,7 +140,11 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s09_l879_0"
+      "next": "s09_l879_0",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "guilty"
+      }
     },
     {
       "id": "s09_l879_0",
@@ -142,7 +159,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s09_l879_1"
+      "next": "s09_l879_1",
+      "emotions": {
+        "rose": "guilty"
+      }
     },
     {
       "id": "s09_l879_1",
@@ -157,7 +177,10 @@ export default {
           "end": 112
         }
       ],
-      "next": "s09_l881_0"
+      "next": "s09_l881_0",
+      "emotions": {
+        "rose": "guilty"
+      }
     },
     {
       "id": "s09_l881_0",
@@ -172,7 +195,10 @@ export default {
           "end": 26
         }
       ],
-      "next": "s09_l881_1"
+      "next": "s09_l881_1",
+      "emotions": {
+        "rose": "guilty"
+      }
     },
     {
       "id": "s09_l881_1",
@@ -187,7 +213,10 @@ export default {
           "end": 50
         }
       ],
-      "next": "choice09_01"
+      "next": "choice09_01",
+      "emotions": {
+        "rose": "guilty"
+      }
     },
     {
       "id": "choice09_01",
@@ -252,7 +281,8 @@ export default {
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s09_l886_1",
@@ -266,7 +296,8 @@ export default {
           "end": 83
         }
       ],
-      "next": "s09_l891_0"
+      "next": "s09_l891_0",
+      "emotions": {}
     },
     {
       "id": "s09_l887_1",
@@ -288,7 +319,10 @@ export default {
           "end": 30
         }
       ],
-      "next": "s09_l888_0"
+      "next": "s09_l888_0",
+      "emotions": {
+        "rose": "blush"
+      }
     },
     {
       "id": "s09_l888_0",
@@ -303,7 +337,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s09_l888_1"
+      "next": "s09_l888_1",
+      "emotions": {
+        "rose": "blush"
+      }
     },
     {
       "id": "s09_l888_1",
@@ -318,7 +355,10 @@ export default {
           "end": 47
         }
       ],
-      "next": "s09_l889_0"
+      "next": "s09_l889_0",
+      "emotions": {
+        "rose": "blush"
+      }
     },
     {
       "id": "s09_l889_0",
@@ -332,7 +372,8 @@ export default {
           "end": 65
         }
       ],
-      "next": "s09_l891_0"
+      "next": "s09_l891_0",
+      "emotions": {}
     },
     {
       "id": "s09_l891_0",
@@ -347,7 +388,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s09_l891_1"
+      "next": "s09_l891_1",
+      "emotions": {}
     },
     {
       "id": "s09_l891_1",
@@ -362,7 +404,8 @@ export default {
           "end": 46
         }
       ],
-      "next": "s09_l891_2"
+      "next": "s09_l891_2",
+      "emotions": {}
     },
     {
       "id": "s09_l891_2",
@@ -378,7 +421,8 @@ export default {
           "end": 56
         }
       ],
-      "next": "s09_l891_3"
+      "next": "s09_l891_3",
+      "emotions": {}
     },
     {
       "id": "s09_l891_3",
@@ -393,7 +437,11 @@ export default {
           "end": 78
         }
       ],
-      "next": "s09_l893_0"
+      "next": "s09_l893_0",
+      "emotions": {
+        "rose": "tease",
+        "azalia": "shy"
+      }
     },
     {
       "id": "s09_l893_0",
@@ -415,7 +463,8 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s09_l895_0"
+      "next": "s09_l895_0",
+      "emotions": {}
     },
     {
       "id": "s09_l895_0",
@@ -430,7 +479,10 @@ export default {
           "end": 14
         }
       ],
-      "next": "s09_l895_1"
+      "next": "s09_l895_1",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s09_l895_1",
@@ -445,7 +497,10 @@ export default {
           "end": 55
         }
       ],
-      "next": "s09_l897_0"
+      "next": "s09_l897_0",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s09_l897_0",
@@ -460,7 +515,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s09_l897_1"
+      "next": "s09_l897_1",
+      "emotions": {}
     },
     {
       "id": "s09_l897_1",
@@ -475,7 +531,8 @@ export default {
           "end": 91
         }
       ],
-      "next": "s09_l899_0"
+      "next": "s09_l899_0",
+      "emotions": {}
     },
     {
       "id": "s09_l899_0",
@@ -489,7 +546,8 @@ export default {
           "end": 29
         }
       ],
-      "next": "s09_enter_corridor"
+      "next": "s09_enter_corridor",
+      "emotions": {}
     },
     {
       "id": "s09_enter_corridor",
@@ -501,7 +559,8 @@ export default {
         "dima"
       ],
       "source": [],
-      "next": "s09_l901_0"
+      "next": "s09_l901_0",
+      "emotions": {}
     },
     {
       "id": "s09_l901_0",
@@ -516,7 +575,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s09_l901_1"
+      "next": "s09_l901_1",
+      "emotions": {}
     },
     {
       "id": "s09_l901_1",
@@ -531,7 +591,8 @@ export default {
           "end": 152
         }
       ],
-      "next": "s09_l903_0"
+      "next": "s09_l903_0",
+      "emotions": {}
     },
     {
       "id": "s09_l903_0",
@@ -546,7 +607,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s09_l903_1"
+      "next": "s09_l903_1",
+      "emotions": {}
     },
     {
       "id": "s09_l903_1",
@@ -561,7 +623,8 @@ export default {
           "end": 15
         }
       ],
-      "next": "s09_l905_0"
+      "next": "s09_l905_0",
+      "emotions": {}
     },
     {
       "id": "s09_l905_0",
@@ -597,7 +660,8 @@ export default {
           "delayMs": 220
         }
       ],
-      "next": "s09_l907_0"
+      "next": "s09_l907_0",
+      "emotions": {}
     },
     {
       "id": "s09_l907_0",
@@ -612,7 +676,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s09_l907_1"
+      "next": "s09_l907_1",
+      "emotions": {
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s09_l907_1",
@@ -627,7 +694,10 @@ export default {
           "end": 75
         }
       ],
-      "next": "s09_l909_0"
+      "next": "s09_l909_0",
+      "emotions": {
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s09_l909_0",
@@ -653,7 +723,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s09_l911_0"
+      "next": "s09_l911_0",
+      "emotions": {}
     },
     {
       "id": "s09_l911_0",
@@ -668,7 +739,10 @@ export default {
           "end": 11
         }
       ],
-      "next": "s09_l911_1"
+      "next": "s09_l911_1",
+      "emotions": {
+        "theo": "accept"
+      }
     },
     {
       "id": "s09_l911_1",
@@ -683,7 +757,10 @@ export default {
           "end": 46
         }
       ],
-      "next": "s09_l913_0"
+      "next": "s09_l913_0",
+      "emotions": {
+        "theo": "accept"
+      }
     },
     {
       "id": "s09_l913_0",
@@ -698,7 +775,10 @@ export default {
           "end": 5
         }
       ],
-      "next": "s09_l913_1"
+      "next": "s09_l913_1",
+      "emotions": {
+        "theo": "accept"
+      }
     },
     {
       "id": "s09_l913_1",
@@ -713,7 +793,10 @@ export default {
           "end": 13
         }
       ],
-      "next": "s09_enter_common"
+      "next": "s09_enter_common",
+      "emotions": {
+        "theo": "accept"
+      }
     },
     {
       "id": "s09_enter_common",
@@ -725,7 +808,8 @@ export default {
         "theo"
       ],
       "source": [],
-      "next": "s09_l915_0"
+      "next": "s09_l915_0",
+      "emotions": {}
     },
     {
       "id": "s09_l915_0",
@@ -739,7 +823,8 @@ export default {
           "end": 54
         }
       ],
-      "next": "s09_l917_0"
+      "next": "s09_l917_0",
+      "emotions": {}
     },
     {
       "id": "s09_l917_0",
@@ -754,7 +839,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s09_l917_1"
+      "next": "s09_l917_1",
+      "emotions": {
+        "azalia": "sad"
+      }
     },
     {
       "id": "s09_l917_1",
@@ -769,7 +857,10 @@ export default {
           "end": 281
         }
       ],
-      "next": "s09_l919_0"
+      "next": "s09_l919_0",
+      "emotions": {
+        "azalia": "sad"
+      }
     },
     {
       "id": "s09_l919_0",
@@ -817,7 +908,9 @@ export default {
           "durationMs": 900
         }
       ],
-      "next": "s09_l921_0"
+      "next": "s09_l921_0",
+      "emotions": {},
+      "pose": "pose_theo_hug"
     },
     {
       "id": "s09_l921_0",
@@ -832,7 +925,9 @@ export default {
           "end": 5
         }
       ],
-      "next": "s09_l921_1"
+      "next": "s09_l921_1",
+      "emotions": {},
+      "pose": "pose_theo_hug"
     },
     {
       "id": "s09_l921_1",
@@ -847,7 +942,9 @@ export default {
           "end": 64
         }
       ],
-      "next": "s09_l923_0"
+      "next": "s09_l923_0",
+      "emotions": {},
+      "pose": "pose_theo_hug"
     },
     {
       "id": "s09_l923_0",
@@ -883,7 +980,8 @@ export default {
           "durationMs": 700
         }
       ],
-      "next": "s09_l923_1"
+      "next": "s09_l923_1",
+      "emotions": {}
     },
     {
       "id": "s09_l923_1",
@@ -898,7 +996,8 @@ export default {
           "end": 55
         }
       ],
-      "next": "s09_l925_0"
+      "next": "s09_l925_0",
+      "emotions": {}
     },
     {
       "id": "s09_l925_0",
@@ -920,7 +1019,11 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s09_l927_0"
+      "next": "s09_l927_0",
+      "emotions": {
+        "azalia": "smile",
+        "theo": "touched"
+      }
     },
     {
       "id": "s09_l927_0",
@@ -935,7 +1038,11 @@ export default {
           "end": 5
         }
       ],
-      "next": "s09_l927_1"
+      "next": "s09_l927_1",
+      "emotions": {
+        "azalia": "smile",
+        "theo": "touched"
+      }
     },
     {
       "id": "s09_l927_1",
@@ -950,7 +1057,11 @@ export default {
           "end": 61
         }
       ],
-      "next": "s09_l929_0"
+      "next": "s09_l929_0",
+      "emotions": {
+        "azalia": "smile",
+        "theo": "touched"
+      }
     },
     {
       "id": "s09_l929_0",
@@ -965,7 +1076,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s09_l929_1"
+      "next": "s09_l929_1",
+      "emotions": {}
     },
     {
       "id": "s09_l929_1",
@@ -980,7 +1092,8 @@ export default {
           "end": 67
         }
       ],
-      "next": "s09_l931_0"
+      "next": "s09_l931_0",
+      "emotions": {}
     },
     {
       "id": "s09_l931_0",
@@ -995,7 +1108,11 @@ export default {
           "end": 41
         }
       ],
-      "next": "s09_l931_1"
+      "next": "s09_l931_1",
+      "emotions": {
+        "azalia": "smile",
+        "theo": "laugh"
+      }
     },
     {
       "id": "s09_l931_1",
@@ -1018,7 +1135,11 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s09_l933_0"
+      "next": "s09_l933_0",
+      "emotions": {
+        "azalia": "smile",
+        "theo": "laugh"
+      }
     },
     {
       "id": "s09_l933_0",
@@ -1044,7 +1165,8 @@ export default {
           "durationMs": 600
         }
       ],
-      "next": "s09_l935_0"
+      "next": "s09_l935_0",
+      "emotions": {}
     },
     {
       "id": "s09_l935_0",
@@ -1060,21 +1182,24 @@ export default {
           "end": 160
         }
       ],
-      "next": "s09_cs09"
+      "next": "s09_cs09",
+      "emotions": {}
     },
     {
       "id": "s09_cs09",
       "type": "cutscene",
-      "cutsceneId": "cs09",
+      "cutsceneId": "cs09_company_dima",
       "source": [],
-      "next": "s09_end"
+      "next": "s09_end",
+      "emotions": {}
     },
     {
       "id": "s09_end",
       "type": "end",
       "nextScene": "scene10",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

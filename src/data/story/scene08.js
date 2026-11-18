@@ -18,7 +18,8 @@ export default {
         "theo"
       ],
       "source": [],
-      "next": "s08_l802_0"
+      "next": "s08_l802_0",
+      "emotions": {}
     },
     {
       "id": "s08_l802_0",
@@ -43,7 +44,8 @@ export default {
           "durationMs": 2800
         }
       ],
-      "next": "s08_l804_0"
+      "next": "s08_l804_0",
+      "emotions": {}
     },
     {
       "id": "s08_l804_0",
@@ -58,7 +60,10 @@ export default {
           "end": 11
         }
       ],
-      "next": "s08_l804_1"
+      "next": "s08_l804_1",
+      "emotions": {
+        "theo": "restrained"
+      }
     },
     {
       "id": "s08_l804_1",
@@ -73,7 +78,10 @@ export default {
           "end": 164
         }
       ],
-      "next": "s08_l806_0"
+      "next": "s08_l806_0",
+      "emotions": {
+        "theo": "restrained"
+      }
     },
     {
       "id": "s08_l806_0",
@@ -88,7 +96,10 @@ export default {
           "end": 17
         }
       ],
-      "next": "s08_l806_1"
+      "next": "s08_l806_1",
+      "emotions": {
+        "theo": "restrained"
+      }
     },
     {
       "id": "s08_l806_1",
@@ -103,7 +114,10 @@ export default {
           "end": 39
         }
       ],
-      "next": "s08_l808_0"
+      "next": "s08_l808_0",
+      "emotions": {
+        "theo": "restrained"
+      }
     },
     {
       "id": "s08_l808_0",
@@ -129,7 +143,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s08_l810_0"
+      "next": "s08_l810_0",
+      "emotions": {}
     },
     {
       "id": "s08_l810_0",
@@ -144,22 +159,46 @@ export default {
           "end": 6
         }
       ],
-      "next": "s08_l810_1"
+      "next": "s08_l810_1",
+      "emotions": {
+        "dima": "surprise"
+      }
     },
     {
       "id": "s08_l810_1",
       "type": "dialogue",
       "speaker": "dima",
-      "text": "«Так. Я, конечно, ожидал увидеть здесь другого Блэка. Ну ладно. Давай начнём сначала. Меня зовут Дмитрий Де Нестер. Обо мне можешь не волноваться: я нормальный, никаких плохих мыслей по поводу твоей сестры у меня нет. Но что касается дружбы... нет. Я хочу быть для неё больше».",
+      "text": "«Так. Я, конечно, ожидал увидеть здесь другого Блэка. Ну ладно. Давай начнём сначала. Меня зовут Дмитрий Де Нестер. ",
       "source": [
         {
           "file": "dialogues",
           "line": 810,
           "start": 6,
+          "end": 122
+        }
+      ],
+      "next": "s08_l810_2",
+      "emotions": {
+        "dima": "surprise"
+      }
+    },
+    {
+      "id": "s08_l810_2",
+      "type": "dialogue",
+      "speaker": "dima",
+      "text": "Обо мне можешь не волноваться: я нормальный, никаких плохих мыслей по поводу твоей сестры у меня нет. Но что касается дружбы... нет. Я хочу быть для неё больше».",
+      "source": [
+        {
+          "file": "dialogues",
+          "line": 810,
+          "start": 122,
           "end": 283
         }
       ],
-      "next": "s08_l812_0"
+      "next": "s08_l812_0",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s08_l812_0",
@@ -185,7 +224,11 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s08_l814_0"
+      "next": "s08_l814_0",
+      "emotions": {
+        "dima": "serious",
+        "theo": "angry"
+      }
     },
     {
       "id": "s08_l814_0",
@@ -200,7 +243,10 @@ export default {
           "end": 42
         }
       ],
-      "next": "s08_l814_1"
+      "next": "s08_l814_1",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s08_l814_1",
@@ -215,7 +261,10 @@ export default {
           "end": 366
         }
       ],
-      "next": "s08_l816_0"
+      "next": "s08_l816_0",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s08_l816_0",
@@ -241,7 +290,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s08_l818_0"
+      "next": "s08_l818_0",
+      "emotions": {
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s08_l818_0",
@@ -256,7 +308,11 @@ export default {
           "end": 20
         }
       ],
-      "next": "s08_l818_1"
+      "next": "s08_l818_1",
+      "emotions": {
+        "dima": "serious",
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s08_l818_1",
@@ -271,7 +327,11 @@ export default {
           "end": 48
         }
       ],
-      "next": "s08_l820_0"
+      "next": "s08_l820_0",
+      "emotions": {
+        "dima": "serious",
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s08_l820_0",
@@ -286,7 +346,10 @@ export default {
           "end": 21
         }
       ],
-      "next": "s08_l820_1"
+      "next": "s08_l820_1",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s08_l820_1",
@@ -301,7 +364,10 @@ export default {
           "end": 26
         }
       ],
-      "next": "s08_l822_0"
+      "next": "s08_l822_0",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s08_l822_0",
@@ -328,7 +394,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s08_l824_0"
+      "next": "s08_l824_0",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s08_l824_0",
@@ -343,7 +412,11 @@ export default {
           "end": 33
         }
       ],
-      "next": "s08_l824_1"
+      "next": "s08_l824_1",
+      "emotions": {
+        "dima": "relief",
+        "theo": "accept"
+      }
     },
     {
       "id": "s08_l824_1",
@@ -358,7 +431,11 @@ export default {
           "end": 97
         }
       ],
-      "next": "s08_l824_2"
+      "next": "s08_l824_2",
+      "emotions": {
+        "dima": "relief",
+        "theo": "accept"
+      }
     },
     {
       "id": "s08_l824_2",
@@ -374,7 +451,8 @@ export default {
           "end": 107
         }
       ],
-      "next": "s08_l824_3"
+      "next": "s08_l824_3",
+      "emotions": {}
     },
     {
       "id": "s08_l824_3",
@@ -402,7 +480,8 @@ export default {
           "end": 214
         }
       ],
-      "next": "s08_if_rose_826"
+      "next": "s08_if_rose_826",
+      "emotions": {}
     },
     {
       "id": "s08_if_rose_826",
@@ -417,7 +496,8 @@ export default {
       "then": "s08_l828_0",
       "source": [],
       "else": "s08_l826_0",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s08_l826_0",
@@ -432,7 +512,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s08_l826_1"
+      "next": "s08_l826_1",
+      "emotions": {}
     },
     {
       "id": "s08_l826_1",
@@ -447,7 +528,8 @@ export default {
           "end": 94
         }
       ],
-      "next": "s08_l828_0"
+      "next": "s08_l828_0",
+      "emotions": {}
     },
     {
       "id": "s08_l828_0",
@@ -470,7 +552,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s08_enter_fountain_night"
+      "next": "s08_enter_fountain_night",
+      "emotions": {}
     },
     {
       "id": "s08_enter_fountain_night",
@@ -482,7 +565,8 @@ export default {
         "dima"
       ],
       "source": [],
-      "next": "s08_l830_0"
+      "next": "s08_l830_0",
+      "emotions": {}
     },
     {
       "id": "s08_l830_0",
@@ -508,7 +592,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s08_if_rose_832"
+      "next": "s08_if_rose_832",
+      "emotions": {
+        "dima": "worried"
+      }
     },
     {
       "id": "s08_if_rose_832",
@@ -523,7 +610,8 @@ export default {
       "then": "s08_l842_0",
       "source": [],
       "else": "s08_l832_0",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s08_l832_0",
@@ -538,7 +626,11 @@ export default {
           "end": 6
         }
       ],
-      "next": "s08_l832_1"
+      "next": "s08_l832_1",
+      "emotions": {
+        "azalia": "sad",
+        "dima": "worried"
+      }
     },
     {
       "id": "s08_l832_1",
@@ -553,7 +645,11 @@ export default {
           "end": 45
         }
       ],
-      "next": "s08_l834_0"
+      "next": "s08_l834_0",
+      "emotions": {
+        "azalia": "sad",
+        "dima": "worried"
+      }
     },
     {
       "id": "s08_l834_0",
@@ -568,7 +664,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s08_l834_1"
+      "next": "s08_l834_1",
+      "emotions": {
+        "azalia": "sad"
+      }
     },
     {
       "id": "s08_l834_1",
@@ -583,7 +682,10 @@ export default {
           "end": 140
         }
       ],
-      "next": "s08_l836_0"
+      "next": "s08_l836_0",
+      "emotions": {
+        "azalia": "sad"
+      }
     },
     {
       "id": "s08_l836_0",
@@ -626,7 +728,9 @@ export default {
           "durationMs": 800
         }
       ],
-      "next": "s08_l838_0"
+      "next": "s08_l838_0",
+      "emotions": {},
+      "pose": "pose_bench_hug"
     },
     {
       "id": "s08_l838_0",
@@ -641,7 +745,9 @@ export default {
           "end": 6
         }
       ],
-      "next": "s08_l838_1"
+      "next": "s08_l838_1",
+      "emotions": {},
+      "pose": "pose_bench_hug"
     },
     {
       "id": "s08_l838_1",
@@ -656,7 +762,9 @@ export default {
           "end": 150
         }
       ],
-      "next": "s08_l840_0"
+      "next": "s08_l840_0",
+      "emotions": {},
+      "pose": "pose_bench_hug"
     },
     {
       "id": "s08_l840_0",
@@ -670,7 +778,9 @@ export default {
           "end": 89
         }
       ],
-      "next": "s08_l842_0"
+      "next": "s08_l842_0",
+      "emotions": {},
+      "pose": "pose_bench_hug"
     },
     {
       "id": "s08_l842_0",
@@ -685,7 +795,10 @@ export default {
           "end": 14
         }
       ],
-      "next": "s08_l842_1"
+      "next": "s08_l842_1",
+      "emotions": {
+        "azalia": "tender"
+      }
     },
     {
       "id": "s08_l842_1",
@@ -700,7 +813,10 @@ export default {
           "end": 37
         }
       ],
-      "next": "s08_l844_0"
+      "next": "s08_l844_0",
+      "emotions": {
+        "azalia": "tender"
+      }
     },
     {
       "id": "s08_l844_0",
@@ -741,7 +857,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s08_l846_0"
+      "next": "s08_l846_0",
+      "emotions": {
+        "azalia": "resolve"
+      }
     },
     {
       "id": "s08_l846_0",
@@ -756,7 +875,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s08_l846_1"
+      "next": "s08_l846_1",
+      "emotions": {
+        "azalia": "resolve"
+      }
     },
     {
       "id": "s08_l846_1",
@@ -771,7 +893,10 @@ export default {
           "end": 113
         }
       ],
-      "next": "s08_l848_0"
+      "next": "s08_l848_0",
+      "emotions": {
+        "azalia": "resolve"
+      }
     },
     {
       "id": "s08_l848_0",
@@ -786,7 +911,10 @@ export default {
           "end": 27
         }
       ],
-      "next": "s08_l848_1"
+      "next": "s08_l848_1",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s08_l848_1",
@@ -809,7 +937,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s08_l850_0"
+      "next": "s08_l850_0",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s08_l850_0",
@@ -857,7 +988,11 @@ export default {
           "durationMs": 1000
         }
       ],
-      "next": "s08_l852_0"
+      "next": "s08_l852_0",
+      "emotions": {
+        "dima": "love"
+      },
+      "pose": "pose_bench_hug"
     },
     {
       "id": "s08_l852_0",
@@ -872,7 +1007,9 @@ export default {
           "end": 6
         }
       ],
-      "next": "s08_l852_1"
+      "next": "s08_l852_1",
+      "emotions": {},
+      "pose": "pose_bench_hug"
     },
     {
       "id": "s08_l852_1",
@@ -887,7 +1024,9 @@ export default {
           "end": 44
         }
       ],
-      "next": "s08_l854_0"
+      "next": "s08_l854_0",
+      "emotions": {},
+      "pose": "pose_bench_hug"
     },
     {
       "id": "s08_l854_0",
@@ -928,7 +1067,8 @@ export default {
           "durationMs": 480
         }
       ],
-      "next": "s08_l856_0"
+      "next": "s08_l856_0",
+      "emotions": {}
     },
     {
       "id": "s08_l856_0",
@@ -943,7 +1083,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s08_l856_1"
+      "next": "s08_l856_1",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s08_l856_1",
@@ -958,7 +1101,10 @@ export default {
           "end": 16
         }
       ],
-      "next": "s08_l858_0"
+      "next": "s08_l858_0",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s08_l858_0",
@@ -973,7 +1119,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s08_l858_1"
+      "next": "s08_l858_1",
+      "emotions": {}
     },
     {
       "id": "s08_l858_1",
@@ -988,7 +1135,8 @@ export default {
           "end": 94
         }
       ],
-      "next": "s08_l860_0"
+      "next": "s08_l860_0",
+      "emotions": {}
     },
     {
       "id": "s08_l860_0",
@@ -1003,7 +1151,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s08_l860_1"
+      "next": "s08_l860_1",
+      "emotions": {}
     },
     {
       "id": "s08_l860_1",
@@ -1018,7 +1167,8 @@ export default {
           "end": 67
         }
       ],
-      "next": "s08_l862_0"
+      "next": "s08_l862_0",
+      "emotions": {}
     },
     {
       "id": "s08_l862_0",
@@ -1033,7 +1183,11 @@ export default {
           "end": 8
         }
       ],
-      "next": "s08_l862_1"
+      "next": "s08_l862_1",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "blush"
+      }
     },
     {
       "id": "s08_l862_1",
@@ -1056,7 +1210,11 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s08_l864_0"
+      "next": "s08_l864_0",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "blush"
+      }
     },
     {
       "id": "s08_l864_0",
@@ -1071,7 +1229,11 @@ export default {
           "end": 6
         }
       ],
-      "next": "s08_l864_1"
+      "next": "s08_l864_1",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "blush"
+      }
     },
     {
       "id": "s08_l864_1",
@@ -1086,7 +1248,11 @@ export default {
           "end": 37
         }
       ],
-      "next": "s08_l867_0"
+      "next": "s08_l867_0",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "blush"
+      }
     },
     {
       "id": "s08_l867_0",
@@ -1112,7 +1278,8 @@ export default {
           "durationMs": 600
         }
       ],
-      "next": "s08_l868_0"
+      "next": "s08_l868_0",
+      "emotions": {}
     },
     {
       "id": "s08_l868_0",
@@ -1128,14 +1295,16 @@ export default {
           "end": 247
         }
       ],
-      "next": "s08_cs08"
+      "next": "s08_cs08",
+      "emotions": {}
     },
     {
       "id": "s08_cs08",
       "type": "cutscene",
-      "cutsceneId": "cs08",
+      "cutsceneId": "cs08_closeness",
       "source": [],
-      "next": "s08_if_rose_end"
+      "next": "s08_if_rose_end",
+      "emotions": {}
     },
     {
       "id": "s08_if_rose_end",
@@ -1150,21 +1319,24 @@ export default {
       "then": "s08_end_skip_s09",
       "source": [],
       "else": "s08_end",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s08_end_skip_s09",
       "type": "end",
       "nextScene": "scene10",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s08_end",
       "type": "end",
       "nextScene": "scene09",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [
@@ -1300,9 +1472,16 @@ export default {
         },
         {
           "start": 6,
-          "end": 283,
+          "end": 122,
           "kind": "dialogue",
           "node": "s08_l810_1",
+          "field": "text"
+        },
+        {
+          "start": 122,
+          "end": 283,
+          "kind": "dialogue",
+          "node": "s08_l810_2",
           "field": "text"
         }
       ],

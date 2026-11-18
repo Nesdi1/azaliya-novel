@@ -239,6 +239,54 @@ body {
   pointer-events: none;
 }
 
+.stage-character.in-paired-pose { visibility: hidden; }
+.stage-pose {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  z-index: 15;
+}
+.stage-pose[hidden] { display: none; }
+
+.cutscene-stage-overlay > .cutscene-bottom-bar {
+  position: absolute;
+  inset: auto 3% 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(12, 18, 30, .9);
+}
+
+.cutscene-media {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: black;
+  animation: cutscene-media-in 180ms ease-out;
+}
+.cutscene-media video, .cutscene-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cutscene-media button {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  font-size: 26px;
+  padding: 14px 26px;
+}
+.cutscene-media .media-start { left: 3%; right: auto; }
+@keyframes cutscene-media-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .cutscene-media { animation: none; } }
+
 /* Stage cue effects (05_CUTSCENES library; disabled when reducedMotion is active) */
 @keyframes cueBounce {
   0%, 100% { transform: translateY(0); }

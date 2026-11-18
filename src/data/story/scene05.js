@@ -21,7 +21,8 @@ export default {
       "then": "s05_enter_dorm_night",
       "source": [],
       "else": "s05_enter_classroom",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s05_enter_classroom",
@@ -34,7 +35,8 @@ export default {
         "dima"
       ],
       "source": [],
-      "next": "s05_l499_0"
+      "next": "s05_l499_0",
+      "emotions": {}
     },
     {
       "id": "s05_l499_0",
@@ -70,7 +72,11 @@ export default {
           "delayMs": 250
         }
       ],
-      "next": "s05_l501_0"
+      "next": "s05_l501_0",
+      "emotions": {
+        "azalia": "annoyed",
+        "dima": "love"
+      }
     },
     {
       "id": "s05_l501_0",
@@ -85,7 +91,11 @@ export default {
           "end": 25
         }
       ],
-      "next": "s05_l501_1"
+      "next": "s05_l501_1",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l501_1",
@@ -108,7 +118,11 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l503_0"
+      "next": "s05_l503_0",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l503_0",
@@ -123,7 +137,10 @@ export default {
           "end": 14
         }
       ],
-      "next": "s05_l503_1"
+      "next": "s05_l503_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l503_1",
@@ -146,7 +163,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l505_0"
+      "next": "s05_l505_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l505_0",
@@ -161,7 +181,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s05_l505_1"
+      "next": "s05_l505_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l505_1",
@@ -176,7 +199,10 @@ export default {
           "end": 130
         }
       ],
-      "next": "s05_l507_0"
+      "next": "s05_l507_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l507_0",
@@ -198,7 +224,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "choice05_01"
+      "next": "choice05_01",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "choice05_01",
@@ -245,7 +274,8 @@ export default {
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s05_l513_1",
@@ -267,7 +297,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l515_0"
+      "next": "s05_l515_0",
+      "emotions": {}
     },
     {
       "id": "s05_l515_0",
@@ -282,7 +313,8 @@ export default {
           "end": 18
         }
       ],
-      "next": "s05_l515_1"
+      "next": "s05_l515_1",
+      "emotions": {}
     },
     {
       "id": "s05_l515_1",
@@ -297,7 +329,8 @@ export default {
           "end": 103
         }
       ],
-      "next": "s05_l522_0"
+      "next": "s05_l522_0",
+      "emotions": {}
     },
     {
       "id": "s05_l517_0",
@@ -312,7 +345,10 @@ export default {
           "end": 34
         }
       ],
-      "next": "s05_l517_1"
+      "next": "s05_l517_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l517_1",
@@ -335,7 +371,10 @@ export default {
           "end": 89
         }
       ],
-      "next": "s05_l519_0"
+      "next": "s05_l519_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l519_0",
@@ -357,7 +396,11 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s05_l522_0"
+      "next": "s05_l522_0",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l521_1",
@@ -371,7 +414,10 @@ export default {
           "end": 95
         }
       ],
-      "next": "s05_l522_0"
+      "next": "s05_l522_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l522_0",
@@ -406,7 +452,10 @@ export default {
           "durationMs": 480
         }
       ],
-      "next": "s05_enter_corridor"
+      "next": "s05_enter_corridor",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_enter_corridor",
@@ -420,7 +469,8 @@ export default {
         "twins"
       ],
       "source": [],
-      "next": "s05_l523_0"
+      "next": "s05_l523_0",
+      "emotions": {}
     },
     {
       "id": "s05_l523_0",
@@ -434,7 +484,8 @@ export default {
           "end": 160
         }
       ],
-      "next": "s05_l525_0"
+      "next": "s05_l525_0",
+      "emotions": {}
     },
     {
       "id": "s05_l525_0",
@@ -449,7 +500,10 @@ export default {
           "end": 29
         }
       ],
-      "next": "s05_l525_1"
+      "next": "s05_l525_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l525_1",
@@ -472,7 +526,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l527_0"
+      "next": "s05_l527_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l527_0",
@@ -487,7 +544,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s05_l527_1"
+      "next": "s05_l527_1",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l527_1",
@@ -510,7 +570,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s05_l529_0"
+      "next": "s05_l529_0",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l529_0",
@@ -540,7 +603,10 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s05_l531_0"
+      "next": "s05_l531_0",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l531_0",
@@ -555,7 +621,10 @@ export default {
           "end": 29
         }
       ],
-      "next": "s05_l531_1"
+      "next": "s05_l531_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l531_1",
@@ -578,7 +647,10 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s05_l533_0"
+      "next": "s05_l533_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l533_0",
@@ -613,7 +685,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l535_0"
+      "next": "s05_l535_0",
+      "emotions": {
+        "theo": "care"
+      }
     },
     {
       "id": "s05_l535_0",
@@ -628,7 +703,10 @@ export default {
           "end": 12
         }
       ],
-      "next": "s05_l535_1"
+      "next": "s05_l535_1",
+      "emotions": {
+        "theo": "care"
+      }
     },
     {
       "id": "s05_l535_1",
@@ -643,7 +721,10 @@ export default {
           "end": 30
         }
       ],
-      "next": "s05_l537_0"
+      "next": "s05_l537_0",
+      "emotions": {
+        "theo": "care"
+      }
     },
     {
       "id": "s05_l537_0",
@@ -658,7 +739,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s05_l537_1"
+      "next": "s05_l537_1",
+      "emotions": {}
     },
     {
       "id": "s05_l537_1",
@@ -673,7 +755,8 @@ export default {
           "end": 234
         }
       ],
-      "next": "s05_l539_0"
+      "next": "s05_l539_0",
+      "emotions": {}
     },
     {
       "id": "s05_l539_0",
@@ -701,7 +784,10 @@ export default {
           "durationMs": 550
         }
       ],
-      "next": "s05_l541_0"
+      "next": "s05_l541_0",
+      "emotions": {
+        "theo": "accept"
+      }
     },
     {
       "id": "s05_l541_0",
@@ -716,7 +802,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s05_l541_1"
+      "next": "s05_l541_1",
+      "emotions": {}
     },
     {
       "id": "s05_l541_1",
@@ -739,7 +826,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l543_0"
+      "next": "s05_l543_0",
+      "emotions": {}
     },
     {
       "id": "s05_l543_0",
@@ -754,7 +842,11 @@ export default {
           "end": 25
         }
       ],
-      "next": "s05_l543_1"
+      "next": "s05_l543_1",
+      "emotions": {
+        "azalia": "shock",
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s05_l543_1",
@@ -783,7 +875,11 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s05_l545_0"
+      "next": "s05_l545_0",
+      "emotions": {
+        "azalia": "shock",
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s05_l545_0",
@@ -798,7 +894,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s05_l545_1"
+      "next": "s05_l545_1",
+      "emotions": {}
     },
     {
       "id": "s05_l545_1",
@@ -813,7 +910,8 @@ export default {
           "end": 17
         }
       ],
-      "next": "s05_l547_0"
+      "next": "s05_l547_0",
+      "emotions": {}
     },
     {
       "id": "s05_l547_0",
@@ -827,7 +925,8 @@ export default {
           "end": 39
         }
       ],
-      "next": "s05_l549_0"
+      "next": "s05_l549_0",
+      "emotions": {}
     },
     {
       "id": "s05_l549_0",
@@ -842,7 +941,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s05_l549_1"
+      "next": "s05_l549_1",
+      "emotions": {}
     },
     {
       "id": "s05_l549_1",
@@ -857,7 +957,8 @@ export default {
           "end": 36
         }
       ],
-      "next": "s05_enter_fountain_day"
+      "next": "s05_enter_fountain_day",
+      "emotions": {}
     },
     {
       "id": "s05_enter_fountain_day",
@@ -871,7 +972,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s05_l551_0"
+      "next": "s05_l551_0",
+      "emotions": {}
     },
     {
       "id": "s05_l551_0",
@@ -896,7 +998,8 @@ export default {
           "durationMs": 2800
         }
       ],
-      "next": "s05_l553_0"
+      "next": "s05_l553_0",
+      "emotions": {}
     },
     {
       "id": "s05_l553_0",
@@ -911,7 +1014,8 @@ export default {
           "end": 15
         }
       ],
-      "next": "s05_l553_1"
+      "next": "s05_l553_1",
+      "emotions": {}
     },
     {
       "id": "s05_l553_1",
@@ -926,7 +1030,8 @@ export default {
           "end": 41
         }
       ],
-      "next": "s05_l555_0"
+      "next": "s05_l555_0",
+      "emotions": {}
     },
     {
       "id": "s05_l555_0",
@@ -941,7 +1046,8 @@ export default {
           "end": 20
         }
       ],
-      "next": "s05_l555_1"
+      "next": "s05_l555_1",
+      "emotions": {}
     },
     {
       "id": "s05_l555_1",
@@ -956,7 +1062,8 @@ export default {
           "end": 43
         }
       ],
-      "next": "s05_l557_0"
+      "next": "s05_l557_0",
+      "emotions": {}
     },
     {
       "id": "s05_l557_0",
@@ -971,7 +1078,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s05_l557_1"
+      "next": "s05_l557_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l557_1",
@@ -986,7 +1096,10 @@ export default {
           "end": 24
         }
       ],
-      "next": "s05_l559_0"
+      "next": "s05_l559_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l559_0",
@@ -1022,7 +1135,8 @@ export default {
           "delayMs": 200
         }
       ],
-      "next": "s05_l561_0"
+      "next": "s05_l561_0",
+      "emotions": {}
     },
     {
       "id": "s05_l561_0",
@@ -1037,7 +1151,10 @@ export default {
           "end": 14
         }
       ],
-      "next": "s05_l561_1"
+      "next": "s05_l561_1",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s05_l561_1",
@@ -1052,7 +1169,10 @@ export default {
           "end": 61
         }
       ],
-      "next": "s05_enter_dorm_night"
+      "next": "s05_enter_dorm_night",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s05_enter_dorm_night",
@@ -1063,7 +1183,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s05_l564_0"
+      "next": "s05_l564_0",
+      "emotions": {}
     },
     {
       "id": "s05_l564_0",
@@ -1085,7 +1206,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l566_0"
+      "next": "s05_l566_0",
+      "emotions": {}
     },
     {
       "id": "s05_l566_0",
@@ -1100,7 +1222,8 @@ export default {
           "end": 14
         }
       ],
-      "next": "s05_l566_1"
+      "next": "s05_l566_1",
+      "emotions": {}
     },
     {
       "id": "s05_l566_1",
@@ -1115,7 +1238,8 @@ export default {
           "end": 91
         }
       ],
-      "next": "s05_l568_0"
+      "next": "s05_l568_0",
+      "emotions": {}
     },
     {
       "id": "s05_l568_0",
@@ -1138,7 +1262,8 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s05_enter_corridor_night"
+      "next": "s05_enter_corridor_night",
+      "emotions": {}
     },
     {
       "id": "s05_enter_corridor_night",
@@ -1150,7 +1275,8 @@ export default {
         "snape"
       ],
       "source": [],
-      "next": "s05_game_stealth"
+      "next": "s05_game_stealth",
+      "emotions": {}
     },
     {
       "id": "s05_game_stealth",
@@ -1173,7 +1299,8 @@ export default {
           "end": 99
         }
       ],
-      "next": "s05_set_stealth_win"
+      "next": "s05_set_stealth_win",
+      "emotions": {}
     },
     {
       "id": "s05_set_stealth_lose",
@@ -1185,7 +1312,8 @@ export default {
         }
       ],
       "source": [],
-      "next": "s05_enter_fail_fountain"
+      "next": "s05_enter_fail_fountain",
+      "emotions": {}
     },
     {
       "id": "s05_enter_fail_fountain",
@@ -1196,7 +1324,8 @@ export default {
         "dima"
       ],
       "source": [],
-      "next": "s05_l571_1"
+      "next": "s05_l571_1",
+      "emotions": {}
     },
     {
       "id": "s05_l571_1",
@@ -1222,7 +1351,10 @@ export default {
           "end": 173
         }
       ],
-      "next": "s05_l573_0"
+      "next": "s05_l573_0",
+      "emotions": {
+        "dima": "disappointed"
+      }
     },
     {
       "id": "s05_l573_0",
@@ -1237,7 +1369,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s05_l573_1"
+      "next": "s05_l573_1",
+      "emotions": {
+        "dima": "disappointed"
+      }
     },
     {
       "id": "s05_l573_1",
@@ -1252,7 +1387,18 @@ export default {
           "end": 32
         }
       ],
-      "next": "s05_stealth_retry"
+      "next": "s05_cs_fail",
+      "emotions": {
+        "dima": "disappointed"
+      }
+    },
+    {
+      "id": "s05_cs_fail",
+      "type": "cutscene",
+      "cutsceneId": "cs05_fountain_fail",
+      "source": [],
+      "next": "s05_stealth_retry",
+      "emotions": {}
     },
     {
       "id": "s05_stealth_retry",
@@ -1262,7 +1408,8 @@ export default {
       "retryKind": "stealth",
       "source": [],
       "else": "s05_set_stealth_win",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s05_set_stealth_win",
@@ -1274,7 +1421,8 @@ export default {
         }
       ],
       "source": [],
-      "next": "s05_enter_fountain_night"
+      "next": "s05_enter_fountain_night",
+      "emotions": {}
     },
     {
       "id": "s05_enter_fountain_night",
@@ -1285,7 +1433,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s05_l577_1"
+      "next": "s05_l577_1",
+      "emotions": {}
     },
     {
       "id": "s05_l577_1",
@@ -1310,7 +1459,8 @@ export default {
           "end": 228
         }
       ],
-      "next": "s05_l579_0"
+      "next": "s05_l579_0",
+      "emotions": {}
     },
     {
       "id": "s05_l579_0",
@@ -1345,7 +1495,10 @@ export default {
           "delayMs": 220
         }
       ],
-      "next": "s05_l581_0"
+      "next": "s05_l581_0",
+      "emotions": {
+        "azalia": "wand_stance"
+      }
     },
     {
       "id": "s05_l581_0",
@@ -1360,7 +1513,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s05_l581_1"
+      "next": "s05_l581_1",
+      "emotions": {
+        "azalia": "wand_stance"
+      }
     },
     {
       "id": "s05_l581_1",
@@ -1375,7 +1531,10 @@ export default {
           "end": 19
         }
       ],
-      "next": "s05_l583_0"
+      "next": "s05_l583_0",
+      "emotions": {
+        "azalia": "wand_stance"
+      }
     },
     {
       "id": "s05_l583_0",
@@ -1389,7 +1548,8 @@ export default {
           "end": 83
         }
       ],
-      "next": "s05_l585_0"
+      "next": "s05_l585_0",
+      "emotions": {}
     },
     {
       "id": "s05_l585_0",
@@ -1404,7 +1564,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s05_l585_1"
+      "next": "s05_l585_1",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l585_1",
@@ -1427,7 +1590,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s05_l587_0"
+      "next": "s05_l587_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l587_0",
@@ -1442,7 +1608,8 @@ export default {
           "end": 32
         }
       ],
-      "next": "s05_l587_1"
+      "next": "s05_l587_1",
+      "emotions": {}
     },
     {
       "id": "s05_l587_1",
@@ -1457,7 +1624,8 @@ export default {
           "end": 167
         }
       ],
-      "next": "s05_l587_2"
+      "next": "s05_l587_2",
+      "emotions": {}
     },
     {
       "id": "s05_l587_2",
@@ -1473,7 +1641,8 @@ export default {
           "end": 177
         }
       ],
-      "next": "s05_l587_3"
+      "next": "s05_l587_3",
+      "emotions": {}
     },
     {
       "id": "s05_l587_3",
@@ -1488,7 +1657,8 @@ export default {
           "end": 309
         }
       ],
-      "next": "s05_l589_0"
+      "next": "s05_l589_0",
+      "emotions": {}
     },
     {
       "id": "s05_l589_0",
@@ -1514,7 +1684,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l591_0"
+      "next": "s05_l591_0",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l591_0",
@@ -1529,7 +1702,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s05_l591_1"
+      "next": "s05_l591_1",
+      "emotions": {
+        "azalia": "shy"
+      }
     },
     {
       "id": "s05_l591_1",
@@ -1544,7 +1720,10 @@ export default {
           "end": 23
         }
       ],
-      "next": "s05_l593_0"
+      "next": "s05_l593_0",
+      "emotions": {
+        "azalia": "shy"
+      }
     },
     {
       "id": "s05_l593_0",
@@ -1585,7 +1764,9 @@ export default {
           "durationMs": 1000
         }
       ],
-      "next": "s05_l595_0"
+      "next": "s05_l595_0",
+      "emotions": {},
+      "pose": "pose_stupenda_whisper"
     },
     {
       "id": "s05_l595_0",
@@ -1600,7 +1781,9 @@ export default {
           "end": 6
         }
       ],
-      "next": "s05_l595_1"
+      "next": "s05_l595_1",
+      "emotions": {},
+      "pose": "pose_stupenda_whisper"
     },
     {
       "id": "s05_l595_1",
@@ -1615,7 +1798,9 @@ export default {
           "end": 17
         }
       ],
-      "next": "s05_l597_0"
+      "next": "s05_l597_0",
+      "emotions": {},
+      "pose": "pose_stupenda_whisper"
     },
     {
       "id": "s05_l597_0",
@@ -1653,7 +1838,8 @@ export default {
           "durationMs": 800
         }
       ],
-      "next": "s05_l599_0"
+      "next": "s05_l599_0",
+      "emotions": {}
     },
     {
       "id": "s05_l599_0",
@@ -1668,7 +1854,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s05_l599_1"
+      "next": "s05_l599_1",
+      "emotions": {}
     },
     {
       "id": "s05_l599_1",
@@ -1683,7 +1870,8 @@ export default {
           "end": 164
         }
       ],
-      "next": "s05_l601_0"
+      "next": "s05_l601_0",
+      "emotions": {}
     },
     {
       "id": "s05_l601_0",
@@ -1711,7 +1899,8 @@ export default {
           "durationMs": 600
         }
       ],
-      "next": "s05_l603_0"
+      "next": "s05_l603_0",
+      "emotions": {}
     },
     {
       "id": "s05_l603_0",
@@ -1726,7 +1915,10 @@ export default {
           "end": 29
         }
       ],
-      "next": "s05_l603_1"
+      "next": "s05_l603_1",
+      "emotions": {
+        "azalia": "tender"
+      }
     },
     {
       "id": "s05_l603_1",
@@ -1749,7 +1941,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s05_l605_0"
+      "next": "s05_l605_0",
+      "emotions": {
+        "azalia": "tender"
+      }
     },
     {
       "id": "s05_l605_0",
@@ -1763,7 +1958,8 @@ export default {
           "end": 60
         }
       ],
-      "next": "s05_l607_0"
+      "next": "s05_l607_0",
+      "emotions": {}
     },
     {
       "id": "s05_l607_0",
@@ -1778,7 +1974,10 @@ export default {
           "end": 21
         }
       ],
-      "next": "s05_l607_1"
+      "next": "s05_l607_1",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l607_1",
@@ -1801,7 +2000,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s05_l609_0"
+      "next": "s05_l609_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l609_0",
@@ -1817,21 +2019,24 @@ export default {
           "end": 202
         }
       ],
-      "next": "s05_cs05"
+      "next": "s05_cs05",
+      "emotions": {}
     },
     {
       "id": "s05_cs05",
       "type": "cutscene",
-      "cutsceneId": "cs05",
+      "cutsceneId": "cs05_fountain_win",
       "source": [],
-      "next": "s05_end"
+      "next": "s05_end",
+      "emotions": {}
     },
     {
       "id": "s05_end",
       "type": "end",
       "nextScene": "scene06",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

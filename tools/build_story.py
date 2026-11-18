@@ -1,5 +1,6 @@
 """Deterministic scene01 transfer pilot; later scenes need reviewed transfer maps."""
 import json,hashlib,argparse
+from emotion_schedule import apply_emotions
 from pathlib import Path
 P=Path(__file__).resolve().parents[1]
 def build():
@@ -20,6 +21,7 @@ def build():
      node=nodes[part['node']];node[part['field']]=value;node['source']=[dict(file='dialogues',line=row['line'],start=part['start'],end=part['end'])]
     else:part['text']=value
   data['sourceSha256']=hashlib.sha256(src.read_bytes()).hexdigest()
+  apply_emotions(data)
   from verify_story import verify
   out=P/f'src/data/story/scene{args.scene:02}.js';out.parent.mkdir(parents=True,exist_ok=True);temp=P/f'audit/build_scene{args.scene:02}.js'
   temp.write_text('export default '+json.dumps(data,ensure_ascii=False,indent=2)+';\n',encoding='utf-8');report=verify(temp)
@@ -128,11 +130,12 @@ def build():
    ],
    source=[],
   ),
-  dict(id='s01_cs01',type='cutscene',cutsceneId='cs01',source=[dict(file='plot',line=38)]),
+  dict(id='s01_cs01',type='cutscene',cutsceneId='cs01_train',source=[dict(file='plot',line=38)]),
   dict(id='s01_end',type='end',nextScene='scene02',source=[]),
  ]
  for i,n in enumerate(nodes):n['next']=nodes[i+1]['id'] if i+1<len(nodes) else None
  result=dict(schemaVersion=1,id='scene01',start='s01_enter',nodes=nodes,sourceLedger=ledger,sourceSha256=hashlib.sha256(src.read_bytes()).hexdigest(),scope=[1,60])
+ apply_emotions(result)
  out=P/'src/data/story';out.mkdir(parents=True,exist_ok=True)
  (out/'scene01.js').write_text('export default '+json.dumps(result,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
  letter=P/'src/data/finalLetter.js'

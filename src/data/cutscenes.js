@@ -11,6 +11,7 @@ export const CUTSCENE_IDS = Object.freeze([
   'cs03',
   'cs04',
   'cs05',
+  'cs05_fountain_fail',
   'cs06',
   'cs07',
   'cs08',
@@ -179,6 +180,16 @@ export const CUTSCENES = Object.freeze({
     next: 'scene06',
   },
 
+  cs05_fountain_fail: {
+    id: 'cs05_fountain_fail', title: 'Дима у фонтана', durationMs: 3200,
+    caption: '«А я думал, она придёт...»',
+    layers: [
+      { id: 'night', assetId: 'bg_fountain_night', z: 0, x: 0, y: 0, width: 896, height: 1200 },
+      { id: 'dima', assetId: 'dima', z: 12, x: 448, y: 1200, width: 560 },
+    ],
+    timeline: [{ atMs: 0, durationMs: 3200, target: 'dima', effect: 'breathe', from: 1, to: 1.007 }],
+    fallback: { background: 'bg_fountain_night', characters: ['dima'] },
+  },
   cs06: {
     id: 'cs06',
     title: 'Дорога в библиотеку с Роуз (D735)',
@@ -400,7 +411,14 @@ export const CUTSCENES = Object.freeze({
   },
 });
 
+export const MEDIA_IDS = Object.freeze({
+  cs01: 'cs01_train', cs02: 'cs02_sleep', cs03: 'cs03_friends', cs04: 'cs04_rose_dima',
+  cs05: 'cs05_fountain_win', cs05_fountain_fail: 'cs05_fountain_fail', cs06: 'cs06_to_library',
+  cs07: 'cs07_theo_walk', cs08: 'cs08_closeness', cs09: 'cs09_company_dima',
+  cs10: 'cs10_finale', cs06_duel_demo: 'cs_duel',
+});
 const ALIAS_MAP = Object.freeze({
+  ...Object.fromEntries(Object.entries(MEDIA_IDS).map(([key, id]) => [id, key])),
   cs11: 'cs06_duel_demo',
   cs12: 'cs06_lake',
   staging06_01: 'cs06_duel_demo',

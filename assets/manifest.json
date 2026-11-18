@@ -16,7 +16,24 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "bored": "azalia_bored",
+        "shock": "azalia_shock",
+        "annoyed": "azalia_annoyed",
+        "angry": "azalia_angry",
+        "blush": "azalia_blush",
+        "smile": "azalia_smile",
+        "sad": "azalia_sad",
+        "thought": "azalia_thought",
+        "resolve": "azalia_resolve",
+        "worried": "azalia_worried",
+        "shy": "azalia_shy",
+        "tender": "azalia_tender",
+        "wand_draw": "azalia_wand_draw",
+        "wand_stance": "azalia_wand_stance",
+        "desk_down": "azalia_desk_down"
+      }
     },
     "bg_manor": {
       "src": "assets/backgrounds/bg_manor.webp",
@@ -59,7 +76,10 @@
         0.5,
         1
       ],
-      "scale": 1.12
+      "scale": 1.12,
+      "emotions": {
+        "tears": "andromeda_tears"
+      }
     },
     "blaise": {
       "src": "assets/characters/blaise.webp",
@@ -91,7 +111,10 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "laugh": "cedric_laugh"
+      }
     },
     "dima": {
       "src": "assets/characters/dima.webp",
@@ -107,7 +130,19 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "love": "dima_love",
+        "blush": "dima_blush",
+        "serious": "dima_serious",
+        "surprise": "dima_surprise",
+        "tired": "dima_tired",
+        "sly": "dima_sly",
+        "worried": "dima_worried",
+        "relief": "dima_relief",
+        "skeptical": "dima_skeptical",
+        "disappointed": "dima_disappointed"
+      }
     },
     "dumbledore": {
       "src": "assets/characters/dumbledore.webp",
@@ -139,7 +174,10 @@
         0.5,
         1
       ],
-      "scale": 1.12
+      "scale": 1.12,
+      "emotions": {
+        "tender": "elizabeth_tender"
+      }
     },
     "harry": {
       "src": "assets/characters/harry.webp",
@@ -155,7 +193,11 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "confused": "harry_confused",
+        "grateful": "harry_grateful"
+      }
     },
     "hermione": {
       "src": "assets/characters/hermione.webp",
@@ -171,7 +213,11 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "indignant": "hermione_indignant",
+        "worried": "hermione_worried"
+      }
     },
     "malfoy": {
       "src": "assets/characters/malfoy.webp",
@@ -187,7 +233,13 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "angry": "malfoy_angry",
+        "hysteria_dry": "malfoy_hysteria_dry",
+        "hysteria_wet": "malfoy_hysteria_wet",
+        "fear": "malfoy_fear"
+      }
     },
     "mcgonagall": {
       "src": "assets/characters/mcgonagall.webp",
@@ -219,7 +271,10 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "disdain": "nott_disdain"
+      }
     },
     "pansy": {
       "src": "assets/characters/pansy.webp",
@@ -235,7 +290,11 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "peace": "pansy_peace",
+        "panic": "pansy_panic"
+      }
     },
     "regulus": {
       "src": "assets/characters/regulus.webp",
@@ -251,7 +310,11 @@
         0.5,
         1
       ],
-      "scale": 1.12
+      "scale": 1.12,
+      "emotions": {
+        "soft": "regulus_soft",
+        "surprise": "regulus_surprise"
+      }
     },
     "ron": {
       "src": "assets/characters/ron.webp",
@@ -267,7 +330,11 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "frown": "ron_frown",
+        "laugh": "ron_laugh"
+      }
     },
     "rose": {
       "src": "assets/characters/rose.webp",
@@ -283,7 +350,16 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "tease": "rose_tease",
+        "delight": "rose_delight",
+        "fear": "rose_fear",
+        "guilty": "rose_guilty",
+        "defiant": "rose_defiant",
+        "relief": "rose_relief",
+        "blush": "rose_blush"
+      }
     },
     "snape": {
       "src": "assets/characters/snape.webp",
@@ -315,7 +391,10 @@
         0.5,
         1
       ],
-      "scale": 1.12
+      "scale": 1.12,
+      "emotions": {
+        "shout": "sprout_shout"
+      }
     },
     "theo": {
       "src": "assets/characters/theo.webp",
@@ -331,7 +410,17 @@
         0.5,
         1
       ],
-      "scale": 1
+      "scale": 1,
+      "emotions": {
+        "laugh": "theo_laugh",
+        "pout": "theo_pout",
+        "suspicious": "theo_suspicious",
+        "angry": "theo_angry",
+        "care": "theo_care",
+        "restrained": "theo_restrained",
+        "accept": "theo_accept",
+        "touched": "theo_touched"
+      }
     },
     "twins": {
       "src": "assets/characters/twins.webp",
@@ -573,6 +662,1068 @@
         1
       ],
       "scale": 1
+    },
+    "azalia_bored": {
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/azalia_bored.webp",
+      "bytes": 133314,
+      "sha256": "8231f225f4c9eb159bac56490fb06c8b5dc99b26808b2a574cc8bf795c53e8a5",
+      "source": "_originals_emotions/azaliya_bored.jfif",
+      "sourceSha256": "773c7c4ff3afd87649b732bcdca738736a55ef4c95e6a1bddd53943af99e5df6",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "azalia_shock": {
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/azalia_shock.webp",
+      "bytes": 135608,
+      "sha256": "6555eec45d1bb4cbd224c883e79a5fd4741c3eaca3f9139d248c331affa700ec",
+      "source": "_originals_emotions/azaliya_shock.jfif",
+      "sourceSha256": "d32da1d134d5d86b518f60691e9da5e2091e71bad44c6f63f1a921270b4e3cba",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "azalia_annoyed": {
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/azalia_annoyed.webp",
+      "bytes": 134850,
+      "sha256": "1f8098af2ef62c5f933405c7e3ab6cceeeb271cf030e9135b2789692d8f21ad5",
+      "source": "_originals_emotions/azaliya_annoyed.jfif",
+      "sourceSha256": "7990bf9fcc74b17a987ce34068fa86fc71655049d43e94c9b05fabe25f80f4b6",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "azalia_angry": {
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/azalia_angry.webp",
+      "bytes": 135904,
+      "sha256": "0e3e4c77dd97cf7bbeffd6bde2fd1140359d80b7a9ea96b9758fb891aa94a0e3",
+      "source": "_originals_emotions/azaliya_angry.jfif",
+      "sourceSha256": "d154ac1d80c5698fb289bc0f29296858f1937dfc57566b7fce4b9cf03bf0025e",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "azalia_blush": {
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/azalia_blush.webp",
+      "bytes": 133180,
+      "sha256": "a6a25291f0f7d29b492bb7951f828563bb73455753d8639dcecbc5ccef03b30d",
+      "source": "_originals_emotions/azaliya_blush.jfif",
+      "sourceSha256": "c2fb4d30623c3dcba8c6787a27dc064de8a58e2431a7ec5be5ff6ec04b28d966",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "azalia_smile": {
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/azalia_smile.webp",
+      "bytes": 137076,
+      "sha256": "a04492c3b91618df2d28d5a324e3f80d1e5bdb9eaf402dc01cfc234810484ff9",
+      "source": "_originals_emotions/azaliya_smile.jfif",
+      "sourceSha256": "cbf24e15184bb8f61679547597e36c99c5179734445785ad83553c9cc3849bd9",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "azalia_sad": {
+      "type": "character",
+      "width": 1003,
+      "height": 1502,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/azalia_sad.webp",
+      "bytes": 135684,
+      "sha256": "04e82c6a7d01461fa100957fc0e08a583e148d1def75cfe1ac685c25fa9e575b",
+      "source": "_originals_emotions/azaliya_sad.jfif",
+      "sourceSha256": "007b58be97adf9c1e12cbd63b41dc976b451734d553015b13843b79f160c441b",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "dima_love": {
+      "type": "character",
+      "width": 1003,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/dima_love.webp",
+      "bytes": 119470,
+      "sha256": "ba97f864ea606d3a0b3b9c0c2d931c1892b785c7642657544246aeb6d53feded",
+      "source": "_originals_emotions/dima_love.jfif",
+      "sourceSha256": "7a441a2243d8eec21ce02a8ec0f95ac35432263bd32f733af35748a6dcbc2e3d",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "dima_blush": {
+      "type": "character",
+      "width": 1003,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/dima_blush.webp",
+      "bytes": 123522,
+      "sha256": "87860da2e51e36b3ee3cbe83d142c003381917d497a9cb1148228085c96f38ce",
+      "source": "_originals_emotions/dima_blush.jfif",
+      "sourceSha256": "274125964c0ac22b5e6b3294afda956e2020a5e18b719280496dfe81425a2d01",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "dima_serious": {
+      "type": "character",
+      "width": 1003,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/dima_serious.webp",
+      "bytes": 129612,
+      "sha256": "dfc58c12b13d3e05756d46376ef6f81e15424bcc8af47705b00a99b6d1e8a02f",
+      "source": "_originals_emotions/dima_serious.jfif",
+      "sourceSha256": "1786b4b36fb8cc963800d40f6f03b198c2465a657f2dfbe39269e0ad7a7bdcd7",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "dima_surprise": {
+      "type": "character",
+      "width": 1003,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/dima_surprise.webp",
+      "bytes": 135438,
+      "sha256": "4476008dd296cec2efb7cc2b0224c2bf132c9d2e3ceac09771fee44b45c4659a",
+      "source": "_originals_emotions/dima_surprise.jfif",
+      "sourceSha256": "09bd4ee1b3559787b6d18d5e6cd987b5f1c1aa539652a5c26f6e190df0532428",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "dima_tired": {
+      "type": "character",
+      "width": 1003,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/dima_tired.webp",
+      "bytes": 132986,
+      "sha256": "01a49f44ebade105f21caf48955b86632f503657ac6bb454ec780b09a5a38e0e",
+      "source": "_originals_emotions/dima_tired.jfif",
+      "sourceSha256": "a2bb9923185569b78499de198e7b5b914ea7ce77dcf2fc18695ed19ab551f198",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "theo_laugh": {
+      "type": "character",
+      "width": 1059,
+      "height": 1515,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/theo_laugh.webp",
+      "bytes": 142632,
+      "sha256": "9911f05c27f7b0e73b169c18aafd1c8ba93a4395c436d80f5529ab7ee5a67a83",
+      "source": "_originals_emotions/theo_laugh.jfif",
+      "sourceSha256": "fcffa18d1fc0663ea7485da2f686936d82c43b6a410bdfd12788cdd32c60c7de",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "theo_pout": {
+      "type": "character",
+      "width": 1059,
+      "height": 1515,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/theo_pout.webp",
+      "bytes": 142746,
+      "sha256": "fee43f9e8a9c026fc45205278fdf14985ff968e083c983b14e3a4e6e07f68cb3",
+      "source": "_originals_emotions/theo_pout.jfif",
+      "sourceSha256": "5ee4c8fabb3ffc99012ef77fe73a50750759a2e563a79a442e5913e1275949b5",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "theo_suspicious": {
+      "type": "character",
+      "width": 1059,
+      "height": 1515,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/theo_suspicious.webp",
+      "bytes": 143608,
+      "sha256": "b85a855062daa5dd566db8f1570133a7f5e7f8bcaffccb77c49ecc846a4162b0",
+      "source": "_originals_emotions/theo_suspicious.jfif",
+      "sourceSha256": "a6d83806a23075fd806feae395189bc00456d62d1aec2eaa30af074a8e227b6f",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "theo_angry": {
+      "type": "character",
+      "width": 1059,
+      "height": 1515,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/theo_angry.webp",
+      "bytes": 148142,
+      "sha256": "84e3e0e62afea03f6b2fb2cf5424cd65fa313843b706eb50e2cc7aace5811550",
+      "source": "_originals_emotions/theo_angry.jfif",
+      "sourceSha256": "5056b0e5b82cf5046f94818c3f93fe56f922fdda1140e54b987b4549921ea6e6",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "rose_tease": {
+      "type": "character",
+      "width": 1075,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/rose_tease.webp",
+      "bytes": 155362,
+      "sha256": "c3aa98b7cb05047f80fb1afcd66f65557609e6e7fc17b8ea87d2407fbcf6d712",
+      "source": "_originals_emotions/rose_tease.jfif",
+      "sourceSha256": "7d3e9e0912cab4d6a811beefd779fabe066ae7f24e65fbb901de8364727f5d0d",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "rose_delight": {
+      "type": "character",
+      "width": 1075,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/rose_delight.webp",
+      "bytes": 156742,
+      "sha256": "7bf99bc4c0ebbf18f06c6841ca51f7a3537d5e05c0ab1938fbb1a77c278feedb",
+      "source": "_originals_emotions/rose_delight.jfif",
+      "sourceSha256": "0d798a704c06930cad05a103fccde2c924dda22cdda35a1734cdcffefa2880df",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "rose_fear": {
+      "type": "character",
+      "width": 1075,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/rose_fear.webp",
+      "bytes": 167954,
+      "sha256": "d2d3d907b7bbfd09711be3dd0588e12b832dbfeb3c6ac43eb977b6eb8f341a52",
+      "source": "_originals_emotions/rose_fear.jfif",
+      "sourceSha256": "2dc98fd6482c5168ac9cc100cc7e45f95b1bc6548ed403aa7bd21921c3fa5755",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "rose_guilty": {
+      "type": "character",
+      "width": 1075,
+      "height": 1505,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/rose_guilty.webp",
+      "bytes": 152072,
+      "sha256": "ddd2933913ee145416e968ddd41dbd320da0afbd6efab5142f7f28444bf671e9",
+      "source": "_originals_emotions/rose_guilty.jfif",
+      "sourceSha256": "841dc080b0629b22ff60cea297dfe6b55c432ba9934f905ef05b1136cdf75eb5",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "malfoy_angry": {
+      "type": "character",
+      "width": 997,
+      "height": 1487,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/malfoy_angry.webp",
+      "bytes": 126388,
+      "sha256": "5a06c6a3f0818d6ffdc42457b93a1d67e4cb1105653481608e1a6b4ed9850f61",
+      "source": "_originals_emotions/malfoy_angry.jfif",
+      "sourceSha256": "55c9aa9d5c99b7d73c1a11ca3d37d4e22e9b33bbafe52c2e18be8adba065c170",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "malfoy_hysteria_dry": {
+      "type": "character",
+      "width": 997,
+      "height": 1487,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/malfoy_hysteria_dry.webp",
+      "bytes": 151544,
+      "sha256": "efb25b5ff410e818beb789eda28465fcc92e8cb94c9040fe2e489663d60215cf",
+      "source": "_originals_emotions/malfoy_hysteria_dry.jfif",
+      "sourceSha256": "4c7f41579d0e5a7719ad196fd08369f8de84c6b5cdcdb94de0e2ba7685ae7227",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "malfoy_hysteria_wet": {
+      "type": "character",
+      "width": 997,
+      "height": 1487,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/malfoy_hysteria_wet.webp",
+      "bytes": 154770,
+      "sha256": "035bb412ba719a89d0248f919da812677500c5447c7cc63a26060a626293716c",
+      "source": "_originals_emotions/malfoy_hysteria_wet.jfif",
+      "sourceSha256": "a48e21ba8a46ae62b866773c2592237d9683016ccad817511cf03566449a4c37",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "malfoy_fear": {
+      "type": "character",
+      "width": 997,
+      "height": 1487,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/malfoy_fear.webp",
+      "bytes": 136098,
+      "sha256": "6cbafebf089efbaa0931fcfb36385807a4067c47c4ae514489d051eec82f780a",
+      "source": "_originals_emotions/malfoy_fear.jfif",
+      "sourceSha256": "24447118cbc17b1c3feb3b613d64008556432c95288d08ae1c606a465541eb75",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "regulus_soft": {
+      "type": "character",
+      "width": 1104,
+      "height": 1511,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12,
+      "src": "assets/characters/regulus_soft.webp",
+      "bytes": 161074,
+      "sha256": "c9a4ffd23184a33db1a6dd20c1eb36e4d133c4adb506ef82b319133cfcd8dabe",
+      "source": "_originals_emotions/regulus_soft.jfif",
+      "sourceSha256": "8980f6cb3010649015cb62a946f84d25c4e28e02c4bed3401ec4f1dc5a0b631b",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "regulus_surprise": {
+      "type": "character",
+      "width": 1104,
+      "height": 1511,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12,
+      "src": "assets/characters/regulus_surprise.webp",
+      "bytes": 162794,
+      "sha256": "0801ee7096e4295e5e74ad44faeb3a15bce0fe1e7b9eb78829d3c9c666eaef72",
+      "source": "_originals_emotions/regulus_surprise.jfif",
+      "sourceSha256": "d4f13c22f06273346ab0f9fe99f9ae2c3a92fb86ffa3389a426704035e39e9fc",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "elizabeth_tender": {
+      "type": "character",
+      "width": 1103,
+      "height": 1507,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12,
+      "src": "assets/characters/elizabeth_tender.webp",
+      "bytes": 225352,
+      "sha256": "914c20e57a08bb7f892a468707c7d9ee8b31c9c6d550756484efe1930e14d219",
+      "source": "_originals_emotions/elizabeth_tender.jfif",
+      "sourceSha256": "8cae042e92c8d52ec3d1e0c8cf792e44272fbe7933bb66d735ffaa044340f4f9",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "andromeda_tears": {
+      "type": "character",
+      "width": 979,
+      "height": 1506,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12,
+      "src": "assets/characters/andromeda_tears.webp",
+      "bytes": 190850,
+      "sha256": "40cb8df93612e9122ce1ecded6fe5c424e7ded7d6bba2d1d1d412a22a1e3bc9f",
+      "source": "_originals_emotions/andromeda_tears.jfif",
+      "sourceSha256": "d47f451628397375b4a905d9562f026c9589f57df2bbaade10e06f7b735dee61",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "cedric_laugh": {
+      "type": "character",
+      "width": 967,
+      "height": 1491,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/cedric_laugh.webp",
+      "bytes": 148018,
+      "sha256": "e39c514a015da5647dca34e0827ce1c6ce9096c8f32d5f412318395f5bf4c1f6",
+      "source": "_originals_emotions/cedric_laugh.jfif",
+      "sourceSha256": "26b767a10833e898f8295909388d071fb55f153ef86b0ce6863abd7220faaa1d",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "pansy_peace": {
+      "type": "character",
+      "width": 1082,
+      "height": 1516,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/pansy_peace.webp",
+      "bytes": 128258,
+      "sha256": "73ab3f85e7de2ccef5606b2c36c4fa0a9419ad06eaf7b9517e25bf73fa6d016c",
+      "source": "_originals_emotions/pansy_peace.jfif",
+      "sourceSha256": "f3312b9d564aa56c45b7656c6984c584e299dfdc9a83ee3c56ec4842f0056df0",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "pansy_panic": {
+      "type": "character",
+      "width": 1082,
+      "height": 1516,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/pansy_panic.webp",
+      "bytes": 130960,
+      "sha256": "1dc80e96560406a9ac058c3fa18da31ced85514bb3b33b8b74e261bff4df2c83",
+      "source": "_originals_emotions/pansy_panic.jfif",
+      "sourceSha256": "e67d09e66479934474ed5b405bb51bf806170f2744a9d6ab814bb538fb71735d",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "nott_disdain": {
+      "type": "character",
+      "width": 1014,
+      "height": 1514,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/nott_disdain.webp",
+      "bytes": 169548,
+      "sha256": "22890ccea2dc0ce2545af868d47b2f171142d9bd5b982f9ac777a8f4cb9d2b88",
+      "source": "_originals_emotions/nott_disdain.jfif",
+      "sourceSha256": "2340eacc184ee00b2577a1abf53269fedd125cb684157110f92bc12ceb64bad3",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "harry_confused": {
+      "type": "character",
+      "width": 1036,
+      "height": 1490,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/harry_confused.webp",
+      "bytes": 125356,
+      "sha256": "a2ab1639d3cfa112711c9a20c82285125a80f0b20db058aa70d169e7dca20418",
+      "source": "_originals_emotions/harry_confused.jfif",
+      "sourceSha256": "b18dcee11a9588b86a2fd95979848b97af9bd879658b2fb13656745202e91fcd",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "harry_grateful": {
+      "type": "character",
+      "width": 1036,
+      "height": 1490,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/harry_grateful.webp",
+      "bytes": 138600,
+      "sha256": "2afb36e1a0c5e9a6587febd91a229a46a6d720701a6b5d9a78010c001c7b5beb",
+      "source": "_originals_emotions/harry_grateful.jfif",
+      "sourceSha256": "3704b385f1600ef1a58e1c98f0caba5140aede75844d1981f80e9771639aa362",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "hermione_indignant": {
+      "type": "character",
+      "width": 971,
+      "height": 1493,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/hermione_indignant.webp",
+      "bytes": 161644,
+      "sha256": "0d51c1189999579a422fcd71e172e63fc36d2cc2cb50c8c3826179cc16ba8ccc",
+      "source": "_originals_emotions/hermione_indignant.jfif",
+      "sourceSha256": "a289004726c7fb5034e0e43b43a09f08168fc0dcccd27973a09007d2dc934e1d",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "hermione_worried": {
+      "type": "character",
+      "width": 971,
+      "height": 1493,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/hermione_worried.webp",
+      "bytes": 145284,
+      "sha256": "cead304269336bc64126dcfafcd65b51feb6eb548397914e20aefa5ad836ab0d",
+      "source": "_originals_emotions/hermione_worried.jfif",
+      "sourceSha256": "1dfc726828e1bd5dd3fa67c91ac57952a878e82af2ac18e01d28ed4dd4b92d90",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "ron_frown": {
+      "type": "character",
+      "width": 1037,
+      "height": 1528,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/ron_frown.webp",
+      "bytes": 159404,
+      "sha256": "78da5545f395ac38208cabf5f757677b7f0886d1b6582d4a6d1911c6bcc0486e",
+      "source": "_originals_emotions/ron_frown.jfif",
+      "sourceSha256": "d4ec28015135171f9d36ba6e080287388e7d8b229cfb940a50fa915d8f65af7b",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "ron_laugh": {
+      "type": "character",
+      "width": 1037,
+      "height": 1528,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1,
+      "src": "assets/characters/ron_laugh.webp",
+      "bytes": 159344,
+      "sha256": "af1ca4d727d2248ce8b9e6ec54c692d6ae8e2ffcb46033df5c1cde78d4adf015",
+      "source": "_originals_emotions/ron_laugh.jfif",
+      "sourceSha256": "1daa614afab33981b1fa803a2068fb1676836c70d9195a4912cf024ffb14e656",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "sprout_shout": {
+      "type": "character",
+      "width": 950,
+      "height": 1539,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "scale": 1.12,
+      "src": "assets/characters/sprout_shout.webp",
+      "bytes": 189154,
+      "sha256": "d1f0d6db6ea18d27be7cf6a3123f70933a3aa51b96ad5bcf0e86773ff9995ec6",
+      "source": "_originals_emotions/sprout_shout.jfif",
+      "sourceSha256": "23281ca66dbee6f6a96234ed33ee0ce0c7c1503f908a8dd4c1ab28656daff327",
+      "processing": "isnet-anime; expression alignment; WebP quality 92"
+    },
+    "azalia_thought": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_thought.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 135790,
+      "sha256": "39997aa1e2f21ea9b99a3d78ea41f84e560c74ed6ec03a6deedcea82f2e95256",
+      "sourceSha256": "ec51173ce5cc3ad0e491b1ae66910785476bbc20ec7f25775b61744ae9a99376"
+    },
+    "azalia_resolve": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_resolve.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 137296,
+      "sha256": "c0b265f2dce1f148da85e71db68b84591be5b2b8b730cb16d3b9233519584dac",
+      "sourceSha256": "fd64c0b73a819a28dcd0935e810e8f9e9672925e6064b25a40faf2518af2679a"
+    },
+    "azalia_worried": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_worried.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 137154,
+      "sha256": "e29002e5f121cd536a1a1d54ec9e02371759c32f5becd9dcddfaca75c7b7ba53",
+      "sourceSha256": "08673bcc9bf008a38acdaf9169151d994c226e1b4d26a3b3e46f90d791a06080"
+    },
+    "azalia_shy": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_shy.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 132456,
+      "sha256": "0ff2ca1becd3c191212bd186fb7f3f3e418536d5aca539397d812bd7b6c5d5c8",
+      "sourceSha256": "0dc9cec07ce72352bccc8fc5c838471914869deea0ad0da4345a32a570385b7a"
+    },
+    "azalia_tender": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_tender.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 130730,
+      "sha256": "10e93563390f6ad797d8a1aefb8df0cfc727f6bb39995515319160561687c283",
+      "sourceSha256": "3fac710f36b66c93c00d604b74096fffaf91ee075b8c7fbf12930f444355288c"
+    },
+    "azalia_wand_draw": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_wand_draw.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 186346,
+      "sha256": "07d27bd11dea99b25ab2e8cf15cf8267163d74919c784d40a624ab6cced0daf3",
+      "sourceSha256": "517524f24953fa80a3578ab08b73d81f4164802660445425aec2eb074b3d1ffd"
+    },
+    "azalia_wand_stance": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_wand_stance.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 177746,
+      "sha256": "3af37e77b9a9644c101495e781effd41d0a81eeec96ef213dcb6d1a544080852",
+      "sourceSha256": "f1ebc68eff77babec17436a5d39f4a7a8cbff048f699e0a4b78cc205a0e0a4ad"
+    },
+    "azalia_desk_down": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/azalia_desk_down.webp",
+      "width": 1003,
+      "height": 1502,
+      "bytes": 160202,
+      "sha256": "783c1510a8945f1cc57c779609f5d304960a71db15747b58d671fc1a95324a6b",
+      "sourceSha256": "5526092ba50621d97ff958407ddbb17215d8de26677721e4175ae21121e5b062"
+    },
+    "dima_sly": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/dima_sly.webp",
+      "width": 1003,
+      "height": 1505,
+      "bytes": 144364,
+      "sha256": "9e68491bb8c88f048ba3faf74f715a4ba73d1230bd2073a25e431b460af9edf5",
+      "sourceSha256": "73663b2a971d588a63c636d458e6a90db60f2550d1edc1b5aff91d5c7634ef7f"
+    },
+    "dima_worried": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/dima_worried.webp",
+      "width": 1003,
+      "height": 1505,
+      "bytes": 141734,
+      "sha256": "782da5a4478fa8e8b77035127567209a7bd34aadd377255c654d15495b3b3e0f",
+      "sourceSha256": "8e447aca6fd5158387886b44926c5232774f7a61f4f08a2db5f86eeb8663fe25"
+    },
+    "dima_relief": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/dima_relief.webp",
+      "width": 1003,
+      "height": 1505,
+      "bytes": 142762,
+      "sha256": "da9422556854a5dd931a8b5e83bd8cb8b04e782888c96a744aba4be8cc87953f",
+      "sourceSha256": "9cbdc1e38c663075ede32a2956acd409aeda06b4e5cb853631272e8230bac4be"
+    },
+    "dima_skeptical": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/dima_skeptical.webp",
+      "width": 1003,
+      "height": 1505,
+      "bytes": 140146,
+      "sha256": "d03f0954415ebd9121d45a0055b992fc5b1bbecbbe1977ec4aa0a5ab528a4751",
+      "sourceSha256": "50a8fe384f61e964e4dcb51205c75f7005b7743730db4abc708db62304edcd1e"
+    },
+    "dima_disappointed": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/dima_disappointed.webp",
+      "width": 1003,
+      "height": 1505,
+      "bytes": 141354,
+      "sha256": "e3a54bbc4b12d3a4253c34952e1ac36446869b1bef4cc767f70f7d21b9d19440",
+      "sourceSha256": "a32fc3cb6e0d2d80f73fd910b5fe831070ea0b4991bd4a3deac5f56fdfd72186"
+    },
+    "theo_care": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/theo_care.webp",
+      "width": 1059,
+      "height": 1515,
+      "bytes": 162362,
+      "sha256": "34b5ed2d377fea1419b5340a9df7a846fd07a71d187023521f49c69ed30079ef",
+      "sourceSha256": "ada44064154a5dc6b9cab897d13543a6c99b7089bcc4c6a7a9e9f2d6031d84c5"
+    },
+    "theo_restrained": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/theo_restrained.webp",
+      "width": 1059,
+      "height": 1515,
+      "bytes": 160078,
+      "sha256": "469bbfb21ad6fe9a2d8eadb8574cfc3d4a30cf5c6a8d598e011e97f633cb7bc9",
+      "sourceSha256": "ab1e2bbbc5c4dda43feb1be85ca9dbe63bee91bdfe90363a7f21889ee57e3bf8"
+    },
+    "theo_accept": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/theo_accept.webp",
+      "width": 1059,
+      "height": 1515,
+      "bytes": 161756,
+      "sha256": "c2479455e45817c06eb604d5bc5a5f2eafee4143ccf2a8cce8803ab9d7625ba1",
+      "sourceSha256": "d6408e5a067c2b367d37376ca82f97dbe9af357f1ef214944a9af094bd9f3c1e"
+    },
+    "theo_touched": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/theo_touched.webp",
+      "width": 1059,
+      "height": 1515,
+      "bytes": 162804,
+      "sha256": "6ab8989c28e9f50a892a2a20d147bd4fc1db4c899239b51054b62d135e821e75",
+      "sourceSha256": "b4e6a71a7163c9557e703bdedc8d21b69cd52b8db514f78373d0e6e437af2545"
+    },
+    "rose_defiant": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/rose_defiant.webp",
+      "width": 1075,
+      "height": 1505,
+      "bytes": 176750,
+      "sha256": "0da9e933cffb584b60c986073b70fb48ca827c5767cee5c02ea2d234c72bb09f",
+      "sourceSha256": "1d94743641e6cc525930f23e837a02e542df26079d9d77c79a589e7889ff1a1a"
+    },
+    "rose_relief": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/rose_relief.webp",
+      "width": 1075,
+      "height": 1505,
+      "bytes": 177692,
+      "sha256": "99540724b299cd71a32fc3109590e2fe7f9f101c5168f2250b078aa1eea9f4ec",
+      "sourceSha256": "6e441785cca3e28bb609992af4f067f128cb94dfd52819b1c7d46594ad0fb704"
+    },
+    "rose_blush": {
+      "type": "character",
+      "scale": 1,
+      "anchor": [
+        0.5,
+        1
+      ],
+      "src": "assets/characters/rose_blush.webp",
+      "width": 1075,
+      "height": 1505,
+      "bytes": 178294,
+      "sha256": "c0200e62a4de6eaf5ecc8ee2de786064913e63330b230440968fe74a91b5e3eb",
+      "sourceSha256": "ea07a4f6c387c3654ee7f3a993dcae027857ae052c53a5a36e613f19032191df"
+    },
+    "pose_andromeda_hug": {
+      "type": "pose",
+      "participants": [
+        "andromeda",
+        "azalia",
+        "theo"
+      ],
+      "src": "assets/poses/pose_andromeda_hug.webp",
+      "width": 896,
+      "height": 1137,
+      "bytes": 178486,
+      "sha256": "e72272527b63cd435d2f0eac829bc2e0472b3aa83c6ffd7c24717ac025563a2f",
+      "sourceSha256": "49b182f3cb680359d48d91bc702369cc8961ad7c857a4808ae58b2719971c8d5"
+    },
+    "pose_bench_hug": {
+      "type": "pose",
+      "participants": [
+        "azalia",
+        "dima"
+      ],
+      "src": "assets/poses/pose_bench_hug.webp",
+      "width": 896,
+      "height": 1193,
+      "bytes": 127980,
+      "sha256": "64470e2ca5aa957dfdff87ed945b28e14db59742c7bb814ac98f507d4d945a49",
+      "sourceSha256": "d59e3bf93046ec5c02611fec2235a2b8b51f3467e3df88e714854348236d9416"
+    },
+    "pose_cedric_hug": {
+      "type": "pose",
+      "participants": [
+        "cedric",
+        "azalia"
+      ],
+      "src": "assets/poses/pose_cedric_hug.webp",
+      "width": 896,
+      "height": 1155,
+      "bytes": 150080,
+      "sha256": "855da01d7bc047e673f4bd1cd05f21b1af87843f9b377f872e3dbcb9360cb35b",
+      "sourceSha256": "03663133c1ed0b716cebb0e3e84e188ab30b8749ea147a5ebd8d2a83de19dfb5"
+    },
+    "pose_earmuffs": {
+      "type": "pose",
+      "participants": [
+        "azalia",
+        "dima"
+      ],
+      "src": "assets/poses/pose_earmuffs.webp",
+      "width": 895,
+      "height": 1200,
+      "bytes": 142646,
+      "sha256": "d800fe77a07a3fbdb21a11dcc9a1db7047b1950844cfd98d8148ed009488f81f",
+      "sourceSha256": "f7597159a40303381ea3e8b7b60bcd82e59ff352efe16239e50de1dfe24663a4"
+    },
+    "pose_kiss": {
+      "type": "pose",
+      "participants": [
+        "azalia",
+        "dima"
+      ],
+      "src": "assets/poses/pose_kiss.webp",
+      "width": 896,
+      "height": 1182,
+      "bytes": 158886,
+      "sha256": "0889ce1fc6e2fefe741d31b34fe951949926cb1eb38de27efe79fc8f32694d8a",
+      "sourceSha256": "2f041df3af5e7af54c1422367951969d9b0d60be55619682b3736b8f01b8c887"
+    },
+    "pose_stupenda_whisper": {
+      "type": "pose",
+      "participants": [
+        "azalia",
+        "dima"
+      ],
+      "src": "assets/poses/pose_stupenda_whisper.webp",
+      "width": 896,
+      "height": 1150,
+      "bytes": 175702,
+      "sha256": "e3ec9a342d34e1fbc64c7f3080f89b73a0116b1e9465c92ec8fbf5201c27de01",
+      "sourceSha256": "ac3832af551b6cef84ed4f9a6d282264170981ff3542b461b17419cbcc5590f0"
+    },
+    "pose_theo_hug": {
+      "type": "pose",
+      "participants": [
+        "theo",
+        "azalia"
+      ],
+      "src": "assets/poses/pose_theo_hug.webp",
+      "width": 875,
+      "height": 1200,
+      "bytes": 142262,
+      "sha256": "49319791a1fc039d562672e96f78562fd133ea3f7ab4356440c2da97f4bbb294",
+      "sourceSha256": "7117a619f623b80c4c2621d9bbc388d00eeeeb92f125c161f1aeb1a006347bcd"
+    },
+    "cs01_train": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs01_train.mp4",
+      "bytes": 4618214,
+      "sha256": "77f5a3ba3efe0108b47ceb73453f4db6dc22d2ec09084efd849b1ef6fa54799e"
+    },
+    "cs02_sleep": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs02_sleep.mp4",
+      "bytes": 4469367,
+      "sha256": "f15d13eba9174845b58c1682aac7033bc6b277a5981c2a47c25f9d51274ca6e5"
+    },
+    "cs03_friends": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs03_friends.mp4",
+      "bytes": 7382493,
+      "sha256": "f69171d7b067b91f013e813333e4814acc185b1d6b62d97e0c814fb800f73eb3"
+    },
+    "cs04_rose_dima": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs04_rose_dima.mp4",
+      "bytes": 6429266,
+      "sha256": "0e23120cba8812069b4f12c9d85c5c2302e50f78704bbc93fb715bd635387a72"
+    },
+    "cs05_fountain_win": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs05_fountain_win.mp4",
+      "bytes": 4014479,
+      "sha256": "f68caa743643c09f8e41e8e657b95265a1a26e5653945f309371df6b47dec9b9"
+    },
+    "cs06_to_library": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs06_to_library.mp4",
+      "bytes": 7243629,
+      "sha256": "a44147e0e25593e1b84670df00658e3a664e9e4033286da4917ad6553193db20"
+    },
+    "cs07_theo_walk": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs07_theo_walk.mp4",
+      "bytes": 5592263,
+      "sha256": "c9943cf1226b397d4477708d5de927ff94b52ec506fff8b2ddc925240903519b"
+    },
+    "cs08_closeness": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs08_closeness.mp4",
+      "bytes": 4160806,
+      "sha256": "aba74eef540657d0afbac40948385d197e8e9c1e444f083703cf16b011792676"
+    },
+    "cs09_company_dima": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs09_company_dima.mp4",
+      "bytes": 6924223,
+      "sha256": "f9080b76b9e60a06622c35e69ffefa80e018ca145b5a4d2174d3869b36f25b6f"
+    },
+    "cs10_finale": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs10_finale.mp4",
+      "bytes": 5733564,
+      "sha256": "cbdcaa6a19b5ce9483e99392dea458cbf4c50ee3a82c6aac4bf7365278be90b5"
+    },
+    "cs_duel": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs_duel.mp4",
+      "bytes": 7158139,
+      "sha256": "ed210acab44504c80ff7c0a84a7019ac4c9ff132d056133463d4ad08ea337942"
     }
   },
   "scenes": {
@@ -583,7 +1734,17 @@
       "regulus",
       "theo",
       "bg_manor",
-      "bg_train"
+      "bg_train",
+      "andromeda_tears",
+      "azalia_sad",
+      "elizabeth_tender",
+      "regulus_soft",
+      "regulus_surprise",
+      "theo_laugh",
+      "azalia_resolve",
+      "cs01_train",
+      "pose_andromeda_hug",
+      "theo_touched"
     ],
     "scene02": [
       "azalia",
@@ -602,7 +1763,24 @@
       "bg_hufflepuff_common",
       "bg_hufflepuff_dorm",
       "bg_hufflepuff_dorm_morning",
-      "sorting_hat"
+      "sorting_hat",
+      "azalia_angry",
+      "azalia_annoyed",
+      "azalia_bored",
+      "azalia_sad",
+      "azalia_shock",
+      "azalia_smile",
+      "cedric_laugh",
+      "dima_love",
+      "theo_laugh",
+      "theo_pout",
+      "theo_suspicious",
+      "azalia_resolve",
+      "azalia_shy",
+      "azalia_thought",
+      "cs02_sleep",
+      "pose_cedric_hug",
+      "theo_care"
     ],
     "scene03": [
       "azalia",
@@ -619,7 +1797,16 @@
       "ron",
       "snape",
       "theo",
-      "twins"
+      "twins",
+      "azalia_angry",
+      "harry_confused",
+      "harry_grateful",
+      "hermione_indignant",
+      "malfoy_hysteria_dry",
+      "nott_disdain",
+      "pansy_peace",
+      "ron_frown",
+      "cs03_friends"
     ],
     "scene04": [
       "azalia",
@@ -634,7 +1821,29 @@
       "bg_corridor",
       "bg_great_hall",
       "bg_hospital",
-      "bg_library"
+      "bg_library",
+      "azalia_angry",
+      "azalia_annoyed",
+      "azalia_blush",
+      "azalia_smile",
+      "dima_blush",
+      "dima_love",
+      "dima_serious",
+      "dima_tired",
+      "hermione_worried",
+      "malfoy_angry",
+      "malfoy_fear",
+      "ron_frown",
+      "ron_laugh",
+      "rose_fear",
+      "azalia_shy",
+      "azalia_wand_draw",
+      "azalia_worried",
+      "cs04_rose_dima",
+      "dima_relief",
+      "dima_worried",
+      "rose_defiant",
+      "rose_relief"
     ],
     "scene05": [
       "azalia",
@@ -651,7 +1860,23 @@
       "bg_fountain_day",
       "bg_fountain_night",
       "bg_hufflepuff_dorm",
-      "bg_corridor_night"
+      "bg_corridor_night",
+      "azalia_angry",
+      "azalia_annoyed",
+      "azalia_blush",
+      "azalia_shock",
+      "dima_love",
+      "rose_tease",
+      "theo_suspicious",
+      "azalia_shy",
+      "azalia_tender",
+      "azalia_thought",
+      "azalia_wand_stance",
+      "cs05_fountain_win",
+      "dima_disappointed",
+      "pose_stupenda_whisper",
+      "theo_accept",
+      "theo_care"
     ],
     "scene06": [
       "azalia",
@@ -663,14 +1888,37 @@
       "malfoy",
       "pansy",
       "rose",
-      "theo"
+      "theo",
+      "azalia_angry",
+      "azalia_annoyed",
+      "dima_blush",
+      "dima_surprise",
+      "malfoy_angry",
+      "malfoy_hysteria_wet",
+      "pansy_panic",
+      "pansy_peace",
+      "azalia_thought",
+      "azalia_wand_draw",
+      "azalia_worried",
+      "cs06_to_library",
+      "cs_duel",
+      "dima_skeptical",
+      "dima_sly"
     ],
     "scene07": [
       "azalia",
       "rose",
       "theo",
       "bg_corridor",
-      "bg_library"
+      "bg_library",
+      "azalia_annoyed",
+      "azalia_blush",
+      "rose_delight",
+      "rose_guilty",
+      "rose_tease",
+      "theo_angry",
+      "azalia_desk_down",
+      "cs07_theo_walk"
     ],
     "scene08": [
       "azalia",
@@ -681,7 +1929,25 @@
       "bg_library",
       "bg_ravenclaw_dorm",
       "dima",
-      "theo"
+      "theo",
+      "azalia_blush",
+      "azalia_sad",
+      "azalia_smile",
+      "dima_blush",
+      "dima_serious",
+      "dima_surprise",
+      "theo_angry",
+      "theo_suspicious",
+      "azalia_resolve",
+      "azalia_tender",
+      "cs08_closeness",
+      "dima_love",
+      "dima_relief",
+      "dima_sly",
+      "dima_worried",
+      "pose_bench_hug",
+      "theo_accept",
+      "theo_restrained"
     ],
     "scene09": [
       "azalia",
@@ -694,7 +1960,22 @@
       "twins",
       "bg_corridor",
       "bg_hufflepuff_common",
-      "bg_hufflepuff_dorm_morning"
+      "bg_hufflepuff_dorm_morning",
+      "azalia_annoyed",
+      "azalia_blush",
+      "azalia_sad",
+      "azalia_smile",
+      "rose_guilty",
+      "rose_tease",
+      "theo_laugh",
+      "theo_suspicious",
+      "azalia_shy",
+      "azalia_thought",
+      "cs09_company_dima",
+      "pose_theo_hug",
+      "rose_blush",
+      "theo_accept",
+      "theo_touched"
     ],
     "scene10": [
       "azalia",
@@ -706,7 +1987,16 @@
       "malfoy",
       "rose",
       "sprout",
-      "theo"
+      "theo",
+      "azalia_blush",
+      "azalia_smile",
+      "dima_blush",
+      "dima_love",
+      "sprout_shout",
+      "azalia_tender",
+      "cs10_finale",
+      "pose_earmuffs",
+      "pose_kiss"
     ]
   },
   "missingRequired": []

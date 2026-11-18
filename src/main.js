@@ -45,7 +45,7 @@ async function bootstrap() {
   const audio = createAudio();
   const stage = createStage(stageRoot, manifest, bus);
   const ui = createDialogue(dialogueRoot, bus, { hudRoot });
-  const cutscenes = createCutscenePlayer(stage, bus);
+  const cutscenes = createCutscenePlayer(stage, bus, manifest.assets);
   const minigames = createMinigameRegistry();
 
   const engine = createEngine({

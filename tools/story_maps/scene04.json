@@ -13,7 +13,8 @@
         "azalia"
       ],
       "source": [],
-      "next": "s04_l375_0"
+      "next": "s04_l375_0",
+      "emotions": {}
     },
     {
       "id": "s04_l375_0",
@@ -31,7 +32,8 @@
           "durationMs": 800
         }
       ],
-      "next": "s04_l377_0"
+      "next": "s04_l377_0",
+      "emotions": {}
     },
     {
       "id": "s04_l377_0",
@@ -39,7 +41,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l377_1"
+      "next": "s04_l377_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s04_l377_1",
@@ -47,7 +52,10 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s04_l379_0"
+      "next": "s04_l379_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s04_l379_0",
@@ -84,7 +92,8 @@
           "delayMs": 140
         }
       ],
-      "next": "s04_l381_0"
+      "next": "s04_l381_0",
+      "emotions": {}
     },
     {
       "id": "s04_l381_0",
@@ -105,7 +114,10 @@
           "effect": "focus"
         }
       ],
-      "next": "s04_l383_0"
+      "next": "s04_l383_0",
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l383_0",
@@ -113,7 +125,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l383_1"
+      "next": "s04_l383_1",
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l383_1",
@@ -121,7 +136,10 @@
       "speaker": "malfoy",
       "text": "",
       "source": [],
-      "next": "s04_l385_0"
+      "next": "s04_l385_0",
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l385_0",
@@ -129,7 +147,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l385_1"
+      "next": "s04_l385_1",
+      "emotions": {
+        "rose": "defiant"
+      }
     },
     {
       "id": "s04_l385_1",
@@ -137,7 +158,10 @@
       "speaker": "rose",
       "text": "",
       "source": [],
-      "next": "s04_l387_0"
+      "next": "s04_l387_0",
+      "emotions": {
+        "rose": "defiant"
+      }
     },
     {
       "id": "s04_l387_0",
@@ -151,7 +175,10 @@
           "durationMs": 450
         }
       ],
-      "next": "s04_l389_0"
+      "next": "s04_l389_0",
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l389_0",
@@ -159,7 +186,11 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l389_1"
+      "next": "s04_l389_1",
+      "emotions": {
+        "rose": "fear",
+        "malfoy": "angry"
+      }
     },
     {
       "id": "s04_l389_1",
@@ -175,7 +206,11 @@
           "durationMs": 450
         }
       ],
-      "next": "s04_l391_0"
+      "next": "s04_l391_0",
+      "emotions": {
+        "rose": "fear",
+        "malfoy": "angry"
+      }
     },
     {
       "id": "s04_l391_0",
@@ -190,7 +225,10 @@
           "durationMs": 450
         }
       ],
-      "next": "choice04_01"
+      "next": "choice04_01",
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "choice04_01",
@@ -223,7 +261,10 @@
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l396_1",
@@ -252,7 +293,10 @@
         }
       ],
       "source": [],
-      "next": "s04_end"
+      "next": "s04_end",
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l398_1",
@@ -276,7 +320,11 @@
         }
       ],
       "source": [],
-      "next": "s04_l399_0"
+      "next": "s04_l399_0",
+      "emotions": {
+        "rose": "fear",
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s04_l399_0",
@@ -284,7 +332,11 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l399_1"
+      "next": "s04_l399_1",
+      "emotions": {
+        "azalia": "wand_draw",
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l399_1",
@@ -292,7 +344,11 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s04_l401_0"
+      "next": "s04_l401_0",
+      "emotions": {
+        "azalia": "wand_draw",
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l401_0",
@@ -300,7 +356,11 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l401_1"
+      "next": "s04_l401_1",
+      "emotions": {
+        "rose": "fear",
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s04_l401_1",
@@ -308,7 +368,11 @@
       "speaker": "malfoy",
       "text": "",
       "source": [],
-      "next": "s04_l403_0"
+      "next": "s04_l403_0",
+      "emotions": {
+        "rose": "fear",
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s04_l403_0",
@@ -316,7 +380,11 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l403_1"
+      "next": "s04_l403_1",
+      "emotions": {
+        "rose": "fear",
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s04_l403_1",
@@ -324,7 +392,11 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s04_l405_0"
+      "next": "s04_l405_0",
+      "emotions": {
+        "rose": "fear",
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s04_l405_0",
@@ -340,7 +412,11 @@
           "durationMs": 480
         }
       ],
-      "next": "s04_game_duel"
+      "next": "s04_game_duel",
+      "emotions": {
+        "rose": "fear",
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s04_game_duel",
@@ -359,7 +435,10 @@
           "end": 83
         }
       ],
-      "next": null
+      "next": null,
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_duel_win_set",
@@ -371,7 +450,8 @@
         }
       ],
       "source": [],
-      "next": "s04_l409_0"
+      "next": "s04_l409_0",
+      "emotions": {}
     },
     {
       "id": "s04_l409_0",
@@ -393,7 +473,8 @@
           "durationMs": 500
         }
       ],
-      "next": "s04_l411_0"
+      "next": "s04_l411_0",
+      "emotions": {}
     },
     {
       "id": "s04_l411_0",
@@ -401,7 +482,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l411_1"
+      "next": "s04_l411_1",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s04_l411_1",
@@ -416,7 +500,10 @@
           "durationMs": 450
         }
       ],
-      "next": "s04_l413_0"
+      "next": "s04_l413_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s04_l413_0",
@@ -447,7 +534,8 @@
           "delayMs": 120
         }
       ],
-      "next": "s04_l415_0"
+      "next": "s04_l415_0",
+      "emotions": {}
     },
     {
       "id": "s04_l415_0",
@@ -464,7 +552,8 @@
           "durationMs": 600
         }
       ],
-      "next": "s04_l417_0"
+      "next": "s04_l417_0",
+      "emotions": {}
     },
     {
       "id": "s04_l417_0",
@@ -472,7 +561,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l417_1"
+      "next": "s04_l417_1",
+      "emotions": {
+        "azalia": "worried"
+      }
     },
     {
       "id": "s04_l417_1",
@@ -480,7 +572,10 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s04_l419_0"
+      "next": "s04_l419_0",
+      "emotions": {
+        "azalia": "worried"
+      }
     },
     {
       "id": "s04_l419_0",
@@ -488,7 +583,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l419_1"
+      "next": "s04_l419_1",
+      "emotions": {
+        "rose": "relief"
+      }
     },
     {
       "id": "s04_l419_1",
@@ -496,7 +594,10 @@
       "speaker": "rose",
       "text": "",
       "source": [],
-      "next": "s04_l421_0"
+      "next": "s04_l421_0",
+      "emotions": {
+        "rose": "relief"
+      }
     },
     {
       "id": "s04_l421_0",
@@ -527,7 +628,10 @@
           "durationMs": 800
         }
       ],
-      "next": "choice04_02"
+      "next": "choice04_02",
+      "emotions": {
+        "dima": "worried"
+      }
     },
     {
       "id": "choice04_02",
@@ -557,7 +661,8 @@
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s04_l427_1",
@@ -576,7 +681,8 @@
         }
       ],
       "source": [],
-      "next": "s04_l429_0"
+      "next": "s04_l429_0",
+      "emotions": {}
     },
     {
       "id": "s04_l429_0",
@@ -584,7 +690,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l429_1"
+      "next": "s04_l429_1",
+      "emotions": {
+        "dima": "love"
+      }
     },
     {
       "id": "s04_l429_1",
@@ -592,7 +701,10 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s04_l431_0"
+      "next": "s04_l431_0",
+      "emotions": {
+        "dima": "love"
+      }
     },
     {
       "id": "s04_l431_0",
@@ -613,7 +725,10 @@
           "durationMs": 600
         }
       ],
-      "next": "s04_enter_great_hall"
+      "next": "s04_enter_great_hall",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s04_l433_1",
@@ -632,7 +747,10 @@
         }
       ],
       "source": [],
-      "next": "s04_l433_2"
+      "next": "s04_l433_2",
+      "emotions": {
+        "dima": "love"
+      }
     },
     {
       "id": "s04_l433_2",
@@ -640,7 +758,10 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s04_l435_0"
+      "next": "s04_l435_0",
+      "emotions": {
+        "dima": "love"
+      }
     },
     {
       "id": "s04_l435_0",
@@ -661,7 +782,10 @@
           "durationMs": 600
         }
       ],
-      "next": "s04_enter_great_hall"
+      "next": "s04_enter_great_hall",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s04_duel_lose_set",
@@ -673,7 +797,8 @@
         }
       ],
       "source": [],
-      "next": "s04_l439_0"
+      "next": "s04_l439_0",
+      "emotions": {}
     },
     {
       "id": "s04_l439_0",
@@ -694,7 +819,10 @@
           "durationMs": 550
         }
       ],
-      "next": "s04_l440_0"
+      "next": "s04_l440_0",
+      "emotions": {
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l440_0",
@@ -722,7 +850,11 @@
           "delayMs": 120
         }
       ],
-      "next": "s04_l442_0"
+      "next": "s04_l442_0",
+      "emotions": {
+        "dima": "serious",
+        "rose": "fear"
+      }
     },
     {
       "id": "s04_l442_0",
@@ -730,7 +862,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l442_1"
+      "next": "s04_l442_1",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s04_l442_1",
@@ -738,7 +873,10 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s04_l444_0"
+      "next": "s04_l444_0",
+      "emotions": {
+        "dima": "serious"
+      }
     },
     {
       "id": "s04_l444_0",
@@ -775,7 +913,10 @@
           "durationMs": 900
         }
       ],
-      "next": "s04_enter_hospital"
+      "next": "s04_enter_hospital",
+      "emotions": {
+        "malfoy": "fear"
+      }
     },
     {
       "id": "s04_enter_hospital",
@@ -787,7 +928,8 @@
         "azalia"
       ],
       "source": [],
-      "next": "s04_l446_0"
+      "next": "s04_l446_0",
+      "emotions": {}
     },
     {
       "id": "s04_l446_0",
@@ -800,7 +942,8 @@
           "effect": "focus"
         }
       ],
-      "next": "s04_l448_0"
+      "next": "s04_l448_0",
+      "emotions": {}
     },
     {
       "id": "s04_l448_0",
@@ -808,7 +951,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l448_1"
+      "next": "s04_l448_1",
+      "emotions": {
+        "dima": "relief"
+      }
     },
     {
       "id": "s04_l448_1",
@@ -816,14 +962,20 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s04_l450_0"
+      "next": "s04_l450_0",
+      "emotions": {
+        "dima": "relief"
+      }
     },
     {
       "id": "s04_l450_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s04_l452_0"
+      "next": "s04_l452_0",
+      "emotions": {
+        "dima": "relief"
+      }
     },
     {
       "id": "s04_l452_0",
@@ -831,7 +983,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l452_1"
+      "next": "s04_l452_1",
+      "emotions": {
+        "dima": "tired"
+      }
     },
     {
       "id": "s04_l452_1",
@@ -839,7 +994,10 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s04_l454_0"
+      "next": "s04_l454_0",
+      "emotions": {
+        "dima": "tired"
+      }
     },
     {
       "id": "s04_l454_0",
@@ -854,7 +1012,8 @@
           "durationMs": 480
         }
       ],
-      "next": "s04_l456_0"
+      "next": "s04_l456_0",
+      "emotions": {}
     },
     {
       "id": "s04_l456_0",
@@ -862,7 +1021,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l456_1"
+      "next": "s04_l456_1",
+      "emotions": {}
     },
     {
       "id": "s04_l456_1",
@@ -870,7 +1030,8 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s04_l458_0"
+      "next": "s04_l458_0",
+      "emotions": {}
     },
     {
       "id": "s04_l458_0",
@@ -890,7 +1051,10 @@
           "durationMs": 700
         }
       ],
-      "next": "s04_l460_0"
+      "next": "s04_l460_0",
+      "emotions": {
+        "dima": "blush"
+      }
     },
     {
       "id": "s04_l460_0",
@@ -898,7 +1062,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l460_1"
+      "next": "s04_l460_1",
+      "emotions": {
+        "dima": "blush"
+      }
     },
     {
       "id": "s04_l460_1",
@@ -906,7 +1073,10 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s04_l462_0"
+      "next": "s04_l462_0",
+      "emotions": {
+        "dima": "blush"
+      }
     },
     {
       "id": "s04_l462_0",
@@ -927,7 +1097,8 @@
           "durationMs": 600
         }
       ],
-      "next": "s04_enter_great_hall"
+      "next": "s04_enter_great_hall",
+      "emotions": {}
     },
     {
       "id": "s04_enter_great_hall",
@@ -939,14 +1110,16 @@
         "azalia"
       ],
       "source": [],
-      "next": "s04_l467_0"
+      "next": "s04_l467_0",
+      "emotions": {}
     },
     {
       "id": "s04_l467_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s04_l469_0"
+      "next": "s04_l469_0",
+      "emotions": {}
     },
     {
       "id": "s04_l469_0",
@@ -954,7 +1127,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l469_1"
+      "next": "s04_l469_1",
+      "emotions": {}
     },
     {
       "id": "s04_l469_1",
@@ -962,7 +1136,8 @@
       "speaker": "rose",
       "text": "",
       "source": [],
-      "next": "s04_l471_0"
+      "next": "s04_l471_0",
+      "emotions": {}
     },
     {
       "id": "s04_l471_0",
@@ -970,7 +1145,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l471_1"
+      "next": "s04_l471_1",
+      "emotions": {}
     },
     {
       "id": "s04_l471_1",
@@ -978,7 +1154,8 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s04_l473_0"
+      "next": "s04_l473_0",
+      "emotions": {}
     },
     {
       "id": "s04_l473_0",
@@ -1002,7 +1179,8 @@
           "delayMs": 100
         }
       ],
-      "next": "s04_l475_0"
+      "next": "s04_l475_0",
+      "emotions": {}
     },
     {
       "id": "s04_l475_0",
@@ -1010,7 +1188,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l475_1"
+      "next": "s04_l475_1",
+      "emotions": {}
     },
     {
       "id": "s04_l475_1",
@@ -1018,14 +1197,18 @@
       "speaker": "ron",
       "text": "",
       "source": [],
-      "next": "s04_l477_0"
+      "next": "s04_l477_0",
+      "emotions": {}
     },
     {
       "id": "s04_l477_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s04_l479_0"
+      "next": "s04_l479_0",
+      "emotions": {
+        "ron": "frown"
+      }
     },
     {
       "id": "s04_l479_0",
@@ -1033,7 +1216,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l479_1"
+      "next": "s04_l479_1",
+      "emotions": {
+        "ron": "frown"
+      }
     },
     {
       "id": "s04_l479_1",
@@ -1041,7 +1227,10 @@
       "speaker": "fred",
       "text": "",
       "source": [],
-      "next": "s04_l481_0"
+      "next": "s04_l481_0",
+      "emotions": {
+        "ron": "frown"
+      }
     },
     {
       "id": "s04_l481_0",
@@ -1049,7 +1238,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l481_1"
+      "next": "s04_l481_1",
+      "emotions": {}
     },
     {
       "id": "s04_l481_1",
@@ -1057,7 +1247,8 @@
       "speaker": "george",
       "text": "",
       "source": [],
-      "next": "s04_l483_0"
+      "next": "s04_l483_0",
+      "emotions": {}
     },
     {
       "id": "s04_l483_0",
@@ -1082,7 +1273,10 @@
           "delayMs": 60
         }
       ],
-      "next": "s04_l483_1"
+      "next": "s04_l483_1",
+      "emotions": {
+        "hermione": "worried"
+      }
     },
     {
       "id": "s04_l483_1",
@@ -1090,7 +1284,10 @@
       "speaker": "hermione",
       "text": "",
       "source": [],
-      "next": "s04_l485_0"
+      "next": "s04_l485_0",
+      "emotions": {
+        "hermione": "worried"
+      }
     },
     {
       "id": "s04_l485_0",
@@ -1098,7 +1295,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l485_1"
+      "next": "s04_l485_1",
+      "emotions": {}
     },
     {
       "id": "s04_l485_1",
@@ -1106,7 +1304,8 @@
       "speaker": "rose",
       "text": "",
       "source": [],
-      "next": "s04_l487_0"
+      "next": "s04_l487_0",
+      "emotions": {}
     },
     {
       "id": "s04_l487_0",
@@ -1128,14 +1327,19 @@
           "delayMs": 140
         }
       ],
-      "next": "s04_l489_0"
+      "next": "s04_l489_0",
+      "emotions": {
+        "azalia": "smile",
+        "ron": "laugh"
+      }
     },
     {
       "id": "s04_l489_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s04_l490_0"
+      "next": "s04_l490_0",
+      "emotions": {}
     },
     {
       "id": "s04_l490_0",
@@ -1156,7 +1360,8 @@
         }
       ],
       "source": [],
-      "next": "s04_l491_0"
+      "next": "s04_l491_0",
+      "emotions": {}
     },
     {
       "id": "s04_l491_0",
@@ -1192,14 +1397,16 @@
         }
       ],
       "source": [],
-      "next": "s04_cs04"
+      "next": "s04_l492_0",
+      "emotions": {}
     },
     {
       "id": "s04_cs04",
       "type": "cutscene",
-      "cutsceneId": "cs04",
+      "cutsceneId": "cs04_rose_dima",
       "source": [],
-      "next": "s04_l492_0"
+      "next": "s04_end",
+      "emotions": {}
     },
     {
       "id": "s04_l492_0",
@@ -1207,7 +1414,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s04_l492_1"
+      "next": "s04_l492_1",
+      "emotions": {
+        "azalia": "shy"
+      }
     },
     {
       "id": "s04_l492_1",
@@ -1215,14 +1425,18 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s04_end"
+      "next": "s04_cs04",
+      "emotions": {
+        "azalia": "shy"
+      }
     },
     {
       "id": "s04_end",
       "type": "end",
       "nextScene": "scene05",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

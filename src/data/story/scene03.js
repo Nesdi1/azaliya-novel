@@ -15,7 +15,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s03_l269_0"
+      "next": "s03_l269_0",
+      "emotions": {}
     },
     {
       "id": "s03_l269_0",
@@ -41,7 +42,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s03_l271_0"
+      "next": "s03_l271_0",
+      "emotions": {}
     },
     {
       "id": "s03_l271_0",
@@ -77,7 +79,8 @@ export default {
           "delayMs": 180
         }
       ],
-      "next": "s03_l273_0"
+      "next": "s03_l273_0",
+      "emotions": {}
     },
     {
       "id": "s03_l273_0",
@@ -92,7 +95,8 @@ export default {
           "end": 58
         }
       ],
-      "next": "s03_l273_1"
+      "next": "s03_l273_1",
+      "emotions": {}
     },
     {
       "id": "s03_l273_1",
@@ -107,7 +111,8 @@ export default {
           "end": 225
         }
       ],
-      "next": "s03_l275_0"
+      "next": "s03_l275_0",
+      "emotions": {}
     },
     {
       "id": "s03_l275_0",
@@ -127,7 +132,8 @@ export default {
           "effect": "focus"
         }
       ],
-      "next": "s03_l277_0"
+      "next": "s03_l277_0",
+      "emotions": {}
     },
     {
       "id": "s03_l277_0",
@@ -142,7 +148,10 @@ export default {
           "end": 7
         }
       ],
-      "next": "s03_l277_1"
+      "next": "s03_l277_1",
+      "emotions": {
+        "harry": "confused"
+      }
     },
     {
       "id": "s03_l277_1",
@@ -157,7 +166,10 @@ export default {
           "end": 218
         }
       ],
-      "next": "s03_l279_0"
+      "next": "s03_l279_0",
+      "emotions": {
+        "harry": "confused"
+      }
     },
     {
       "id": "s03_l279_0",
@@ -184,7 +196,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s03_l279_1"
+      "next": "s03_l279_1",
+      "emotions": {
+        "harry": "confused"
+      }
     },
     {
       "id": "s03_l279_1",
@@ -199,7 +214,10 @@ export default {
           "end": 40
         }
       ],
-      "next": "s03_l281_0"
+      "next": "s03_l281_0",
+      "emotions": {
+        "harry": "confused"
+      }
     },
     {
       "id": "s03_l281_0",
@@ -225,7 +243,8 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s03_l283_0"
+      "next": "s03_l283_0",
+      "emotions": {}
     },
     {
       "id": "s03_l283_0",
@@ -240,7 +259,8 @@ export default {
           "end": 29
         }
       ],
-      "next": "s03_l283_1"
+      "next": "s03_l283_1",
+      "emotions": {}
     },
     {
       "id": "s03_l283_1",
@@ -255,7 +275,8 @@ export default {
           "end": 101
         }
       ],
-      "next": "s03_l285_0"
+      "next": "s03_l285_0",
+      "emotions": {}
     },
     {
       "id": "s03_l285_0",
@@ -277,7 +298,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s03_l287_0"
+      "next": "s03_l287_0",
+      "emotions": {}
     },
     {
       "id": "s03_l287_0",
@@ -292,7 +314,8 @@ export default {
           "end": 14
         }
       ],
-      "next": "s03_l287_1"
+      "next": "s03_l287_1",
+      "emotions": {}
     },
     {
       "id": "s03_l287_1",
@@ -307,7 +330,8 @@ export default {
           "end": 229
         }
       ],
-      "next": "s03_l289_0"
+      "next": "s03_l289_0",
+      "emotions": {}
     },
     {
       "id": "s03_l289_0",
@@ -337,7 +361,8 @@ export default {
           "delayMs": 500
         }
       ],
-      "next": "s03_l291_0"
+      "next": "s03_l291_0",
+      "emotions": {}
     },
     {
       "id": "s03_l291_0",
@@ -352,7 +377,8 @@ export default {
           "end": 14
         }
       ],
-      "next": "s03_l291_1"
+      "next": "s03_l291_1",
+      "emotions": {}
     },
     {
       "id": "s03_l291_1",
@@ -367,7 +393,8 @@ export default {
           "end": 119
         }
       ],
-      "next": "s03_l291_2"
+      "next": "s03_l291_2",
+      "emotions": {}
     },
     {
       "id": "s03_l291_2",
@@ -383,7 +410,8 @@ export default {
           "end": 129
         }
       ],
-      "next": "s03_l291_3"
+      "next": "s03_l291_3",
+      "emotions": {}
     },
     {
       "id": "s03_l291_3",
@@ -398,7 +426,8 @@ export default {
           "end": 197
         }
       ],
-      "next": "s03_l293_0"
+      "next": "s03_l293_0",
+      "emotions": {}
     },
     {
       "id": "s03_l293_0",
@@ -419,7 +448,8 @@ export default {
           "durationMs": 700
         }
       ],
-      "next": "s03_game_potions"
+      "next": "s03_game_potions",
+      "emotions": {}
     },
     {
       "id": "s03_game_potions",
@@ -438,7 +468,8 @@ export default {
           "end": 65
         }
       ],
-      "next": "s03_l297_0"
+      "next": "s03_l297_0",
+      "emotions": {}
     },
     {
       "id": "s03_l297_0",
@@ -481,7 +512,8 @@ export default {
           "delayMs": 200
         }
       ],
-      "next": "s03_l299_0"
+      "next": "s03_l299_0",
+      "emotions": {}
     },
     {
       "id": "s03_l299_0",
@@ -496,7 +528,8 @@ export default {
           "end": 14
         }
       ],
-      "next": "s03_l299_1"
+      "next": "s03_l299_1",
+      "emotions": {}
     },
     {
       "id": "s03_l299_1",
@@ -511,7 +544,8 @@ export default {
           "end": 149
         }
       ],
-      "next": "s03_l300_0"
+      "next": "s03_l300_0",
+      "emotions": {}
     },
     {
       "id": "s03_l300_0",
@@ -542,7 +576,8 @@ export default {
           "durationMs": 600
         }
       ],
-      "next": "s03_l302_0"
+      "next": "s03_l302_0",
+      "emotions": {}
     },
     {
       "id": "s03_l302_0",
@@ -557,7 +592,10 @@ export default {
           "end": 10
         }
       ],
-      "next": "s03_l302_1"
+      "next": "s03_l302_1",
+      "emotions": {
+        "hermione": "indignant"
+      }
     },
     {
       "id": "s03_l302_1",
@@ -572,7 +610,10 @@ export default {
           "end": 154
         }
       ],
-      "next": "s03_l304_0"
+      "next": "s03_l304_0",
+      "emotions": {
+        "hermione": "indignant"
+      }
     },
     {
       "id": "s03_l304_0",
@@ -587,7 +628,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s03_l304_1"
+      "next": "s03_l304_1",
+      "emotions": {}
     },
     {
       "id": "s03_l304_1",
@@ -602,7 +644,8 @@ export default {
           "end": 44
         }
       ],
-      "next": "s03_l306_0"
+      "next": "s03_l306_0",
+      "emotions": {}
     },
     {
       "id": "s03_l306_0",
@@ -630,7 +673,8 @@ export default {
           "durationMs": 480
         }
       ],
-      "next": "s03_l308_0"
+      "next": "s03_l308_0",
+      "emotions": {}
     },
     {
       "id": "s03_l308_0",
@@ -645,7 +689,10 @@ export default {
           "end": 5
         }
       ],
-      "next": "s03_l308_1"
+      "next": "s03_l308_1",
+      "emotions": {
+        "ron": "frown"
+      }
     },
     {
       "id": "s03_l308_1",
@@ -660,7 +707,10 @@ export default {
           "end": 73
         }
       ],
-      "next": "s03_l310_0"
+      "next": "s03_l310_0",
+      "emotions": {
+        "ron": "frown"
+      }
     },
     {
       "id": "s03_l310_0",
@@ -675,7 +725,8 @@ export default {
           "end": 33
         }
       ],
-      "next": "s03_l310_1"
+      "next": "s03_l310_1",
+      "emotions": {}
     },
     {
       "id": "s03_l310_1",
@@ -690,7 +741,8 @@ export default {
           "end": 51
         }
       ],
-      "next": "s03_l312_0"
+      "next": "s03_l312_0",
+      "emotions": {}
     },
     {
       "id": "s03_l312_0",
@@ -705,7 +757,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s03_l312_1"
+      "next": "s03_l312_1",
+      "emotions": {}
     },
     {
       "id": "s03_l312_1",
@@ -720,7 +773,8 @@ export default {
           "end": 171
         }
       ],
-      "next": "s03_l314_0"
+      "next": "s03_l314_0",
+      "emotions": {}
     },
     {
       "id": "s03_l314_0",
@@ -735,7 +789,10 @@ export default {
           "end": 34
         }
       ],
-      "next": "s03_l314_1"
+      "next": "s03_l314_1",
+      "emotions": {
+        "harry": "grateful"
+      }
     },
     {
       "id": "s03_l314_1",
@@ -750,7 +807,10 @@ export default {
           "end": 54
         }
       ],
-      "next": "s03_enter_corridor"
+      "next": "s03_enter_corridor",
+      "emotions": {
+        "harry": "grateful"
+      }
     },
     {
       "id": "s03_enter_corridor",
@@ -764,7 +824,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s03_l316_0"
+      "next": "s03_l316_0",
+      "emotions": {}
     },
     {
       "id": "s03_l316_0",
@@ -778,7 +839,8 @@ export default {
           "end": 229
         }
       ],
-      "next": "s03_l318_0"
+      "next": "s03_l318_0",
+      "emotions": {}
     },
     {
       "id": "s03_l318_0",
@@ -822,7 +884,8 @@ export default {
           "delayMs": 160
         }
       ],
-      "next": "s03_l318_1"
+      "next": "s03_l318_1",
+      "emotions": {}
     },
     {
       "id": "s03_l318_1",
@@ -837,7 +900,8 @@ export default {
           "end": 103
         }
       ],
-      "next": "s03_l320_0"
+      "next": "s03_l320_0",
+      "emotions": {}
     },
     {
       "id": "s03_l320_0",
@@ -867,7 +931,8 @@ export default {
           "delayMs": 120
         }
       ],
-      "next": "s03_l322_0"
+      "next": "s03_l322_0",
+      "emotions": {}
     },
     {
       "id": "s03_l322_0",
@@ -882,7 +947,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s03_l322_1"
+      "next": "s03_l322_1",
+      "emotions": {}
     },
     {
       "id": "s03_l322_1",
@@ -897,7 +963,8 @@ export default {
           "end": 41
         }
       ],
-      "next": "s03_l324_0"
+      "next": "s03_l324_0",
+      "emotions": {}
     },
     {
       "id": "s03_l324_0",
@@ -912,7 +979,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s03_l324_1"
+      "next": "s03_l324_1",
+      "emotions": {}
     },
     {
       "id": "s03_l324_1",
@@ -927,7 +995,8 @@ export default {
           "end": 36
         }
       ],
-      "next": "s03_l326_0"
+      "next": "s03_l326_0",
+      "emotions": {}
     },
     {
       "id": "s03_l326_0",
@@ -947,7 +1016,8 @@ export default {
           "effect": "focus"
         }
       ],
-      "next": "s03_l328_0"
+      "next": "s03_l328_0",
+      "emotions": {}
     },
     {
       "id": "s03_l328_0",
@@ -962,7 +1032,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s03_l328_1"
+      "next": "s03_l328_1",
+      "emotions": {}
     },
     {
       "id": "s03_l328_1",
@@ -985,7 +1056,8 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s03_l330_0"
+      "next": "s03_l330_0",
+      "emotions": {}
     },
     {
       "id": "s03_l330_0",
@@ -1000,7 +1072,10 @@ export default {
           "end": 14
         }
       ],
-      "next": "s03_l330_1"
+      "next": "s03_l330_1",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s03_l330_1",
@@ -1015,7 +1090,10 @@ export default {
           "end": 68
         }
       ],
-      "next": "s03_l332_0"
+      "next": "s03_l332_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s03_l332_0",
@@ -1041,7 +1119,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s03_l334_0"
+      "next": "s03_l334_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s03_l334_0",
@@ -1079,7 +1160,8 @@ export default {
           "delayMs": 120
         }
       ],
-      "next": "s03_l336_0"
+      "next": "s03_l336_0",
+      "emotions": {}
     },
     {
       "id": "s03_l336_0",
@@ -1094,7 +1176,10 @@ export default {
           "end": 33
         }
       ],
-      "next": "s03_l336_1"
+      "next": "s03_l336_1",
+      "emotions": {
+        "pansy": "peace"
+      }
     },
     {
       "id": "s03_l336_1",
@@ -1109,7 +1194,10 @@ export default {
           "end": 58
         }
       ],
-      "next": "s03_l338_0"
+      "next": "s03_l338_0",
+      "emotions": {
+        "pansy": "peace"
+      }
     },
     {
       "id": "s03_l338_0",
@@ -1133,7 +1221,10 @@ export default {
           "durationMs": 550
         }
       ],
-      "next": "s03_l340_0"
+      "next": "s03_l340_0",
+      "emotions": {
+        "pansy": "peace"
+      }
     },
     {
       "id": "s03_l340_0",
@@ -1148,7 +1239,8 @@ export default {
           "end": 7
         }
       ],
-      "next": "s03_l340_1"
+      "next": "s03_l340_1",
+      "emotions": {}
     },
     {
       "id": "s03_l340_1",
@@ -1163,7 +1255,8 @@ export default {
           "end": 71
         }
       ],
-      "next": "s03_l342_0"
+      "next": "s03_l342_0",
+      "emotions": {}
     },
     {
       "id": "s03_l342_0",
@@ -1178,7 +1271,10 @@ export default {
           "end": 48
         }
       ],
-      "next": "s03_l342_1"
+      "next": "s03_l342_1",
+      "emotions": {
+        "malfoy": "hysteria_dry"
+      }
     },
     {
       "id": "s03_l342_1",
@@ -1201,7 +1297,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s03_enter_slytherin_end"
+      "next": "s03_enter_slytherin_end",
+      "emotions": {
+        "malfoy": "hysteria_dry"
+      }
     },
     {
       "id": "s03_enter_slytherin_end",
@@ -1215,7 +1314,8 @@ export default {
         "nott"
       ],
       "source": [],
-      "next": "s03_l344_0"
+      "next": "s03_l344_0",
+      "emotions": {}
     },
     {
       "id": "s03_l344_0",
@@ -1241,7 +1341,10 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s03_l346_0"
+      "next": "s03_l346_0",
+      "emotions": {
+        "malfoy": "hysteria_dry"
+      }
     },
     {
       "id": "s03_l346_0",
@@ -1256,7 +1359,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s03_l346_1"
+      "next": "s03_l346_1",
+      "emotions": {
+        "malfoy": "hysteria_dry"
+      }
     },
     {
       "id": "s03_l346_1",
@@ -1279,7 +1385,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s03_l348_0"
+      "next": "s03_l348_0",
+      "emotions": {
+        "malfoy": "hysteria_dry"
+      }
     },
     {
       "id": "s03_l348_0",
@@ -1313,7 +1422,10 @@ export default {
           "delayMs": 180
         }
       ],
-      "next": "s03_l350_0"
+      "next": "s03_l350_0",
+      "emotions": {
+        "nott": "disdain"
+      }
     },
     {
       "id": "s03_l350_0",
@@ -1328,7 +1440,10 @@ export default {
           "end": 23
         }
       ],
-      "next": "s03_l350_1"
+      "next": "s03_l350_1",
+      "emotions": {
+        "nott": "disdain"
+      }
     },
     {
       "id": "s03_l350_1",
@@ -1343,7 +1458,10 @@ export default {
           "end": 103
         }
       ],
-      "next": "s03_l352_0"
+      "next": "s03_l352_0",
+      "emotions": {
+        "nott": "disdain"
+      }
     },
     {
       "id": "s03_l352_0",
@@ -1363,7 +1481,8 @@ export default {
           "effect": "focus"
         }
       ],
-      "next": "s03_l354_0"
+      "next": "s03_l354_0",
+      "emotions": {}
     },
     {
       "id": "s03_l354_0",
@@ -1378,7 +1497,8 @@ export default {
           "end": 14
         }
       ],
-      "next": "s03_l354_1"
+      "next": "s03_l354_1",
+      "emotions": {}
     },
     {
       "id": "s03_l354_1",
@@ -1393,7 +1513,8 @@ export default {
           "end": 80
         }
       ],
-      "next": "s03_l356_0"
+      "next": "s03_l356_0",
+      "emotions": {}
     },
     {
       "id": "s03_l356_0",
@@ -1440,7 +1561,8 @@ export default {
           "delayMs": 180
         }
       ],
-      "next": "s03_enter_friends_after"
+      "next": "s03_enter_friends_after",
+      "emotions": {}
     },
     {
       "id": "s03_enter_friends_after",
@@ -1454,7 +1576,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s03_l358_0"
+      "next": "s03_l358_0",
+      "emotions": {}
     },
     {
       "id": "s03_l358_0",
@@ -1468,7 +1591,8 @@ export default {
           "end": 24
         }
       ],
-      "next": "s03_l360_0"
+      "next": "s03_l360_0",
+      "emotions": {}
     },
     {
       "id": "s03_l360_0",
@@ -1483,7 +1607,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s03_l360_1"
+      "next": "s03_l360_1",
+      "emotions": {}
     },
     {
       "id": "s03_l360_1",
@@ -1498,7 +1623,8 @@ export default {
           "end": 20
         }
       ],
-      "next": "s03_l362_0"
+      "next": "s03_l362_0",
+      "emotions": {}
     },
     {
       "id": "s03_l362_0",
@@ -1513,7 +1639,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s03_l362_1"
+      "next": "s03_l362_1",
+      "emotions": {}
     },
     {
       "id": "s03_l362_1",
@@ -1528,7 +1655,8 @@ export default {
           "end": 46
         }
       ],
-      "next": "s03_l364_0"
+      "next": "s03_l364_0",
+      "emotions": {}
     },
     {
       "id": "s03_l364_0",
@@ -1542,7 +1670,8 @@ export default {
           "end": 26
         }
       ],
-      "next": "s03_enter_courtyard"
+      "next": "s03_enter_courtyard",
+      "emotions": {}
     },
     {
       "id": "s03_enter_courtyard",
@@ -1556,7 +1685,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s03_l366_0"
+      "next": "s03_l366_0",
+      "emotions": {}
     },
     {
       "id": "s03_l366_0",
@@ -1570,7 +1700,8 @@ export default {
           "end": 168
         }
       ],
-      "next": "s03_l367_0"
+      "next": "s03_l367_0",
+      "emotions": {}
     },
     {
       "id": "s03_l367_0",
@@ -1601,21 +1732,24 @@ export default {
           "end": 107
         }
       ],
-      "next": "s03_cs03"
+      "next": "s03_cs03",
+      "emotions": {}
     },
     {
       "id": "s03_cs03",
       "type": "cutscene",
-      "cutsceneId": "cs03",
+      "cutsceneId": "cs03_friends",
       "source": [],
-      "next": "s03_end"
+      "next": "s03_end",
+      "emotions": {}
     },
     {
       "id": "s03_end",
       "type": "end",
       "nextScene": "scene04",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

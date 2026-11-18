@@ -21,7 +21,8 @@
       "then": "s05_enter_dorm_night",
       "source": [],
       "else": "s05_enter_classroom",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s05_enter_classroom",
@@ -34,7 +35,8 @@
         "dima"
       ],
       "source": [],
-      "next": "s05_l499_0"
+      "next": "s05_l499_0",
+      "emotions": {}
     },
     {
       "id": "s05_l499_0",
@@ -63,7 +65,11 @@
           "delayMs": 250
         }
       ],
-      "next": "s05_l501_0"
+      "next": "s05_l501_0",
+      "emotions": {
+        "azalia": "annoyed",
+        "dima": "love"
+      }
     },
     {
       "id": "s05_l501_0",
@@ -71,7 +77,11 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l501_1"
+      "next": "s05_l501_1",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l501_1",
@@ -87,7 +97,11 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l503_0"
+      "next": "s05_l503_0",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l503_0",
@@ -95,7 +109,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l503_1"
+      "next": "s05_l503_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l503_1",
@@ -111,7 +128,10 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l505_0"
+      "next": "s05_l505_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l505_0",
@@ -119,7 +139,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l505_1"
+      "next": "s05_l505_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l505_1",
@@ -127,7 +150,10 @@
       "speaker": "rose",
       "text": "",
       "source": [],
-      "next": "s05_l507_0"
+      "next": "s05_l507_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l507_0",
@@ -142,7 +168,10 @@
           "durationMs": 450
         }
       ],
-      "next": "choice05_01"
+      "next": "choice05_01",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "choice05_01",
@@ -168,7 +197,8 @@
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s05_l513_1",
@@ -183,7 +213,8 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l515_0"
+      "next": "s05_l515_0",
+      "emotions": {}
     },
     {
       "id": "s05_l515_0",
@@ -191,7 +222,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l515_1"
+      "next": "s05_l515_1",
+      "emotions": {}
     },
     {
       "id": "s05_l515_1",
@@ -199,7 +231,8 @@
       "speaker": "rose",
       "text": "",
       "source": [],
-      "next": "s05_l522_0"
+      "next": "s05_l522_0",
+      "emotions": {}
     },
     {
       "id": "s05_l517_0",
@@ -207,7 +240,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l517_1"
+      "next": "s05_l517_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l517_1",
@@ -223,7 +259,10 @@
         }
       ],
       "source": [],
-      "next": "s05_l519_0"
+      "next": "s05_l519_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l519_0",
@@ -238,14 +277,21 @@
           "durationMs": 520
         }
       ],
-      "next": "s05_l522_0"
+      "next": "s05_l522_0",
+      "emotions": {
+        "azalia": "annoyed",
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l521_1",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s05_l522_0"
+      "next": "s05_l522_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l522_0",
@@ -273,7 +319,10 @@
           "durationMs": 480
         }
       ],
-      "next": "s05_enter_corridor"
+      "next": "s05_enter_corridor",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_enter_corridor",
@@ -287,14 +336,16 @@
         "twins"
       ],
       "source": [],
-      "next": "s05_l523_0"
+      "next": "s05_l523_0",
+      "emotions": {}
     },
     {
       "id": "s05_l523_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s05_l525_0"
+      "next": "s05_l525_0",
+      "emotions": {}
     },
     {
       "id": "s05_l525_0",
@@ -302,7 +353,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l525_1"
+      "next": "s05_l525_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l525_1",
@@ -318,7 +372,10 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l527_0"
+      "next": "s05_l527_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l527_0",
@@ -326,7 +383,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l527_1"
+      "next": "s05_l527_1",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l527_1",
@@ -342,7 +402,10 @@
           "durationMs": 450
         }
       ],
-      "next": "s05_l529_0"
+      "next": "s05_l529_0",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l529_0",
@@ -365,7 +428,10 @@
           "durationMs": 520
         }
       ],
-      "next": "s05_l531_0"
+      "next": "s05_l531_0",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l531_0",
@@ -373,7 +439,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l531_1"
+      "next": "s05_l531_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l531_1",
@@ -389,7 +458,10 @@
           "durationMs": 520
         }
       ],
-      "next": "s05_l533_0"
+      "next": "s05_l533_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s05_l533_0",
@@ -417,7 +489,10 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l535_0"
+      "next": "s05_l535_0",
+      "emotions": {
+        "theo": "care"
+      }
     },
     {
       "id": "s05_l535_0",
@@ -425,7 +500,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l535_1"
+      "next": "s05_l535_1",
+      "emotions": {
+        "theo": "care"
+      }
     },
     {
       "id": "s05_l535_1",
@@ -433,7 +511,10 @@
       "speaker": "theo",
       "text": "",
       "source": [],
-      "next": "s05_l537_0"
+      "next": "s05_l537_0",
+      "emotions": {
+        "theo": "care"
+      }
     },
     {
       "id": "s05_l537_0",
@@ -441,7 +522,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l537_1"
+      "next": "s05_l537_1",
+      "emotions": {}
     },
     {
       "id": "s05_l537_1",
@@ -449,7 +531,8 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s05_l539_0"
+      "next": "s05_l539_0",
+      "emotions": {}
     },
     {
       "id": "s05_l539_0",
@@ -470,7 +553,10 @@
           "durationMs": 550
         }
       ],
-      "next": "s05_l541_0"
+      "next": "s05_l541_0",
+      "emotions": {
+        "theo": "accept"
+      }
     },
     {
       "id": "s05_l541_0",
@@ -478,7 +564,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l541_1"
+      "next": "s05_l541_1",
+      "emotions": {}
     },
     {
       "id": "s05_l541_1",
@@ -494,7 +581,8 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l543_0"
+      "next": "s05_l543_0",
+      "emotions": {}
     },
     {
       "id": "s05_l543_0",
@@ -502,7 +590,11 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l543_1"
+      "next": "s05_l543_1",
+      "emotions": {
+        "azalia": "shock",
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s05_l543_1",
@@ -524,7 +616,11 @@
           "durationMs": 450
         }
       ],
-      "next": "s05_l545_0"
+      "next": "s05_l545_0",
+      "emotions": {
+        "azalia": "shock",
+        "theo": "suspicious"
+      }
     },
     {
       "id": "s05_l545_0",
@@ -532,7 +628,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l545_1"
+      "next": "s05_l545_1",
+      "emotions": {}
     },
     {
       "id": "s05_l545_1",
@@ -540,14 +637,16 @@
       "speaker": "george",
       "text": "",
       "source": [],
-      "next": "s05_l547_0"
+      "next": "s05_l547_0",
+      "emotions": {}
     },
     {
       "id": "s05_l547_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s05_l549_0"
+      "next": "s05_l549_0",
+      "emotions": {}
     },
     {
       "id": "s05_l549_0",
@@ -555,7 +654,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l549_1"
+      "next": "s05_l549_1",
+      "emotions": {}
     },
     {
       "id": "s05_l549_1",
@@ -563,7 +663,8 @@
       "speaker": "fred",
       "text": "",
       "source": [],
-      "next": "s05_enter_fountain_day"
+      "next": "s05_enter_fountain_day",
+      "emotions": {}
     },
     {
       "id": "s05_enter_fountain_day",
@@ -577,7 +678,8 @@
         "azalia"
       ],
       "source": [],
-      "next": "s05_l551_0"
+      "next": "s05_l551_0",
+      "emotions": {}
     },
     {
       "id": "s05_l551_0",
@@ -595,7 +697,8 @@
           "durationMs": 2800
         }
       ],
-      "next": "s05_l553_0"
+      "next": "s05_l553_0",
+      "emotions": {}
     },
     {
       "id": "s05_l553_0",
@@ -603,7 +706,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l553_1"
+      "next": "s05_l553_1",
+      "emotions": {}
     },
     {
       "id": "s05_l553_1",
@@ -611,7 +715,8 @@
       "speaker": "ron",
       "text": "",
       "source": [],
-      "next": "s05_l555_0"
+      "next": "s05_l555_0",
+      "emotions": {}
     },
     {
       "id": "s05_l555_0",
@@ -619,7 +724,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l555_1"
+      "next": "s05_l555_1",
+      "emotions": {}
     },
     {
       "id": "s05_l555_1",
@@ -627,7 +733,8 @@
       "speaker": "hermione",
       "text": "",
       "source": [],
-      "next": "s05_l557_0"
+      "next": "s05_l557_0",
+      "emotions": {}
     },
     {
       "id": "s05_l557_0",
@@ -635,7 +742,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l557_1"
+      "next": "s05_l557_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l557_1",
@@ -643,7 +753,10 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s05_l559_0"
+      "next": "s05_l559_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s05_l559_0",
@@ -672,7 +785,8 @@
           "delayMs": 200
         }
       ],
-      "next": "s05_l561_0"
+      "next": "s05_l561_0",
+      "emotions": {}
     },
     {
       "id": "s05_l561_0",
@@ -680,7 +794,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l561_1"
+      "next": "s05_l561_1",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s05_l561_1",
@@ -688,7 +805,10 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s05_enter_dorm_night"
+      "next": "s05_enter_dorm_night",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s05_enter_dorm_night",
@@ -699,7 +819,8 @@
         "azalia"
       ],
       "source": [],
-      "next": "s05_l564_0"
+      "next": "s05_l564_0",
+      "emotions": {}
     },
     {
       "id": "s05_l564_0",
@@ -714,7 +835,8 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l566_0"
+      "next": "s05_l566_0",
+      "emotions": {}
     },
     {
       "id": "s05_l566_0",
@@ -722,7 +844,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l566_1"
+      "next": "s05_l566_1",
+      "emotions": {}
     },
     {
       "id": "s05_l566_1",
@@ -730,7 +853,8 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s05_l568_0"
+      "next": "s05_l568_0",
+      "emotions": {}
     },
     {
       "id": "s05_l568_0",
@@ -746,7 +870,8 @@
           "durationMs": 520
         }
       ],
-      "next": "s05_enter_corridor_night"
+      "next": "s05_enter_corridor_night",
+      "emotions": {}
     },
     {
       "id": "s05_enter_corridor_night",
@@ -758,7 +883,8 @@
         "snape"
       ],
       "source": [],
-      "next": "s05_game_stealth"
+      "next": "s05_game_stealth",
+      "emotions": {}
     },
     {
       "id": "s05_game_stealth",
@@ -781,7 +907,8 @@
           "end": 99
         }
       ],
-      "next": "s05_set_stealth_win"
+      "next": "s05_set_stealth_win",
+      "emotions": {}
     },
     {
       "id": "s05_set_stealth_lose",
@@ -793,7 +920,8 @@
         }
       ],
       "source": [],
-      "next": "s05_enter_fail_fountain"
+      "next": "s05_enter_fail_fountain",
+      "emotions": {}
     },
     {
       "id": "s05_enter_fail_fountain",
@@ -804,7 +932,8 @@
         "dima"
       ],
       "source": [],
-      "next": "s05_l571_1"
+      "next": "s05_l571_1",
+      "emotions": {}
     },
     {
       "id": "s05_l571_1",
@@ -823,7 +952,10 @@
         }
       ],
       "source": [],
-      "next": "s05_l573_0"
+      "next": "s05_l573_0",
+      "emotions": {
+        "dima": "disappointed"
+      }
     },
     {
       "id": "s05_l573_0",
@@ -831,7 +963,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l573_1"
+      "next": "s05_l573_1",
+      "emotions": {
+        "dima": "disappointed"
+      }
     },
     {
       "id": "s05_l573_1",
@@ -839,7 +974,18 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s05_stealth_retry"
+      "next": "s05_cs_fail",
+      "emotions": {
+        "dima": "disappointed"
+      }
+    },
+    {
+      "id": "s05_cs_fail",
+      "type": "cutscene",
+      "cutsceneId": "cs05_fountain_fail",
+      "source": [],
+      "next": "s05_stealth_retry",
+      "emotions": {}
     },
     {
       "id": "s05_stealth_retry",
@@ -849,7 +995,8 @@
       "retryKind": "stealth",
       "source": [],
       "else": "s05_set_stealth_win",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s05_set_stealth_win",
@@ -861,7 +1008,8 @@
         }
       ],
       "source": [],
-      "next": "s05_enter_fountain_night"
+      "next": "s05_enter_fountain_night",
+      "emotions": {}
     },
     {
       "id": "s05_enter_fountain_night",
@@ -872,7 +1020,8 @@
         "azalia"
       ],
       "source": [],
-      "next": "s05_l577_1"
+      "next": "s05_l577_1",
+      "emotions": {}
     },
     {
       "id": "s05_l577_1",
@@ -890,7 +1039,8 @@
         }
       ],
       "source": [],
-      "next": "s05_l579_0"
+      "next": "s05_l579_0",
+      "emotions": {}
     },
     {
       "id": "s05_l579_0",
@@ -918,7 +1068,10 @@
           "delayMs": 220
         }
       ],
-      "next": "s05_l581_0"
+      "next": "s05_l581_0",
+      "emotions": {
+        "azalia": "wand_stance"
+      }
     },
     {
       "id": "s05_l581_0",
@@ -926,7 +1079,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l581_1"
+      "next": "s05_l581_1",
+      "emotions": {
+        "azalia": "wand_stance"
+      }
     },
     {
       "id": "s05_l581_1",
@@ -934,14 +1090,18 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s05_l583_0"
+      "next": "s05_l583_0",
+      "emotions": {
+        "azalia": "wand_stance"
+      }
     },
     {
       "id": "s05_l583_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s05_l585_0"
+      "next": "s05_l585_0",
+      "emotions": {}
     },
     {
       "id": "s05_l585_0",
@@ -949,7 +1109,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l585_1"
+      "next": "s05_l585_1",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l585_1",
@@ -965,7 +1128,10 @@
           "durationMs": 450
         }
       ],
-      "next": "s05_l587_0"
+      "next": "s05_l587_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l587_0",
@@ -973,7 +1139,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l587_1"
+      "next": "s05_l587_1",
+      "emotions": {}
     },
     {
       "id": "s05_l587_1",
@@ -981,7 +1148,8 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s05_l587_2"
+      "next": "s05_l587_2",
+      "emotions": {}
     },
     {
       "id": "s05_l587_2",
@@ -990,7 +1158,8 @@
       "narration": true,
       "annotation": "",
       "source": [],
-      "next": "s05_l587_3"
+      "next": "s05_l587_3",
+      "emotions": {}
     },
     {
       "id": "s05_l587_3",
@@ -998,7 +1167,8 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s05_l589_0"
+      "next": "s05_l589_0",
+      "emotions": {}
     },
     {
       "id": "s05_l589_0",
@@ -1017,7 +1187,10 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l591_0"
+      "next": "s05_l591_0",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s05_l591_0",
@@ -1025,7 +1198,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l591_1"
+      "next": "s05_l591_1",
+      "emotions": {
+        "azalia": "shy"
+      }
     },
     {
       "id": "s05_l591_1",
@@ -1033,7 +1209,10 @@
       "speaker": "azalia",
       "text": "",
       "source": [],
-      "next": "s05_l593_0"
+      "next": "s05_l593_0",
+      "emotions": {
+        "azalia": "shy"
+      }
     },
     {
       "id": "s05_l593_0",
@@ -1067,7 +1246,9 @@
           "durationMs": 1000
         }
       ],
-      "next": "s05_l595_0"
+      "next": "s05_l595_0",
+      "emotions": {},
+      "pose": "pose_stupenda_whisper"
     },
     {
       "id": "s05_l595_0",
@@ -1075,7 +1256,9 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l595_1"
+      "next": "s05_l595_1",
+      "emotions": {},
+      "pose": "pose_stupenda_whisper"
     },
     {
       "id": "s05_l595_1",
@@ -1083,7 +1266,9 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s05_l597_0"
+      "next": "s05_l597_0",
+      "emotions": {},
+      "pose": "pose_stupenda_whisper"
     },
     {
       "id": "s05_l597_0",
@@ -1114,7 +1299,8 @@
           "durationMs": 800
         }
       ],
-      "next": "s05_l599_0"
+      "next": "s05_l599_0",
+      "emotions": {}
     },
     {
       "id": "s05_l599_0",
@@ -1122,7 +1308,8 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l599_1"
+      "next": "s05_l599_1",
+      "emotions": {}
     },
     {
       "id": "s05_l599_1",
@@ -1130,7 +1317,8 @@
       "speaker": "dima",
       "text": "",
       "source": [],
-      "next": "s05_l601_0"
+      "next": "s05_l601_0",
+      "emotions": {}
     },
     {
       "id": "s05_l601_0",
@@ -1151,7 +1339,8 @@
           "durationMs": 600
         }
       ],
-      "next": "s05_l603_0"
+      "next": "s05_l603_0",
+      "emotions": {}
     },
     {
       "id": "s05_l603_0",
@@ -1159,7 +1348,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l603_1"
+      "next": "s05_l603_1",
+      "emotions": {
+        "azalia": "tender"
+      }
     },
     {
       "id": "s05_l603_1",
@@ -1175,14 +1367,18 @@
           "durationMs": 500
         }
       ],
-      "next": "s05_l605_0"
+      "next": "s05_l605_0",
+      "emotions": {
+        "azalia": "tender"
+      }
     },
     {
       "id": "s05_l605_0",
       "type": "narration",
       "text": "",
       "source": [],
-      "next": "s05_l607_0"
+      "next": "s05_l607_0",
+      "emotions": {}
     },
     {
       "id": "s05_l607_0",
@@ -1190,7 +1386,10 @@
       "action": "cue",
       "annotation": "",
       "source": [],
-      "next": "s05_l607_1"
+      "next": "s05_l607_1",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l607_1",
@@ -1206,7 +1405,10 @@
           "durationMs": 450
         }
       ],
-      "next": "s05_l609_0"
+      "next": "s05_l609_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s05_l609_0",
@@ -1215,21 +1417,24 @@
       "narration": true,
       "annotation": "",
       "source": [],
-      "next": "s05_cs05"
+      "next": "s05_cs05",
+      "emotions": {}
     },
     {
       "id": "s05_cs05",
       "type": "cutscene",
-      "cutsceneId": "cs05",
+      "cutsceneId": "cs05_fountain_win",
       "source": [],
-      "next": "s05_end"
+      "next": "s05_end",
+      "emotions": {}
     },
     {
       "id": "s05_end",
       "type": "end",
       "nextScene": "scene06",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

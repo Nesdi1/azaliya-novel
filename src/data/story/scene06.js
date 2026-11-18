@@ -19,7 +19,8 @@ export default {
         "theo"
       ],
       "source": [],
-      "next": "s06_l617_0"
+      "next": "s06_l617_0",
+      "emotions": {}
     },
     {
       "id": "s06_l617_0",
@@ -45,7 +46,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_l619_0"
+      "next": "s06_l619_0",
+      "emotions": {
+        "malfoy": "angry"
+      }
     },
     {
       "id": "s06_l619_0",
@@ -60,7 +64,10 @@ export default {
           "end": 36
         }
       ],
-      "next": "s06_l619_1"
+      "next": "s06_l619_1",
+      "emotions": {
+        "malfoy": "angry"
+      }
     },
     {
       "id": "s06_l619_1",
@@ -83,7 +90,10 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s06_if_rose_621"
+      "next": "s06_if_rose_621",
+      "emotions": {
+        "malfoy": "angry"
+      }
     },
     {
       "id": "s06_if_rose_621",
@@ -98,7 +108,8 @@ export default {
       "then": "s06_l623_0",
       "source": [],
       "else": "s06_l621_0",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s06_l621_0",
@@ -122,7 +133,8 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s06_l621_1"
+      "next": "s06_l621_1",
+      "emotions": {}
     },
     {
       "id": "s06_l621_1",
@@ -145,7 +157,8 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s06_l623_0"
+      "next": "s06_l623_0",
+      "emotions": {}
     },
     {
       "id": "s06_l623_0",
@@ -165,7 +178,10 @@ export default {
           "effect": "focus"
         }
       ],
-      "next": "s06_l625_0"
+      "next": "s06_l625_0",
+      "emotions": {
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s06_l625_0",
@@ -180,7 +196,10 @@ export default {
           "end": 14
         }
       ],
-      "next": "s06_l625_1"
+      "next": "s06_l625_1",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s06_l625_1",
@@ -195,7 +214,10 @@ export default {
           "end": 118
         }
       ],
-      "next": "s06_game_duel"
+      "next": "s06_game_duel",
+      "emotions": {
+        "azalia": "thought"
+      }
     },
     {
       "id": "s06_game_duel",
@@ -218,7 +240,10 @@ export default {
           "end": 52
         }
       ],
-      "next": "s06_l629_0"
+      "next": "s06_l629_0",
+      "emotions": {
+        "azalia": "wand_draw"
+      }
     },
     {
       "id": "s06_l629_0",
@@ -265,7 +290,8 @@ export default {
           "end": 102
         }
       ],
-      "next": "s06_l631_0"
+      "next": "s06_l631_0",
+      "emotions": {}
     },
     {
       "id": "s06_l631_0",
@@ -280,7 +306,8 @@ export default {
           "end": 15
         }
       ],
-      "next": "s06_l631_1"
+      "next": "s06_l631_1",
+      "emotions": {}
     },
     {
       "id": "s06_l631_1",
@@ -295,7 +322,8 @@ export default {
           "end": 63
         }
       ],
-      "next": "s06_enter_duel_theo_dima"
+      "next": "s06_enter_duel_theo_dima",
+      "emotions": {}
     },
     {
       "id": "s06_enter_duel_theo_dima",
@@ -308,7 +336,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s06_l633_0"
+      "next": "s06_l633_0",
+      "emotions": {}
     },
     {
       "id": "s06_l633_0",
@@ -335,7 +364,8 @@ export default {
           "delayMs": 200
         }
       ],
-      "next": "s06_l635_0"
+      "next": "s06_l635_0",
+      "emotions": {}
     },
     {
       "id": "s06_l635_0",
@@ -367,14 +397,16 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_cs06_duel_demo"
+      "next": "s06_cs06_duel_demo",
+      "emotions": {}
     },
     {
       "id": "s06_cs06_duel_demo",
       "type": "cutscene",
-      "cutsceneId": "cs06_duel_demo",
+      "cutsceneId": "cs_duel",
       "next": "s06_l637_0",
-      "source": []
+      "source": [],
+      "emotions": {}
     },
     {
       "id": "s06_l637_0",
@@ -403,7 +435,8 @@ export default {
           "durationMs": 600
         }
       ],
-      "next": "s06_l639_0"
+      "next": "s06_l639_0",
+      "emotions": {}
     },
     {
       "id": "s06_l639_0",
@@ -418,7 +451,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l639_1"
+      "next": "s06_l639_1",
+      "emotions": {}
     },
     {
       "id": "s06_l639_1",
@@ -433,7 +467,8 @@ export default {
           "end": 27
         }
       ],
-      "next": "s06_l641_0"
+      "next": "s06_l641_0",
+      "emotions": {}
     },
     {
       "id": "s06_l641_0",
@@ -448,7 +483,8 @@ export default {
           "end": 26
         }
       ],
-      "next": "s06_l641_1"
+      "next": "s06_l641_1",
+      "emotions": {}
     },
     {
       "id": "s06_l641_1",
@@ -471,7 +507,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_enter_corridor"
+      "next": "s06_enter_corridor",
+      "emotions": {}
     },
     {
       "id": "s06_enter_corridor",
@@ -483,7 +520,8 @@ export default {
         "theo"
       ],
       "source": [],
-      "next": "s06_l643_0"
+      "next": "s06_l643_0",
+      "emotions": {}
     },
     {
       "id": "s06_l643_0",
@@ -497,7 +535,8 @@ export default {
           "end": 282
         }
       ],
-      "next": "s06_if_rose_645"
+      "next": "s06_if_rose_645",
+      "emotions": {}
     },
     {
       "id": "s06_if_rose_645",
@@ -512,7 +551,8 @@ export default {
       "then": "s06_l649_0",
       "source": [],
       "else": "s06_l645_0",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s06_l645_0",
@@ -535,7 +575,8 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s06_l647_0"
+      "next": "s06_l647_0",
+      "emotions": {}
     },
     {
       "id": "s06_l647_0",
@@ -550,7 +591,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l647_1"
+      "next": "s06_l647_1",
+      "emotions": {}
     },
     {
       "id": "s06_l647_1",
@@ -565,7 +607,8 @@ export default {
           "end": 58
         }
       ],
-      "next": "s06_l649_0"
+      "next": "s06_l649_0",
+      "emotions": {}
     },
     {
       "id": "s06_l649_0",
@@ -580,7 +623,8 @@ export default {
           "end": 18
         }
       ],
-      "next": "s06_l649_1"
+      "next": "s06_l649_1",
+      "emotions": {}
     },
     {
       "id": "s06_l649_1",
@@ -603,7 +647,8 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "choice06_01"
+      "next": "choice06_01",
+      "emotions": {}
     },
     {
       "id": "choice06_01",
@@ -649,7 +694,8 @@ export default {
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s06_enter_quidditch",
@@ -661,7 +707,8 @@ export default {
         "dima"
       ],
       "source": [],
-      "next": "s06_l655_0"
+      "next": "s06_l655_0",
+      "emotions": {}
     },
     {
       "id": "s06_l655_0",
@@ -686,7 +733,8 @@ export default {
           "durationMs": 2800
         }
       ],
-      "next": "s06_game_quidditch"
+      "next": "s06_game_quidditch",
+      "emotions": {}
     },
     {
       "id": "s06_game_quidditch",
@@ -707,7 +755,8 @@ export default {
           "end": 30
         }
       ],
-      "next": "s06_l657_1"
+      "next": "s06_l657_1",
+      "emotions": {}
     },
     {
       "id": "s06_l657_1",
@@ -721,7 +770,8 @@ export default {
           "end": 69
         }
       ],
-      "next": "choice06_02"
+      "next": "choice06_02",
+      "emotions": {}
     },
     {
       "id": "choice06_02",
@@ -755,7 +805,8 @@ export default {
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s06_l661_1",
@@ -783,7 +834,8 @@ export default {
           "end": 67
         }
       ],
-      "next": "s06_l662_0"
+      "next": "s06_l662_0",
+      "emotions": {}
     },
     {
       "id": "s06_l662_0",
@@ -798,7 +850,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l662_1"
+      "next": "s06_l662_1",
+      "emotions": {}
     },
     {
       "id": "s06_l662_1",
@@ -813,7 +866,8 @@ export default {
           "end": 70
         }
       ],
-      "next": "s06_if_route_after_quidditch"
+      "next": "s06_if_route_after_quidditch",
+      "emotions": {}
     },
     {
       "id": "s06_l663_1",
@@ -843,7 +897,8 @@ export default {
           "end": 112
         }
       ],
-      "next": "s06_if_route_after_quidditch"
+      "next": "s06_if_route_after_quidditch",
+      "emotions": {}
     },
     {
       "id": "s06_if_route_after_quidditch",
@@ -858,7 +913,8 @@ export default {
       "then": "s06_if_rose_724",
       "source": [],
       "else": "s06_l665_0",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s06_l665_0",
@@ -873,7 +929,8 @@ export default {
           "end": 23
         }
       ],
-      "next": "s06_l665_1"
+      "next": "s06_l665_1",
+      "emotions": {}
     },
     {
       "id": "s06_l665_1",
@@ -896,7 +953,8 @@ export default {
           "durationMs": 480
         }
       ],
-      "next": "s06_l666_0"
+      "next": "s06_l666_0",
+      "emotions": {}
     },
     {
       "id": "s06_l666_0",
@@ -911,7 +969,10 @@ export default {
           "end": 17
         }
       ],
-      "next": "s06_l666_1"
+      "next": "s06_l666_1",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s06_l666_1",
@@ -926,7 +987,10 @@ export default {
           "end": 38
         }
       ],
-      "next": "s06_l667_0"
+      "next": "s06_l667_0",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s06_l667_0",
@@ -941,7 +1005,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s06_l667_1"
+      "next": "s06_l667_1",
+      "emotions": {}
     },
     {
       "id": "s06_l667_1",
@@ -956,7 +1021,8 @@ export default {
           "end": 36
         }
       ],
-      "next": "s06_l668_0"
+      "next": "s06_l668_0",
+      "emotions": {}
     },
     {
       "id": "s06_l668_0",
@@ -971,7 +1037,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l668_1"
+      "next": "s06_l668_1",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s06_l668_1",
@@ -986,7 +1055,10 @@ export default {
           "end": 99
         }
       ],
-      "next": "s06_if_rose_724"
+      "next": "s06_if_rose_724",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s06_enter_lake",
@@ -999,7 +1071,8 @@ export default {
         "azalia"
       ],
       "source": [],
-      "next": "s06_l670_0"
+      "next": "s06_l670_0",
+      "emotions": {}
     },
     {
       "id": "s06_l670_0",
@@ -1025,7 +1098,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_l672_0"
+      "next": "s06_l672_0",
+      "emotions": {
+        "malfoy": "angry"
+      }
     },
     {
       "id": "s06_l672_0",
@@ -1040,7 +1116,10 @@ export default {
           "end": 22
         }
       ],
-      "next": "s06_l672_1"
+      "next": "s06_l672_1",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s06_l672_1",
@@ -1063,7 +1142,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s06_l674_0"
+      "next": "s06_l674_0",
+      "emotions": {
+        "azalia": "angry"
+      }
     },
     {
       "id": "s06_l674_0",
@@ -1090,7 +1172,8 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s06_l676_0"
+      "next": "s06_l676_0",
+      "emotions": {}
     },
     {
       "id": "s06_l676_0",
@@ -1120,7 +1203,10 @@ export default {
           "delayMs": 100
         }
       ],
-      "next": "s06_l678_0"
+      "next": "s06_l678_0",
+      "emotions": {
+        "pansy": "panic"
+      }
     },
     {
       "id": "s06_l678_0",
@@ -1135,7 +1221,10 @@ export default {
           "end": 15
         }
       ],
-      "next": "s06_l678_1"
+      "next": "s06_l678_1",
+      "emotions": {
+        "pansy": "panic"
+      }
     },
     {
       "id": "s06_l678_1",
@@ -1158,7 +1247,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s06_l680_0"
+      "next": "s06_l680_0",
+      "emotions": {
+        "pansy": "panic"
+      }
     },
     {
       "id": "s06_l680_0",
@@ -1182,7 +1274,10 @@ export default {
           "durationMs": 550
         }
       ],
-      "next": "s06_l682_0"
+      "next": "s06_l682_0",
+      "emotions": {
+        "malfoy": "hysteria_wet"
+      }
     },
     {
       "id": "s06_l682_0",
@@ -1197,7 +1292,11 @@ export default {
           "end": 7
         }
       ],
-      "next": "s06_l682_1"
+      "next": "s06_l682_1",
+      "emotions": {
+        "malfoy": "hysteria_wet",
+        "pansy": "peace"
+      }
     },
     {
       "id": "s06_l682_1",
@@ -1212,7 +1311,11 @@ export default {
           "end": 38
         }
       ],
-      "next": "s06_l684_0"
+      "next": "s06_l684_0",
+      "emotions": {
+        "malfoy": "hysteria_wet",
+        "pansy": "peace"
+      }
     },
     {
       "id": "s06_l684_0",
@@ -1248,14 +1351,16 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_cs06_lake"
+      "next": "s06_cs06_lake",
+      "emotions": {}
     },
     {
       "id": "s06_cs06_lake",
       "type": "cutscene",
       "cutsceneId": "cs06_lake",
       "next": "s06_l686_0",
-      "source": []
+      "source": [],
+      "emotions": {}
     },
     {
       "id": "s06_l686_0",
@@ -1270,7 +1375,8 @@ export default {
           "end": 15
         }
       ],
-      "next": "s06_l686_1"
+      "next": "s06_l686_1",
+      "emotions": {}
     },
     {
       "id": "s06_l686_1",
@@ -1285,7 +1391,8 @@ export default {
           "end": 24
         }
       ],
-      "next": "s06_l688_0"
+      "next": "s06_l688_0",
+      "emotions": {}
     },
     {
       "id": "s06_l688_0",
@@ -1313,7 +1420,8 @@ export default {
           "effect": "focus"
         }
       ],
-      "next": "s06_l690_0"
+      "next": "s06_l690_0",
+      "emotions": {}
     },
     {
       "id": "s06_l690_0",
@@ -1328,7 +1436,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s06_l690_1"
+      "next": "s06_l690_1",
+      "emotions": {
+        "azalia": "worried"
+      }
     },
     {
       "id": "s06_l690_1",
@@ -1343,7 +1454,10 @@ export default {
           "end": 47
         }
       ],
-      "next": "s06_l692_0"
+      "next": "s06_l692_0",
+      "emotions": {
+        "azalia": "worried"
+      }
     },
     {
       "id": "s06_l692_0",
@@ -1358,7 +1472,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l692_1"
+      "next": "s06_l692_1",
+      "emotions": {}
     },
     {
       "id": "s06_l692_1",
@@ -1373,7 +1488,8 @@ export default {
           "end": 23
         }
       ],
-      "next": "s06_l692_2"
+      "next": "s06_l692_2",
+      "emotions": {}
     },
     {
       "id": "s06_l692_2",
@@ -1389,7 +1505,8 @@ export default {
           "end": 33
         }
       ],
-      "next": "s06_l692_3"
+      "next": "s06_l692_3",
+      "emotions": {}
     },
     {
       "id": "s06_l692_3",
@@ -1404,7 +1521,8 @@ export default {
           "end": 82
         }
       ],
-      "next": "choice06_03"
+      "next": "choice06_03",
+      "emotions": {}
     },
     {
       "id": "choice06_03",
@@ -1438,7 +1556,8 @@ export default {
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s06_l697_1",
@@ -1453,7 +1572,10 @@ export default {
           "end": 69
         }
       ],
-      "next": "s06_l699_0"
+      "next": "s06_l699_0",
+      "emotions": {
+        "dima": "skeptical"
+      }
     },
     {
       "id": "s06_l699_0",
@@ -1468,7 +1590,10 @@ export default {
           "end": 17
         }
       ],
-      "next": "s06_l699_1"
+      "next": "s06_l699_1",
+      "emotions": {
+        "dima": "skeptical"
+      }
     },
     {
       "id": "s06_l699_1",
@@ -1483,7 +1608,10 @@ export default {
           "end": 91
         }
       ],
-      "next": "s06_l701_0"
+      "next": "s06_l701_0",
+      "emotions": {
+        "dima": "skeptical"
+      }
     },
     {
       "id": "s06_l701_0",
@@ -1497,7 +1625,8 @@ export default {
           "end": 16
         }
       ],
-      "next": "s06_l703_0"
+      "next": "s06_l703_0",
+      "emotions": {}
     },
     {
       "id": "s06_l703_0",
@@ -1512,7 +1641,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s06_l703_1"
+      "next": "s06_l703_1",
+      "emotions": {}
     },
     {
       "id": "s06_l703_1",
@@ -1527,7 +1657,8 @@ export default {
           "end": 70
         }
       ],
-      "next": "s06_l705_0"
+      "next": "s06_l705_0",
+      "emotions": {}
     },
     {
       "id": "s06_l705_0",
@@ -1541,7 +1672,8 @@ export default {
           "end": 13
         }
       ],
-      "next": "s06_l707_0"
+      "next": "s06_l707_0",
+      "emotions": {}
     },
     {
       "id": "s06_l707_0",
@@ -1556,7 +1688,8 @@ export default {
           "end": 29
         }
       ],
-      "next": "s06_l707_1"
+      "next": "s06_l707_1",
+      "emotions": {}
     },
     {
       "id": "s06_l707_1",
@@ -1571,7 +1704,8 @@ export default {
           "end": 130
         }
       ],
-      "next": "s06_l709_0"
+      "next": "s06_l709_0",
+      "emotions": {}
     },
     {
       "id": "s06_l709_0",
@@ -1593,7 +1727,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_l711_0"
+      "next": "s06_l711_0",
+      "emotions": {
+        "dima": "blush"
+      }
     },
     {
       "id": "s06_l711_0",
@@ -1608,7 +1745,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l711_1"
+      "next": "s06_l711_1",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s06_l711_1",
@@ -1623,7 +1763,10 @@ export default {
           "end": 114
         }
       ],
-      "next": "s06_l713_0"
+      "next": "s06_l713_0",
+      "emotions": {
+        "dima": "sly"
+      }
     },
     {
       "id": "s06_l713_0",
@@ -1637,7 +1780,8 @@ export default {
           "end": 10
         }
       ],
-      "next": "s06_l715_0"
+      "next": "s06_l715_0",
+      "emotions": {}
     },
     {
       "id": "s06_l715_0",
@@ -1652,7 +1796,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l715_1"
+      "next": "s06_l715_1",
+      "emotions": {}
     },
     {
       "id": "s06_l715_1",
@@ -1667,7 +1812,8 @@ export default {
           "end": 76
         }
       ],
-      "next": "s06_l717_0"
+      "next": "s06_l717_0",
+      "emotions": {}
     },
     {
       "id": "s06_l717_0",
@@ -1695,7 +1841,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_l719_0"
+      "next": "s06_l719_0",
+      "emotions": {}
     },
     {
       "id": "s06_l719_0",
@@ -1710,7 +1857,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s06_l719_1"
+      "next": "s06_l719_1",
+      "emotions": {}
     },
     {
       "id": "s06_l719_1",
@@ -1725,7 +1873,8 @@ export default {
           "end": 78
         }
       ],
-      "next": "s06_l721_0"
+      "next": "s06_l721_0",
+      "emotions": {}
     },
     {
       "id": "s06_l721_0",
@@ -1739,7 +1888,8 @@ export default {
           "end": 40
         }
       ],
-      "next": "s06_enter_quidditch"
+      "next": "s06_enter_quidditch",
+      "emotions": {}
     },
     {
       "id": "s06_if_rose_724",
@@ -1754,7 +1904,8 @@ export default {
       "then": "s06_end",
       "source": [],
       "else": "s06_enter_quidditch_end",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s06_enter_quidditch_end",
@@ -1766,7 +1917,8 @@ export default {
         "rose"
       ],
       "source": [],
-      "next": "s06_l724_0"
+      "next": "s06_l724_0",
+      "emotions": {}
     },
     {
       "id": "s06_l724_0",
@@ -1788,7 +1940,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_l725_0"
+      "next": "s06_l725_0",
+      "emotions": {}
     },
     {
       "id": "s06_l725_0",
@@ -1803,7 +1956,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l725_1"
+      "next": "s06_l725_1",
+      "emotions": {}
     },
     {
       "id": "s06_l725_1",
@@ -1818,7 +1972,8 @@ export default {
           "end": 23
         }
       ],
-      "next": "s06_l726_0"
+      "next": "s06_l726_0",
+      "emotions": {}
     },
     {
       "id": "s06_l726_0",
@@ -1833,7 +1988,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s06_l726_1"
+      "next": "s06_l726_1",
+      "emotions": {}
     },
     {
       "id": "s06_l726_1",
@@ -1848,7 +2004,8 @@ export default {
           "end": 23
         }
       ],
-      "next": "s06_l727_0"
+      "next": "s06_l727_0",
+      "emotions": {}
     },
     {
       "id": "s06_l727_0",
@@ -1863,7 +2020,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l727_1"
+      "next": "s06_l727_1",
+      "emotions": {}
     },
     {
       "id": "s06_l727_1",
@@ -1878,7 +2036,8 @@ export default {
           "end": 14
         }
       ],
-      "next": "s06_l729_0"
+      "next": "s06_l729_0",
+      "emotions": {}
     },
     {
       "id": "s06_l729_0",
@@ -1893,7 +2052,10 @@ export default {
           "end": 21
         }
       ],
-      "next": "s06_l729_1"
+      "next": "s06_l729_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s06_l729_1",
@@ -1916,7 +2078,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s06_l731_0"
+      "next": "s06_l731_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s06_l731_0",
@@ -1930,7 +2095,8 @@ export default {
           "end": 13
         }
       ],
-      "next": "s06_l733_0"
+      "next": "s06_l733_0",
+      "emotions": {}
     },
     {
       "id": "s06_l733_0",
@@ -1945,7 +2111,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s06_l733_1"
+      "next": "s06_l733_1",
+      "emotions": {}
     },
     {
       "id": "s06_l733_1",
@@ -1960,7 +2127,8 @@ export default {
           "end": 23
         }
       ],
-      "next": "s06_l735_1"
+      "next": "s06_l735_1",
+      "emotions": {}
     },
     {
       "id": "s06_l735_1",
@@ -1976,21 +2144,24 @@ export default {
           "end": 64
         }
       ],
-      "next": "s06_cs06"
+      "next": "s06_cs06",
+      "emotions": {}
     },
     {
       "id": "s06_cs06",
       "type": "cutscene",
-      "cutsceneId": "cs06",
+      "cutsceneId": "cs06_to_library",
       "source": [],
-      "next": "s06_end"
+      "next": "s06_end",
+      "emotions": {}
     },
     {
       "id": "s06_end",
       "type": "end",
       "nextScene": "scene07",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

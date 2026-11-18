@@ -71,6 +71,8 @@ export function createStage(root, manifest, bus = defaultBus) {
   let dimAllOnOffstageSpeaker = false;
   let reducedMotion = false;
   let sceneToken = 0;
+  let emotions = {};
+  let emotionRevision = 0;
   let cameraZoom = 1;
   let glowLevel = 0;
 
@@ -102,6 +104,13 @@ export function createStage(root, manifest, bus = defaultBus) {
 
   const charsLayerEl = document.createElement('div');
   charsLayerEl.className = 'stage-characters-layer';
+  const poseEl = document.createElement('img');
+  poseEl.className = 'stage-pose';
+  poseEl.alt = '';
+  poseEl.hidden = true;
+  let requestedPose = null;
+  let poseMembers = [];
+  let poseRevision = 0;
 
   const glowEl = document.createElement('div');
   glowEl.className = 'stage-glow';
@@ -110,7 +119,7 @@ export function createStage(root, manifest, bus = defaultBus) {
   const overlayLayerEl = document.createElement('div');
   overlayLayerEl.className = 'stage-overlay-layer';
 
-  cameraEl.append(bgImgEl, charsLayerEl, glowEl);
+  cameraEl.append(bgImgEl, charsLayerEl, poseEl, glowEl);
   frameEl.append(cameraEl, overlayLayerEl);
   root.append(backdropEl, frameEl);
 
@@ -272,14 +281,46 @@ export function createStage(root, manifest, bus = defaultBus) {
     }
   }
 
+  function portraitId(charId) {
+    const variant = getAssetEntry(charId)?.emotions?.[emotions[charId]];
+    return variant && getAssetEntry(variant)?.src ? variant : charId;
+  }
+
+  // Full snapshots reset omitted/unknown expressions, without changing stage membership or layout.
+  async function setEmotions(snapshot = {}) {
+    emotions = { ...snapshot };
+    const revision = ++emotionRevision;
+    const token = sceneToken;
+    await Promise.all(currentCharacters.map(async (charId) => {
+      const wrapper = charEls.get(charId);
+      const img = wrapper?.querySelector('.stage-character-img');
+      const id = portraitId(charId);
+      if (!img || img.dataset.portraitId === id) return;
+      const loaded = await preloadOne(id);
+      if (revision !== emotionRevision || token !== sceneToken || charEls.get(charId) !== wrapper) return;
+      const resolved = loaded ? id : charId;
+      img.src = assetUrl(getAssetEntry(resolved));
+      img.dataset.portraitId = resolved;
+    }));
+  }
+
   function createCharEl(charId) {
-    const entry = getAssetEntry(charId);
+    const id = portraitId(charId);
+    const entry = getAssetEntry(id);
     const wrapper = document.createElement('div');
     wrapper.className = 'stage-character';
     wrapper.dataset.charId = charId;
+    wrapper.classList.toggle('in-paired-pose', poseMembers.includes(charId));
 
     const img = document.createElement('img');
     img.className = 'stage-character-img';
+    img.dataset.portraitId = id;
+    img.onerror = () => {
+      if (img.dataset.portraitId !== charId) {
+        img.dataset.portraitId = charId;
+        img.src = assetUrl(getAssetEntry(charId));
+      }
+    };
     img.src = assetUrl(entry);
     img.alt = charId;
     img.draggable = false;
@@ -289,6 +330,21 @@ export function createStage(root, manifest, bus = defaultBus) {
     charsLayerEl.appendChild(wrapper);
     charEls.set(charId, wrapper);
     return wrapper;
+  }
+
+  async function setPose(id = null) {
+    if (requestedPose === id) return;
+    requestedPose = id;
+    const revision = ++poseRevision;
+    const entry = id && getAssetEntry(id);
+    const loaded = entry?.type === 'pose' && await preloadOne(id);
+    if (revision !== poseRevision) return;
+    poseMembers = loaded ? entry.participants : [];
+    if (loaded) poseEl.src = assetUrl(entry);
+    poseEl.hidden = !loaded;
+    for (const [charId, el] of charEls) {
+      el.classList.toggle('in-paired-pose', poseMembers.includes(charId));
+    }
   }
 
   async function renderCharacters(characterIds = []) {
@@ -322,6 +378,9 @@ export function createStage(root, manifest, bus = defaultBus) {
 
   async function enter({ background, characters = [] } = {}) {
     sceneToken += 1;
+    await setPose(null);
+    emotionRevision += 1;
+    emotions = {};
     clearCueTimers();
     groupIds = [];
     leans.clear();
@@ -603,6 +662,7 @@ export function createStage(root, manifest, bus = defaultBus) {
   }
 
   function destroy() {
+    poseRevision += 1;
     if (resizeObserver) resizeObserver.disconnect();
     window.removeEventListener('resize', onWindowResize);
     window.removeEventListener('orientationchange', onWindowResize);
@@ -618,6 +678,8 @@ export function createStage(root, manifest, bus = defaultBus) {
     resize,
     destroy,
     setActiveSpeaker,
+    setEmotions,
+    setPose,
     isCharacter: isRealCharacter,
     setReducedMotion,
     getOverlayRoot,
@@ -625,6 +687,7 @@ export function createStage(root, manifest, bus = defaultBus) {
       return {
         background: currentBackground,
         characters: [...currentCharacters],
+        emotions: { ...emotions },
         activeSpeaker: activeSpeakerAssetId,
         group: [...groupIds],
         camera: cameraZoom,

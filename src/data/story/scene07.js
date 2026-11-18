@@ -21,7 +21,8 @@ export default {
       "then": "s07_enter_no_rose",
       "source": [],
       "else": "s07_enter",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s07_enter_no_rose",
@@ -39,14 +40,16 @@ export default {
           "target": "azalia",
           "effect": "focus"
         }
-      ]
+      ],
+      "emotions": {}
     },
     {
       "id": "s07_goto_759",
       "type": "goto",
       "target": "s07_l759_0",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s07_enter",
@@ -58,7 +61,8 @@ export default {
         "rose"
       ],
       "source": [],
-      "next": "s07_l741_0"
+      "next": "s07_l741_0",
+      "emotions": {}
     },
     {
       "id": "s07_l741_0",
@@ -82,7 +86,8 @@ export default {
           "durationMs": 600
         }
       ],
-      "next": "s07_l743_0"
+      "next": "s07_l743_0",
+      "emotions": {}
     },
     {
       "id": "s07_l743_0",
@@ -97,7 +102,8 @@ export default {
           "end": 16
         }
       ],
-      "next": "s07_l743_1"
+      "next": "s07_l743_1",
+      "emotions": {}
     },
     {
       "id": "s07_l743_1",
@@ -112,7 +118,8 @@ export default {
           "end": 48
         }
       ],
-      "next": "s07_l745_0"
+      "next": "s07_l745_0",
+      "emotions": {}
     },
     {
       "id": "s07_l745_0",
@@ -127,7 +134,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s07_l745_1"
+      "next": "s07_l745_1",
+      "emotions": {}
     },
     {
       "id": "s07_l745_1",
@@ -142,7 +150,8 @@ export default {
           "end": 35
         }
       ],
-      "next": "s07_l747_0"
+      "next": "s07_l747_0",
+      "emotions": {}
     },
     {
       "id": "s07_l747_0",
@@ -157,7 +166,10 @@ export default {
           "end": 27
         }
       ],
-      "next": "s07_l747_1"
+      "next": "s07_l747_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s07_l747_1",
@@ -180,7 +192,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s07_l749_0"
+      "next": "s07_l749_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s07_l749_0",
@@ -195,7 +210,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s07_l749_1"
+      "next": "s07_l749_1",
+      "emotions": {}
     },
     {
       "id": "s07_l749_1",
@@ -210,7 +226,8 @@ export default {
           "end": 15
         }
       ],
-      "next": "s07_l751_0"
+      "next": "s07_l751_0",
+      "emotions": {}
     },
     {
       "id": "s07_l751_0",
@@ -225,7 +242,10 @@ export default {
           "end": 20
         }
       ],
-      "next": "s07_l751_1"
+      "next": "s07_l751_1",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s07_l751_1",
@@ -240,7 +260,10 @@ export default {
           "end": 153
         }
       ],
-      "next": "s07_l753_0"
+      "next": "s07_l753_0",
+      "emotions": {
+        "rose": "tease"
+      }
     },
     {
       "id": "s07_l753_0",
@@ -255,7 +278,10 @@ export default {
           "end": 8
         }
       ],
-      "next": "s07_l753_1"
+      "next": "s07_l753_1",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s07_l753_1",
@@ -278,7 +304,10 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s07_l755_0"
+      "next": "s07_l755_0",
+      "emotions": {
+        "azalia": "annoyed"
+      }
     },
     {
       "id": "s07_l755_0",
@@ -292,7 +321,8 @@ export default {
           "end": 54
         }
       ],
-      "next": "s07_l757_0"
+      "next": "s07_l757_0",
+      "emotions": {}
     },
     {
       "id": "s07_l757_0",
@@ -307,7 +337,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s07_l757_1"
+      "next": "s07_l757_1",
+      "emotions": {}
     },
     {
       "id": "s07_l757_1",
@@ -330,7 +361,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s07_l759_0"
+      "next": "s07_l759_0",
+      "emotions": {}
     },
     {
       "id": "s07_l759_0",
@@ -351,7 +383,8 @@ export default {
         }
       ],
       "next": "s07_if_rose_after_759",
-      "stageNoteWhenNoRose": "В глубине библиотеки за стеллажом стоит Тео"
+      "stageNoteWhenNoRose": "В глубине библиотеки за стеллажом стоит Тео",
+      "emotions": {}
     },
     {
       "id": "s07_if_rose_after_759",
@@ -366,7 +399,8 @@ export default {
       "then": "s07_l763_0",
       "source": [],
       "else": "s07_l761_0",
-      "next": null
+      "next": null,
+      "emotions": {}
     },
     {
       "id": "s07_l761_0",
@@ -381,7 +415,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s07_l761_1"
+      "next": "s07_l761_1",
+      "emotions": {}
     },
     {
       "id": "s07_l761_1",
@@ -396,7 +431,8 @@ export default {
           "end": 38
         }
       ],
-      "next": "s07_l763_0"
+      "next": "s07_l763_0",
+      "emotions": {}
     },
     {
       "id": "s07_l763_0",
@@ -411,7 +447,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s07_l763_1"
+      "next": "s07_l763_1",
+      "emotions": {}
     },
     {
       "id": "s07_l763_1",
@@ -426,7 +463,8 @@ export default {
           "end": 18
         }
       ],
-      "next": "s07_l765_0"
+      "next": "s07_l765_0",
+      "emotions": {}
     },
     {
       "id": "s07_l765_0",
@@ -464,7 +502,10 @@ export default {
         }
       ],
       "next": "s07_l766_0",
-      "stageNoteWhenNoRose": "Тео за стеллажом слышит перевод слова «Stupend»"
+      "stageNoteWhenNoRose": "Тео за стеллажом слышит перевод слова «Stupend»",
+      "emotions": {
+        "azalia": "blush"
+      }
     },
     {
       "id": "s07_l766_0",
@@ -493,7 +534,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s07_if_rose_after_766"
+      "next": "s07_if_rose_after_766",
+      "emotions": {
+        "azalia": "desk_down"
+      }
     },
     {
       "id": "s07_if_rose_after_766",
@@ -508,7 +552,10 @@ export default {
       "then": "s07_l782_0",
       "source": [],
       "else": "s07_l768_0",
-      "next": null
+      "next": null,
+      "emotions": {
+        "azalia": "desk_down"
+      }
     },
     {
       "id": "s07_l768_0",
@@ -523,7 +570,11 @@ export default {
           "end": 40
         }
       ],
-      "next": "s07_l768_1"
+      "next": "s07_l768_1",
+      "emotions": {
+        "azalia": "desk_down",
+        "rose": "delight"
+      }
     },
     {
       "id": "s07_l768_1",
@@ -551,7 +602,11 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s07_l770_0"
+      "next": "s07_l770_0",
+      "emotions": {
+        "azalia": "desk_down",
+        "rose": "delight"
+      }
     },
     {
       "id": "s07_l770_0",
@@ -565,7 +620,11 @@ export default {
           "end": 68
         }
       ],
-      "next": "s07_l772_0"
+      "next": "s07_l772_0",
+      "emotions": {
+        "rose": "delight",
+        "azalia": "desk_down"
+      }
     },
     {
       "id": "s07_l772_0",
@@ -580,7 +639,10 @@ export default {
           "end": 6
         }
       ],
-      "next": "s07_l772_1"
+      "next": "s07_l772_1",
+      "emotions": {
+        "azalia": "desk_down"
+      }
     },
     {
       "id": "s07_l772_1",
@@ -595,7 +657,10 @@ export default {
           "end": 45
         }
       ],
-      "next": "s07_l774_0"
+      "next": "s07_l774_0",
+      "emotions": {
+        "azalia": "desk_down"
+      }
     },
     {
       "id": "s07_l774_0",
@@ -635,7 +700,10 @@ export default {
           "durationMs": 480
         }
       ],
-      "next": "s07_enter_corridor"
+      "next": "s07_enter_corridor",
+      "emotions": {
+        "azalia": "desk_down"
+      }
     },
     {
       "id": "s07_enter_corridor",
@@ -647,7 +715,8 @@ export default {
         "theo"
       ],
       "source": [],
-      "next": "s07_l776_0"
+      "next": "s07_l776_0",
+      "emotions": {}
     },
     {
       "id": "s07_l776_0",
@@ -677,7 +746,8 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s07_l778_0"
+      "next": "s07_l778_0",
+      "emotions": {}
     },
     {
       "id": "s07_l778_0",
@@ -692,7 +762,10 @@ export default {
           "end": 26
         }
       ],
-      "next": "s07_l778_1"
+      "next": "s07_l778_1",
+      "emotions": {
+        "rose": "delight"
+      }
     },
     {
       "id": "s07_l778_1",
@@ -707,7 +780,10 @@ export default {
           "end": 50
         }
       ],
-      "next": "s07_l780_0"
+      "next": "s07_l780_0",
+      "emotions": {
+        "rose": "delight"
+      }
     },
     {
       "id": "s07_l780_0",
@@ -721,7 +797,10 @@ export default {
           "end": 98
         }
       ],
-      "next": "s07_l781_0"
+      "next": "s07_l781_0",
+      "emotions": {
+        "rose": "delight"
+      }
     },
     {
       "id": "s07_l781_0",
@@ -736,7 +815,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s07_l781_1"
+      "next": "s07_l781_1",
+      "emotions": {}
     },
     {
       "id": "s07_l781_1",
@@ -751,7 +831,8 @@ export default {
           "end": 107
         }
       ],
-      "next": "s07_l782_0"
+      "next": "s07_l782_0",
+      "emotions": {}
     },
     {
       "id": "s07_l782_0",
@@ -778,7 +859,10 @@ export default {
         }
       ],
       "next": "s07_if_rose_after_782",
-      "stageNoteWhenNoRose": "Тео (услышав перевод за стеллажом в библиотеке)"
+      "stageNoteWhenNoRose": "Тео (услышав перевод за стеллажом в библиотеке)",
+      "emotions": {
+        "theo": "angry"
+      }
     },
     {
       "id": "s07_if_rose_after_782",
@@ -793,7 +877,8 @@ export default {
       "then": "s07_l788_0",
       "next": null,
       "source": [],
-      "else": "s07_l784_0"
+      "else": "s07_l784_0",
+      "emotions": {}
     },
     {
       "id": "s07_l784_0",
@@ -808,7 +893,10 @@ export default {
           "end": 22
         }
       ],
-      "next": "s07_l784_1"
+      "next": "s07_l784_1",
+      "emotions": {
+        "theo": "angry"
+      }
     },
     {
       "id": "s07_l784_1",
@@ -823,7 +911,10 @@ export default {
           "end": 40
         }
       ],
-      "next": "s07_l786_0"
+      "next": "s07_l786_0",
+      "emotions": {
+        "theo": "angry"
+      }
     },
     {
       "id": "s07_l786_0",
@@ -838,7 +929,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s07_l786_1"
+      "next": "s07_l786_1",
+      "emotions": {}
     },
     {
       "id": "s07_l786_1",
@@ -853,7 +945,8 @@ export default {
           "end": 78
         }
       ],
-      "next": "s07_l788_0"
+      "next": "s07_l788_0",
+      "emotions": {}
     },
     {
       "id": "s07_l788_0",
@@ -868,7 +961,10 @@ export default {
           "end": 5
         }
       ],
-      "next": "s07_l788_1"
+      "next": "s07_l788_1",
+      "emotions": {
+        "theo": "angry"
+      }
     },
     {
       "id": "s07_l788_1",
@@ -884,7 +980,10 @@ export default {
         }
       ],
       "next": "s07_if_rose_after_788",
-      "stageNoteWhenNoRose": "услышав всё за стеллажом"
+      "stageNoteWhenNoRose": "услышав всё за стеллажом",
+      "emotions": {
+        "theo": "angry"
+      }
     },
     {
       "id": "s07_if_rose_after_788",
@@ -899,7 +998,8 @@ export default {
       "then": "s07_enter_corridor_no_rose",
       "next": null,
       "source": [],
-      "else": "s07_l790_0"
+      "else": "s07_l790_0",
+      "emotions": {}
     },
     {
       "id": "s07_enter_corridor_no_rose",
@@ -910,7 +1010,8 @@ export default {
         "theo"
       ],
       "next": "s07_l794_0",
-      "source": []
+      "source": [],
+      "emotions": {}
     },
     {
       "id": "s07_l790_0",
@@ -938,7 +1039,8 @@ export default {
           "durationMs": 520
         }
       ],
-      "next": "s07_l792_0"
+      "next": "s07_l792_0",
+      "emotions": {}
     },
     {
       "id": "s07_l792_0",
@@ -953,7 +1055,10 @@ export default {
           "end": 13
         }
       ],
-      "next": "s07_l792_1"
+      "next": "s07_l792_1",
+      "emotions": {
+        "rose": "guilty"
+      }
     },
     {
       "id": "s07_l792_1",
@@ -968,7 +1073,10 @@ export default {
           "end": 18
         }
       ],
-      "next": "s07_l794_0"
+      "next": "s07_l794_0",
+      "emotions": {
+        "rose": "guilty"
+      }
     },
     {
       "id": "s07_l794_0",
@@ -984,21 +1092,24 @@ export default {
           "end": 63
         }
       ],
-      "next": "s07_cs07"
+      "next": "s07_cs07",
+      "emotions": {}
     },
     {
       "id": "s07_cs07",
       "type": "cutscene",
-      "cutsceneId": "cs07",
+      "cutsceneId": "cs07_theo_walk",
       "source": [],
-      "next": "s07_end"
+      "next": "s07_end",
+      "emotions": {}
     },
     {
       "id": "s07_end",
       "type": "end",
       "nextScene": "scene08",
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

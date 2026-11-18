@@ -138,7 +138,9 @@ export function createEngine({
       if (!n) continue;
       steps += 1;
       if (n.background) ids.add(n.background);
+      if (n.pose) ids.add(n.pose);
       if (Array.isArray(n.characters)) n.characters.forEach((c) => ids.add(c));
+      Object.entries(n.emotions || {}).forEach(([character, emotion]) => ids.add(`${character}_${emotion}`));
       if (n.speaker && (!stage?.isCharacter || stage.isCharacter(n.speaker))) {
         ids.add(n.speaker);
       }
@@ -192,6 +194,11 @@ export function createEngine({
         guard += 1;
         state.sceneId = sceneId;
         state.nodeId = node.id;
+
+        if (!(node.type === 'scene' && node.action === 'enter')) {
+          await Promise.all([stage?.setEmotions?.(node.emotions || {}), stage?.setPose?.(node.pose || null)]);
+          if (myInstanceId !== instanceCounter) return;
+        }
 
         if (node.type === 'scene') {
           if (node.action === 'enter') {
@@ -362,6 +369,8 @@ export function createEngine({
         try {
           await cutscenes?.play?.(stage?.getOverlayRoot?.(), node.cutsceneId, {
             signal: activeAbortController.signal,
+            muted: state.settings?.muted,
+            volume: state.settings?.volume,
             reducedMotion: Boolean(state.settings?.reducedMotion),
             preloadPromise,
           });

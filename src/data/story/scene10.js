@@ -20,7 +20,8 @@ export default {
         "rose"
       ],
       "source": [],
-      "next": "s10_l941_0"
+      "next": "s10_l941_0",
+      "emotions": {}
     },
     {
       "id": "s10_l941_0",
@@ -40,7 +41,8 @@ export default {
           "effect": "focus"
         }
       ],
-      "next": "s10_l943_0"
+      "next": "s10_l943_0",
+      "emotions": {}
     },
     {
       "id": "s10_l943_0",
@@ -55,7 +57,8 @@ export default {
           "end": 27
         }
       ],
-      "next": "s10_l943_1"
+      "next": "s10_l943_1",
+      "emotions": {}
     },
     {
       "id": "s10_l943_1",
@@ -70,7 +73,8 @@ export default {
           "end": 202
         }
       ],
-      "next": "s10_l945_0"
+      "next": "s10_l945_0",
+      "emotions": {}
     },
     {
       "id": "s10_l945_0",
@@ -84,7 +88,8 @@ export default {
           "end": 29
         }
       ],
-      "next": "s10_l947_0"
+      "next": "s10_l947_0",
+      "emotions": {}
     },
     {
       "id": "s10_l947_0",
@@ -99,7 +104,8 @@ export default {
           "end": 18
         }
       ],
-      "next": "s10_l947_1"
+      "next": "s10_l947_1",
+      "emotions": {}
     },
     {
       "id": "s10_l947_1",
@@ -114,7 +120,8 @@ export default {
           "end": 38
         }
       ],
-      "next": "s10_l949_0"
+      "next": "s10_l949_0",
+      "emotions": {}
     },
     {
       "id": "s10_l949_0",
@@ -150,7 +157,8 @@ export default {
           "delayMs": 200
         }
       ],
-      "next": "s10_l951_0"
+      "next": "s10_l951_0",
+      "emotions": {}
     },
     {
       "id": "s10_l951_0",
@@ -187,7 +195,10 @@ export default {
           "delayMs": 220
         }
       ],
-      "next": "s10_l953_0"
+      "next": "s10_l953_0",
+      "emotions": {
+        "azalia": "smile"
+      }
     },
     {
       "id": "s10_l953_0",
@@ -202,7 +213,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s10_l953_1"
+      "next": "s10_l953_1",
+      "emotions": {}
     },
     {
       "id": "s10_l953_1",
@@ -217,7 +229,8 @@ export default {
           "end": 63
         }
       ],
-      "next": "s10_l955_0"
+      "next": "s10_l955_0",
+      "emotions": {}
     },
     {
       "id": "s10_l955_0",
@@ -232,7 +245,8 @@ export default {
           "end": 6
         }
       ],
-      "next": "s10_l955_1"
+      "next": "s10_l955_1",
+      "emotions": {}
     },
     {
       "id": "s10_l955_1",
@@ -247,7 +261,8 @@ export default {
           "end": 38
         }
       ],
-      "next": "s10_l957_0"
+      "next": "s10_l957_0",
+      "emotions": {}
     },
     {
       "id": "s10_l957_0",
@@ -262,7 +277,8 @@ export default {
           "end": 8
         }
       ],
-      "next": "s10_l957_1"
+      "next": "s10_l957_1",
+      "emotions": {}
     },
     {
       "id": "s10_l957_1",
@@ -277,7 +293,8 @@ export default {
           "end": 23
         }
       ],
-      "next": "s10_l959_0"
+      "next": "s10_l959_0",
+      "emotions": {}
     },
     {
       "id": "s10_l959_0",
@@ -310,7 +327,8 @@ export default {
           "delayMs": 150
         }
       ],
-      "next": "s10_l961_0"
+      "next": "s10_l961_0",
+      "emotions": {}
     },
     {
       "id": "s10_l961_0",
@@ -325,7 +343,10 @@ export default {
           "end": 18
         }
       ],
-      "next": "s10_l961_1"
+      "next": "s10_l961_1",
+      "emotions": {
+        "sprout": "shout"
+      }
     },
     {
       "id": "s10_l961_1",
@@ -348,7 +369,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s10_l963_0"
+      "next": "s10_l963_0",
+      "emotions": {
+        "sprout": "shout"
+      }
     },
     {
       "id": "s10_l963_0",
@@ -383,7 +407,10 @@ export default {
           "durationMs": 450
         }
       ],
-      "next": "s10_l965_0"
+      "next": "s10_l965_0",
+      "emotions": {
+        "sprout": "shout"
+      }
     },
     {
       "id": "s10_l965_0",
@@ -431,7 +458,12 @@ export default {
           "durationMs": 1000
         }
       ],
-      "next": "choice10_01"
+      "next": "choice10_01",
+      "emotions": {
+        "azalia": "blush",
+        "dima": "love"
+      },
+      "pose": "pose_earmuffs"
     },
     {
       "id": "choice10_01",
@@ -465,7 +497,12 @@ export default {
         }
       ],
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {
+        "dima": "love",
+        "azalia": "blush"
+      },
+      "pose": "pose_earmuffs"
     },
     {
       "id": "s10_l970_1",
@@ -486,7 +523,9 @@ export default {
           "end": 121
         }
       ],
-      "next": "s10_l971_0"
+      "next": "s10_l971_0",
+      "emotions": {},
+      "pose": "pose_kiss"
     },
     {
       "id": "s10_l971_0",
@@ -501,7 +540,11 @@ export default {
           "end": 6
         }
       ],
-      "next": "s10_l971_1"
+      "next": "s10_l971_1",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "love"
+      }
     },
     {
       "id": "s10_l971_1",
@@ -516,7 +559,11 @@ export default {
           "end": 74
         }
       ],
-      "next": "s10_l972_0"
+      "next": "s10_l972_0",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "love"
+      }
     },
     {
       "id": "s10_l972_0",
@@ -531,7 +578,11 @@ export default {
           "end": 17
         }
       ],
-      "next": "s10_l972_1"
+      "next": "s10_l972_1",
+      "emotions": {
+        "azalia": "tender",
+        "dima": "blush"
+      }
     },
     {
       "id": "s10_l972_1",
@@ -554,7 +605,11 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s10_l973_0"
+      "next": "s10_l973_0",
+      "emotions": {
+        "azalia": "tender",
+        "dima": "blush"
+      }
     },
     {
       "id": "s10_l973_0",
@@ -568,7 +623,9 @@ export default {
           "end": 44
         }
       ],
-      "next": "s10_l978_0"
+      "next": "s10_l978_0",
+      "emotions": {},
+      "pose": "pose_kiss"
     },
     {
       "id": "s10_l974_1",
@@ -603,7 +660,8 @@ export default {
           "end": 127
         }
       ],
-      "next": "s10_l975_0"
+      "next": "s10_l975_0",
+      "emotions": {}
     },
     {
       "id": "s10_l975_0",
@@ -618,7 +676,11 @@ export default {
           "end": 6
         }
       ],
-      "next": "s10_l975_1"
+      "next": "s10_l975_1",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "love"
+      }
     },
     {
       "id": "s10_l975_1",
@@ -633,7 +695,11 @@ export default {
           "end": 74
         }
       ],
-      "next": "s10_l976_0"
+      "next": "s10_l976_0",
+      "emotions": {
+        "azalia": "smile",
+        "dima": "love"
+      }
     },
     {
       "id": "s10_l976_0",
@@ -648,7 +714,11 @@ export default {
           "end": 8
         }
       ],
-      "next": "s10_l976_1"
+      "next": "s10_l976_1",
+      "emotions": {
+        "azalia": "tender",
+        "dima": "blush"
+      }
     },
     {
       "id": "s10_l976_1",
@@ -663,7 +733,11 @@ export default {
           "end": 13
         }
       ],
-      "next": "s10_l977_0"
+      "next": "s10_l977_0",
+      "emotions": {
+        "azalia": "tender",
+        "dima": "blush"
+      }
     },
     {
       "id": "s10_l977_0",
@@ -698,7 +772,9 @@ export default {
           "durationMs": 700
         }
       ],
-      "next": "s10_l978_0"
+      "next": "s10_l978_0",
+      "emotions": {},
+      "pose": "pose_kiss"
     },
     {
       "id": "s10_l978_0",
@@ -714,14 +790,16 @@ export default {
           "end": 197
         }
       ],
-      "next": "s10_cs10"
+      "next": "s10_cs10",
+      "emotions": {}
     },
     {
       "id": "s10_cs10",
       "type": "cutscene",
-      "cutsceneId": "cs10",
+      "cutsceneId": "cs10_finale",
       "source": [],
-      "next": "s10_enter_parchment"
+      "next": "s10_enter_parchment",
+      "emotions": {}
     },
     {
       "id": "s10_enter_parchment",
@@ -730,7 +808,8 @@ export default {
       "background": "bg_parchment_clean",
       "characters": [],
       "source": [],
-      "next": "s10_game_parchment"
+      "next": "s10_game_parchment",
+      "emotions": {}
     },
     {
       "id": "s10_game_parchment",
@@ -744,7 +823,8 @@ export default {
         "failure": "s10_l979_1"
       },
       "source": [],
-      "next": "s10_l979_1"
+      "next": "s10_l979_1",
+      "emotions": {}
     },
     {
       "id": "s10_l979_1",
@@ -759,14 +839,16 @@ export default {
           "end": 37
         }
       ],
-      "next": "s10_end"
+      "next": "s10_end",
+      "emotions": {}
     },
     {
       "id": "s10_end",
       "type": "end",
       "nextScene": null,
       "source": [],
-      "next": null
+      "next": null,
+      "emotions": {}
     }
   ],
   "sourceLedger": [

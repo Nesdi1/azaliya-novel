@@ -1,5 +1,5 @@
 import { bus as defaultBus } from '../events.js';
-import { CUTSCENES, CUTSCENE_IDS, getCutsceneDefinition } from '../data/cutscenes.js';
+import { CUTSCENES, CUTSCENE_IDS, MEDIA_IDS, getCutsceneDefinition } from '../data/cutscenes.js';
 
 /**
  * Declarative Cutscene & Living Train-Transition Player (docs/03_ARCHITECTURE.md + docs/05_CUTSCENES.md):
@@ -330,7 +330,79 @@ function renderParticles(ctx, activeEffects, elapsedMs) {
   }
 }
 
-export function createCutscenePlayer(stage = null, bus = defaultBus) {
+function playMedia(container, entry, def, { signal, muted = false, volume = 1 }) {
+  return new Promise((resolve) => {
+    if (signal?.aborted) { resolve('skipped'); return; }
+    const video = /\.(mp4|webm)$/i.test(entry.src);
+    const media = document.createElement(video ? 'video' : 'img');
+    const overlay = document.createElement('div');
+    overlay.className = 'cutscene-media';
+    const skip = document.createElement('button');
+    skip.type = 'button';
+    skip.className = 'ui-btn';
+    skip.textContent = 'Пропустить ▸';
+    const start = document.createElement('button');
+    start.type = 'button';
+    start.className = 'ui-btn media-start';
+    start.textContent = 'Воспроизвести';
+    start.hidden = true;
+    let settled = false;
+    let timer;
+    function finish(status) {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', abort);
+      media.onerror = media.onended = media.onload = media.onwaiting = media.onplaying = null;
+      if (video) media.pause();
+      overlay.remove();
+      media.removeAttribute('src');
+      if (video) media.load();
+      resolve(status);
+    }
+    const abort = () => finish('skipped');
+    signal?.addEventListener('abort', abort, { once: true });
+    skip.onclick = abort;
+    media.onerror = () => finish('fallback');
+    overlay.append(media, skip, start);
+    container.replaceChildren(overlay);
+    const armTimeout = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => finish('fallback'), 12000);
+    };
+    armTimeout();
+    if (video) {
+      media.playsInline = true;
+      media.muted = muted;
+      media.volume = volume;
+      media.onplaying = () => { clearTimeout(timer); start.hidden = true; };
+      media.onwaiting = armTimeout;
+      media.onended = () => finish('completed');
+      async function startVideo() {
+        try { await media.play(); }
+        catch (error) {
+          if (settled) return;
+          if (error.name !== 'NotAllowedError') { finish('fallback'); return; }
+          if (!media.muted) { media.muted = true; return startVideo(); }
+          clearTimeout(timer);
+          start.hidden = false;
+        }
+      }
+      start.onclick = startVideo;
+      media.src = './' + entry.src;
+      startVideo();
+    } else {
+      media.alt = def.title || '';
+      media.onload = () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => finish('completed'), entry.durationMs || def.durationMs);
+      };
+      media.src = './' + entry.src;
+    }
+  });
+}
+
+export function createCutscenePlayer(stage = null, bus = defaultBus, assets = {}) {
   /**
    * Living train transition screen used strictly for cs01 (Scene 1 -> Scene 2 on the way to Hogwarts).
    */
@@ -525,6 +597,14 @@ export function createCutscenePlayer(stage = null, bus = defaultBus) {
       fallback: { background: 'bg_great_hall', characters: ['azalia'] },
     };
 
+    const mediaEntry = assets[MEDIA_IDS[def.id]];
+    if (container && mediaEntry && !reducedMotion) {
+      const status = await playMedia(container, mediaEntry, def, options);
+      if (status !== 'fallback' || signal?.aborted) {
+        bus?.emit?.('cutscene:done', { id: def.id, status });
+        return { status };
+      }
+    }
     const assetIds = collectDefinitionAssets(def);
     if (assetIds.length > 0) {
       await stage?.preload?.(assetIds);
