@@ -138,8 +138,6 @@ def build():
  apply_emotions(result)
  out=P/'src/data/story';out.mkdir(parents=True,exist_ok=True)
  (out/'scene01.js').write_text('export default '+json.dumps(result,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
- letter=P/'src/data/finalLetter.js'
- if not letter.exists():letter.write_text('export const FINAL_LOVE_LETTER_TEXT = '+json.dumps('Текст письма будет добавлен здесь',ensure_ascii=False)+';\n',encoding='utf-8')
  full=src.read_text(encoding='utf-8').splitlines();variants=[]
  for line in [629,824]:
   base=full[line-1]

@@ -10,7 +10,7 @@ import { FINAL_LOVE_LETTER_TEXT } from '../data/finalLetter.js';
  * - Grid: 32×48 cells inside sheet area, brush radius r = 38 logical px.
  * - At >= 85% coverage: smoothly reveal remaining 15% over 600ms -> state 'complete' -> button «Завершить».
  * - Immediate «Показать письмо» button available at all times (sets details.reason = 'skipped').
- * - CSS text 18px (never < 16px) with pagination if FINAL_LOVE_LETTER_TEXT exceeds one page.
+ * - The revealed sheet expands into a keyboard- and touch-scrollable letter.
  */
 
 const LOGICAL_W = 896;
@@ -38,43 +38,6 @@ const WAND_LENGTH_PX = 250;
 
 function clamp(v, lo, hi) {
   return Math.max(lo, Math.min(hi, v));
-}
-
-/**
- * Splits letter text into pages that comfortably fit inside 445×500 at 18px line-height 1.48
- * without ever shrinking font-size below 16px (06_MINIGAMES.md L35).
- */
-function paginateLetterText(rawText) {
-  const clean = String(rawText || 'Текст письма будет добавлен здесь').trim();
-  const maxCharsPerPage = 520;
-  if (clean.length <= maxCharsPerPage) return [clean];
-
-  const paragraphs = clean.split(/\n+/);
-  const pages = [];
-  let current = '';
-
-  for (const para of paragraphs) {
-    const words = para.split(/\s+/);
-    for (const word of words) {
-      const candidate = current ? `${current} ${word}` : word;
-      if (candidate.length > maxCharsPerPage && current.length > 0) {
-        pages.push(current.trim());
-        current = word;
-      } else {
-        current = candidate;
-      }
-    }
-    if (current.length > 0 && current.length + 2 <= maxCharsPerPage) {
-      current += '\n\n';
-    } else if (current.length > 0) {
-      pages.push(current.trim());
-      current = '';
-    }
-  }
-  if (current.trim().length > 0) {
-    pages.push(current.trim());
-  }
-  return pages.length > 0 ? pages : [clean];
 }
 
 export async function run(container, params = {}) {
@@ -134,7 +97,6 @@ export async function run(container, params = {}) {
     // Pause tracking on visibilitychange (06_MINIGAMES.md L3)
     let pausedAt = null;
     let totalPausedMs = 0;
-    let revealStartedAt = 0;
 
     // 32x48 grid inside sheet rect (x: 220..665, y: 340..910)
     const totalCells = GRID_COLS * GRID_ROWS;
@@ -156,7 +118,7 @@ export async function run(container, params = {}) {
     const root = document.createElement('div');
     root.className = 'parchment-game-root';
     root.style.cssText =
-      'position:absolute;inset:0;width:896px;height:1200px;overflow:hidden;touch-action:none;user-select:none;z-index:35;';
+      'position:absolute;inset:0;width:896px;height:1200px;overflow:hidden;z-index:35;';
 
     // 1. Clean parchment background image (896x1200)
     const bgImg = document.createElement('img');
@@ -166,65 +128,21 @@ export async function run(container, params = {}) {
     bgImg.style.cssText =
       'position:absolute;inset:0;width:896px;height:1200px;object-fit:cover;pointer-events:none;z-index:1;';
 
-    // 2. Letter text layer inside sheet area (x: 220..665, y: 340..910, 18px CSS)
-    const pages = paginateLetterText(FINAL_LOVE_LETTER_TEXT);
-    let currentPageIdx = 0;
-
-    const sheetBox = document.createElement('div');
+    // The same ink sits under the wand's mask and in the expanded reading sheet.
+    const sheetBox = document.createElement('article');
     sheetBox.className = 'parchment-sheet-box';
-    sheetBox.style.cssText = `position:absolute;left:${SHEET_X0}px;top:${SHEET_Y0}px;width:${SHEET_W}px;height:${SHEET_H}px;padding:26px 28px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;z-index:2;`;
-
-    const letterTextEl = document.createElement('div');
-    letterTextEl.className = 'parchment-letter-text';
-    letterTextEl.style.cssText =
-      'font-size:18px;line-height:1.52;color:#2c1d11;font-style:italic;font-weight:600;white-space:pre-wrap;word-break:break-word;text-shadow:0 1px 0 rgba(255,248,230,0.65);overflow:hidden;';
-    letterTextEl.textContent = pages[0];
-
-    const pageNavEl = document.createElement('div');
-    pageNavEl.className = 'parchment-page-nav';
-    pageNavEl.hidden = pages.length <= 1;
-    pageNavEl.style.cssText =
-      'display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;pointer-events:auto;';
-
-    const prevPageBtn = document.createElement('button');
-    prevPageBtn.type = 'button';
-    prevPageBtn.className = 'ui-btn ui-btn-compact';
-    prevPageBtn.style.minHeight = '44px';
-    prevPageBtn.textContent = '◂ Пред.';
-
-    const pageIndicator = document.createElement('span');
-    pageIndicator.style.cssText = 'font-size:16px;color:#3b2616;font-weight:700;';
-
-    const nextPageBtn = document.createElement('button');
-    nextPageBtn.type = 'button';
-    nextPageBtn.className = 'ui-btn ui-btn-compact';
-    nextPageBtn.style.minHeight = '44px';
-    nextPageBtn.textContent = 'След. ▸';
-
-    function updatePagination() {
-      letterTextEl.textContent = pages[currentPageIdx] || '';
-      pageIndicator.textContent = `${currentPageIdx + 1} / ${pages.length}`;
-      prevPageBtn.disabled = currentPageIdx <= 0;
-      nextPageBtn.disabled = currentPageIdx >= pages.length - 1;
-    }
-    prevPageBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (currentPageIdx > 0) {
-        currentPageIdx -= 1;
-        updatePagination();
-      }
+    sheetBox.style.cssText = `--sheet-x:${SHEET_X0}px;--sheet-y:${SHEET_Y0}px;--sheet-w:${SHEET_W}px;--sheet-h:${SHEET_H}px;`;
+    sheetBox.setAttribute('aria-labelledby', 'parchment-title');
+    sheetBox.inert = true;
+    sheetBox.tabIndex = 0;
+    FINAL_LOVE_LETTER_TEXT.split('\n\n').forEach((paragraph, index) => {
+      const el = document.createElement(index === 0 ? 'h1' : 'p');
+      if (index === 0) el.id = 'parchment-title';
+      if (paragraph.includes('\n')) el.className = 'parchment-stanza';
+      if (index > 0) sheetBox.append('\n\n');
+      el.textContent = paragraph;
+      sheetBox.append(el);
     });
-    nextPageBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (currentPageIdx < pages.length - 1) {
-        currentPageIdx += 1;
-        updatePagination();
-      }
-    });
-    updatePagination();
-
-    pageNavEl.append(prevPageBtn, pageIndicator, nextPageBtn);
-    sheetBox.append(letterTextEl, pageNavEl);
 
     // 3. Veil canvas covering the sheet area (drawn from bg_parchment_clean crop so unrevealed areas look 100% blank)
     const dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -324,6 +242,7 @@ export async function run(container, params = {}) {
 
     // 6. Top HUD bar (progress % + instruction) & Bottom action bar («Показать письмо» / «Завершить»)
     const topHud = document.createElement('div');
+    topHud.className = 'parchment-progress';
     topHud.style.cssText =
       'position:absolute;left:36px;right:36px;top:92px;z-index:8;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(12,18,32,0.88);border:1.5px solid rgba(216,180,103,0.78);border-radius:14px;padding:12px 18px;box-shadow:0 10px 28px rgba(0,0,0,0.55);';
 
@@ -339,6 +258,7 @@ export async function run(container, params = {}) {
     topHud.append(statusText, pctBadge);
 
     const bottomBar = document.createElement('div');
+    bottomBar.className = 'parchment-actions';
     bottomBar.style.cssText =
       'position:absolute;left:36px;right:36px;bottom:48px;z-index:8;display:flex;align-items:center;justify-content:center;gap:16px;';
 
@@ -504,7 +424,7 @@ export async function run(container, params = {}) {
       if (state === 'revealing' || state === 'complete') return;
       completionReason = reason;
       state = 'revealing';
-      revealStartedAt = performance.now();
+      root.classList.add('is-revealing');
       activePointerId = null;
       lastTipX = null;
       lastTipY = null;
@@ -518,6 +438,9 @@ export async function run(container, params = {}) {
         if (settled) return;
         state = 'complete';
         veilCtx.clearRect(0, 0, LOGICAL_W, LOGICAL_H);
+        root.classList.replace('is-revealing', 'is-reading');
+        sheetBox.inert = false;
+        sheetBox.focus({ preventScroll: true });
         finishBtn.hidden = false;
         statusText.textContent = 'Письмо открыто! Прочитайте текст и нажмите «Завершить».';
       }, reducedMotion ? 120 : REVEAL_FINISH_MS);
@@ -642,7 +565,7 @@ export async function run(container, params = {}) {
 
     // RAF loop for wand tip glow & sparks (<= 50, ttl 600ms)
     const tick = (now) => {
-      if (settled) return;
+      if (settled || state === 'complete') return;
       if (!document.hidden) {
         fxCtx.clearRect(0, 0, LOGICAL_W, LOGICAL_H);
 

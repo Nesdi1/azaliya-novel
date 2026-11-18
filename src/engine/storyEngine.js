@@ -1,6 +1,5 @@
 import { bus as defaultBus } from '../events.js';
 import { createInitialState, normalizeState, HISTORY_LIMIT } from '../storage/save.js';
-import { FINAL_LOVE_LETTER_TEXT } from '../data/finalLetter.js';
 
 /**
  * Safe AST condition evaluator (no eval).
@@ -229,6 +228,13 @@ export function createEngine({
           continue;
         }
 
+        // The parchment already presented this source line in its scrollable reader.
+        if (node.useFinalLetter && node.next) {
+          markNodeRead(node.id);
+          node = getNode(sceneId, node.next);
+          continue;
+        }
+
         if (node.type === 'set') {
           markNodeRead(node.id);
           state.variables = applyEffects(node.effects, state.variables);
@@ -298,10 +304,7 @@ export function createEngine({
         const matchedVariant = Array.isArray(node.variants)
           ? node.variants.find((v) => v && evaluateCondition(v.condition, state.variables))
           : null;
-        let resolvedNode = matchedVariant ? { ...node, text: matchedVariant.text } : node;
-        if (resolvedNode.useFinalLetter && FINAL_LOVE_LETTER_TEXT) {
-          resolvedNode = { ...resolvedNode, text: FINAL_LOVE_LETTER_TEXT };
-        }
+        const resolvedNode = matchedVariant ? { ...node, text: matchedVariant.text } : node;
         const uiNode = isCueNarration
           ? {
               ...resolvedNode,

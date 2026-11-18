@@ -1091,3 +1091,77 @@ body {
 .file-warning[hidden] {
   display: none !important;
 }
+
+.parchment-game-root {
+  touch-action: none;
+  user-select: none;
+}
+
+.parchment-sheet-box {
+  position: absolute;
+  z-index: 2;
+  left: var(--sheet-x);
+  top: var(--sheet-y);
+  width: var(--sheet-w);
+  height: var(--sheet-h);
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 28px;
+  pointer-events: none;
+  font: 22px/1.55 Georgia, 'Times New Roman', serif;
+  color: #392213;
+  text-shadow: 0 0 5px #ffe7a0;
+}
+
+.parchment-sheet-box h1 {
+  margin: 0 0 1em;
+  font: bold 1.34em/1.2 Georgia, 'Times New Roman', serif;
+  text-align: center;
+  color: #653912;
+}
+
+.parchment-sheet-box p { margin: 0 0 1em; }
+.parchment-sheet-box p:last-child { margin-bottom: 0; }
+.parchment-sheet-box .parchment-stanza {
+  padding-inline-start: 0.8em;
+  border-inline-start: 2px solid #ae803f;
+  white-space: pre-wrap;
+  font-style: italic;
+}
+
+.is-revealing .parchment-sheet-box {
+  text-shadow: 0 0 9px #ffd060, 0 0 3px #fff4bb;
+}
+
+.parchment-game-root.is-reading {
+  touch-action: pan-y;
+  user-select: text;
+}
+
+.is-reading .parchment-sheet-box {
+  inset: max(8%, calc(64px / var(--stage-scale, 1))) 4% max(11%, calc(70px / var(--stage-scale, 1)));
+  width: auto;
+  height: auto;
+  padding: 1.3em 1.5em;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  pointer-events: auto;
+  font-size: max(23px, calc(17px / var(--stage-scale, 1)));
+  text-shadow: none;
+  border: 2px solid #977039;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #e1c28a, #f7e8c3 11%, #f9eccd 76%, #ebd3a1);
+  box-shadow: inset 0 0 22px #ac78394a, 0 8px 35px #29180e88;
+  scrollbar-color: #90672f #eddbb0;
+  scrollbar-width: thin;
+}
+
+.is-reading .parchment-sheet-box:focus-visible { outline: 3px solid #cc9e51; }
+.is-reading .parchment-wand-hit, .is-reading .parchment-wand-dock,
+.is-reading .parchment-progress, .is-reading canvas { visibility: hidden; }
+
+.parchment-actions .ui-btn {
+  min-block-size: max(48px, calc(44px / var(--stage-scale, 1)));
+  font-size: max(20px, calc(16px / var(--stage-scale, 1)));
+}

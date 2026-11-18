@@ -22,7 +22,7 @@ GROUPS = dict(azalia='thought resolve worried shy tender wand_draw wand_stance d
 MEMBERS = dict(andromeda_hug=['andromeda','azalia','theo'], cedric_hug=['cedric','azalia'],
                theo_hug=['theo','azalia'], bench_hug=['azalia','dima'], earmuffs=['azalia','dima'],
                kiss=['azalia','dima'], stupenda_whisper=['azalia','dima'])
-MOVIES = 'cs01_train cs02_sleep cs03_friends cs04_rose_dima cs05_fountain_win cs05_fountain_fail cs06_to_library cs07_theo_walk cs08_closeness cs09_company_dima cs10_finale cs_duel'.split()
+MOVIES = 'cs01_train cs02_sleep cs03_friends cs04_rose_dima cs05_fountain_win cs05_fountain_fail cs06_to_library cs07_theo_walk cs08_closeness cs09_company_dima cs10_finale cs_duel cs_malfoy_lake'.split()
 
 def digest(path):
     with path.open('rb') as f:

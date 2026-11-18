@@ -2,7 +2,7 @@
  * Declarative cutscene definitions (docs/05_CUTSCENES.md).
  * Logical coordinate space: 896×1200, origin top-left (0, 0).
  * Layer z-order: background 0..9, figures 10..19, overlay 30, particles 40, UI 100.
- * All 12 canonical IDs from 05_CUTSCENES.md are exported (plus aliases cs11 -> cs06_duel_demo, cs12 -> cs06_lake).
+ * Scene transitions and in-scene clips use stable IDs with aliases for their supplied media.
  */
 
 export const CUTSCENE_IDS = Object.freeze([
@@ -405,9 +405,9 @@ export const CUTSCENES = Object.freeze({
     ],
     fallback: {
       background: 'bg_black_lake',
-      characters: ['dima', 'azalia'],
+      characters: ['dima', 'malfoy', 'azalia'],
     },
-    next: 's06_l686_0',
+    next: 's06_l676_0',
   },
 });
 
@@ -415,7 +415,7 @@ export const MEDIA_IDS = Object.freeze({
   cs01: 'cs01_train', cs02: 'cs02_sleep', cs03: 'cs03_friends', cs04: 'cs04_rose_dima',
   cs05: 'cs05_fountain_win', cs05_fountain_fail: 'cs05_fountain_fail', cs06: 'cs06_to_library',
   cs07: 'cs07_theo_walk', cs08: 'cs08_closeness', cs09: 'cs09_company_dima',
-  cs10: 'cs10_finale', cs06_duel_demo: 'cs_duel',
+  cs10: 'cs10_finale', cs06_duel_demo: 'cs_duel', cs06_lake: 'cs_malfoy_lake',
 });
 const ALIAS_MAP = Object.freeze({
   ...Object.fromEntries(Object.entries(MEDIA_IDS).map(([key, id]) => [id, key])),

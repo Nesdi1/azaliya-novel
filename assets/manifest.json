@@ -1724,6 +1724,12 @@
       "src": "assets/cutscenes/cs_duel.mp4",
       "bytes": 7158139,
       "sha256": "ed210acab44504c80ff7c0a84a7019ac4c9ff132d056133463d4ad08ea337942"
+    },
+    "cs_malfoy_lake": {
+      "type": "cutscene",
+      "src": "assets/cutscenes/cs_malfoy_lake.mp4",
+      "bytes": 6094344,
+      "sha256": "93b841f919c43a51a5d41f577bb68b18d014a13d38eb431c3398e7afa02e4509"
     }
   },
   "scenes": {
@@ -1903,7 +1909,8 @@
       "cs06_to_library",
       "cs_duel",
       "dima_skeptical",
-      "dima_sly"
+      "dima_sly",
+      "cs_malfoy_lake"
     ],
     "scene07": [
       "azalia",

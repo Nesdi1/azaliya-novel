@@ -1172,7 +1172,15 @@ export default {
           "durationMs": 520
         }
       ],
+      "next": "s06_cs06_lake",
+      "emotions": {}
+    },
+    {
+      "id": "s06_cs06_lake",
+      "type": "cutscene",
+      "cutsceneId": "cs_malfoy_lake",
       "next": "s06_l676_0",
+      "source": [],
       "emotions": {}
     },
     {
@@ -1351,15 +1359,7 @@ export default {
           "durationMs": 500
         }
       ],
-      "next": "s06_cs06_lake",
-      "emotions": {}
-    },
-    {
-      "id": "s06_cs06_lake",
-      "type": "cutscene",
-      "cutsceneId": "cs06_lake",
       "next": "s06_l686_0",
-      "source": [],
       "emotions": {}
     },
     {
